@@ -3,9 +3,6 @@ import pandas as pd
 from datetime import datetime
 import time
 
-# -----------------------------------
-# IMPORTS E TRATAMENTO DE ERRO
-# -----------------------------------
 try:
     from web_scraper import buscar_dados_brasileirao
     from feature_engineering import preparar_dados_para_modelo
@@ -16,18 +13,14 @@ except ImportError as e:
     print(f"Erro crítico de importação: {e}")
     raise e
 
-# -----------------------------------
 # CONSTANTES DE ESTILO (PALETA)
-# -----------------------------------
 COR_ACCENT = "#00E676"  
 COR_BG = "#121212"      
 COR_SURFACE = "#1E1E1E" 
 COR_TEXT_SEC = "#9E9E9E"
 COR_BORDER = "#333333"  
 
-# -----------------------------------
 # COMPONENTES DE UI REUTILIZÁVEIS
-# -----------------------------------
 def criar_card(content, padding=20):
     """Cria um container estilizado com bordas arredondadas e fundo cinza."""
     return ft.Container(
@@ -82,13 +75,10 @@ def criar_tabela_estilizada(df: pd.DataFrame):
         data_row_max_height=40,
         column_spacing=20,
         divider_thickness=0,
-        # --- ALTERAÇÃO AQUI: FORÇA LARGURA TOTAL ---
         width=float('inf'), 
     )
 
-# -----------------------------------
 # APP PRINCIPAL
-# -----------------------------------
 def main(page: ft.Page):
     # Configurações Globais
     page.title = "AtletiQ Pro"
@@ -97,7 +87,6 @@ def main(page: ft.Page):
     page.bgcolor = COR_BG
     page.fonts = {"Roboto": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"}
 
-    # --- TELA DE CARREGAMENTO (SPLASH SCREEN) ---
     loading_text = ft.Text("Inicializando Neural Engine...", color=COR_TEXT_SEC, size=12)
     loading_bar = ft.ProgressBar(width=200, color=COR_ACCENT, bgcolor="#333333")
     
@@ -154,11 +143,6 @@ def main(page: ft.Page):
 
     page.clean()
 
-    # -----------------------------------
-    # UI PRINCIPAL
-    # -----------------------------------
-
-    # HEADER MODERNO
     header = ft.Container(
         content=ft.Row([
             ft.Row([
@@ -175,10 +159,6 @@ def main(page: ft.Page):
         border=ft.border.only(bottom=ft.border.BorderSide(1, COR_BORDER)),
         bgcolor=COR_BG
     )
-
-    # -----------------------------------
-    # CONTEÚDO DA ABA 1: PREVISÃO
-    # -----------------------------------
     
     dd_casa = ft.Dropdown(label="Mandante", options=opcoes_times, expand=True, text_size=14, border_color=COR_BORDER, border_radius=10, focused_border_color=COR_ACCENT)
     dd_visitante = ft.Dropdown(label="Visitante", options=opcoes_times, expand=True, text_size=14, border_color=COR_BORDER, border_radius=10, focused_border_color=COR_ACCENT)
@@ -261,9 +241,6 @@ def main(page: ft.Page):
         padding=20
     )
 
-    # -----------------------------------
-    # CONTEÚDO DA ABA 2: SIMULAÇÃO
-    # -----------------------------------
     slider_rodada = ft.Slider(min=1, max=38, value=38, divisions=38, label="{value}ª Rodada", active_color=COR_ACCENT)
     container_tabela = ft.Column(scroll=ft.ScrollMode.HIDDEN, height=400)
 
@@ -292,9 +269,6 @@ def main(page: ft.Page):
         padding=20
     )
 
-    # -----------------------------------
-    # CONTEÚDO DA ABA 3: H2H
-    # -----------------------------------
     h2h_t1 = ft.Dropdown(label="Time A", options=opcoes_times, expand=True, border_color=COR_BORDER, border_radius=10)
     h2h_t2 = ft.Dropdown(label="Time B", options=opcoes_times, expand=True, border_color=COR_BORDER, border_radius=10)
     h2h_stats = ft.Row([], alignment="spaceEvenly")
@@ -331,9 +305,6 @@ def main(page: ft.Page):
         padding=20
     )
 
-    # -----------------------------------
-    # NAVEGAÇÃO (TABS)
-    # -----------------------------------
     tabs = ft.Tabs(
         selected_index=0,
         animation_duration=300,
@@ -344,7 +315,7 @@ def main(page: ft.Page):
         tabs=[
             ft.Tab(text="PREVISÃO", icon="analytics", content=tab_previsao),
             ft.Tab(text="SIMULAÇÃO", icon="table_chart", content=tab_simulacao),
-            ft.Tab(text="H2H", icon="compare_arrows", content=tab_h2h),
+            ft.Tab(text="CONFRONTO DIRETO", icon="compare_arrows", content=tab_h2h),
         ],
         expand=True
     )
