@@ -81,7 +81,7 @@ def criar_tabela_estilizada(df: pd.DataFrame):
 # APP PRINCIPAL
 def main(page: ft.Page):
     # Configurações Globais
-    page.title = "AtletiQ Pro"
+    page.title = "AtletiQ 2.0"
     page.theme_mode = "dark"
     page.padding = 0 
     page.bgcolor = COR_BG
@@ -149,7 +149,7 @@ def main(page: ft.Page):
                 ft.Image(src="logo.png", width=40, height=40, error_content=ft.Icon(name="sports_soccer", color=COR_ACCENT)),
                 ft.Text("AtletiQ", size=22, weight="bold"),
                 ft.Container(
-                    content=ft.Text("PRO 2025", size=10, weight="bold", color="black"),
+                    content=ft.Text("2.0", size=10, weight="bold", color="black"),
                     bgcolor=COR_ACCENT, padding=ft.padding.symmetric(horizontal=6, vertical=2), border_radius=4
                 )
             ], alignment="center"),
