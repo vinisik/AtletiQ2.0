@@ -1,70 +1,69 @@
 import pandas as pd
 import cloudscraper
-from io import StringIO
-from typing import Optional
+import time
+import io
 
-
-def buscar_dados_brasileirao(ano: str) -> Optional[pd.DataFrame]:
-    """
-    Busca os resultados e jogos futuros de uma temporada do Brasileirão no FBref,
-    utilizando cloudscraper para contornar proteções anti-bot (Cloudflare).
-    """
-    print(f"Buscando dados da temporada {ano}...")
-
-    url = f"https://fbref.com/en/comps/24/schedule/{ano}-Serie-A-Scores-and-Fixtures"
-
-    # Criar scraper com cabeçalho de navegador
-    scraper = cloudscraper.create_scraper(
-        browser={'custom': 'chrome', 'platform': 'windows', 'mobile': False}
+# Configuração global do scraper para simular um navegador real
+def get_scraper():
+    return cloudscraper.create_scraper(
+        browser={
+            'browser': 'chrome',
+            'platform': 'windows',
+            'desktop': True
+        }
     )
 
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/123.0 Safari/537.36"
-        )
-    }
-
+def buscar_dados_brasileirao(ano):
+    """
+    Busca tabela de jogos (Scores & Fixtures).
+    """
+    print(f"Buscando tabela de jogos de {ano}...")
+    url = f"https://fbref.com/en/comps/24/schedule/{ano}-Serie-A-Scores-and-Fixtures"
+    
+    scraper = get_scraper()
+    
     try:
-        # Fazer requisição simulando um navegador real
-        response = scraper.get(url, headers=headers, timeout=20)
-        response.raise_for_status()  # levanta erro se status != 200
-
-        # Ler tabelas do HTML
-        tabelas = pd.read_html(StringIO(response.text), match="Scores & Fixtures")
-
-        if not tabelas:
-            print(f"AVISO: Nenhuma tabela com 'Scores & Fixtures' foi encontrada para o ano {ano}.")
+        response = scraper.get(url)
+        if response.status_code == 429:
+            print("Muitas requisições (429). Aguardando 10s...")
+            time.sleep(10)
+            response = scraper.get(url)
+            
+        if response.status_code != 200:
+            print(f"Erro {response.status_code} ao acessar jogos.")
             return None
 
+        html_content = io.StringIO(response.text)
+        
+        # Tenta pegar a tabela de resultados
+        tabelas = pd.read_html(html_content, match="Home")
+        if not tabelas: return None
+        
         df = tabelas[0]
-
-        # Limpeza básica
-        df = df[df['Wk'].notna()]
-        df = df[pd.to_numeric(df['Wk'], errors='coerce').notna()]
-
-        # Renomear colunas
-        df = df.rename(columns={
-            'Wk': 'Rodada',
-            'Home': 'HomeTeam',
-            'Away': 'AwayTeam',
-            'Score': 'Result'
-        })
-
-        # Separar gols
-        if 'Result' in df.columns:
-            gols = df['Result'].str.split('–', expand=True)
-            df['FTHG'] = pd.to_numeric(gols[0], errors='coerce')
-            df['FTAG'] = pd.to_numeric(gols[1], errors='coerce')
-
-        # Colunas finais
-        colunas_finais = ['Rodada', 'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG']
-        df = df[[c for c in colunas_finais if c in df.columns]]
-
-        print(f"✅ Dados de {ano} carregados com sucesso. Total de {len(df)} partidas.")
-        return df
-
+        
+        # Limpeza e Padronização
+        df = df[df['Wk'].notna() & (df['Wk'] != 'Wk')]
+        df = df.rename(columns={'Home': 'HomeTeam', 'Away': 'AwayTeam'})
+        
+        if 'Score' in df.columns:
+            df['Score'] = df['Score'].str.replace('–', '-', regex=False)
+            gols = df['Score'].str.split('-', expand=True)
+            if len(gols.columns) >= 2:
+                df['FTHG'] = pd.to_numeric(gols[0], errors='coerce')
+                df['FTAG'] = pd.to_numeric(gols[1], errors='coerce')
+            else:
+                df['FTHG'] = pd.NA
+                df['FTAG'] = pd.NA
+        
+        return df[['Wk', 'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG']].rename(columns={'Wk': 'Rodada'})
     except Exception as e:
-        print(f"❌ ERRO ao buscar ou processar dados de {ano}: {e}")
+        print(f"Erro no scraper de jogos: {e}")
         return None
+
+def buscar_artilheiros(ano):
+    """
+    Funcionalidade desativada para evitar erros de bloqueio e dependências.
+    Retorna None para que a interface apenas ignore ou mostre aviso.
+    """
+    print("Busca de artilheiros desativada temporariamente.")
+    return None

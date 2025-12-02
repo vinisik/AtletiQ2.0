@@ -1,100 +1,155 @@
 import pandas as pd
 import numpy as np
 
-def prever_jogo_especifico(time_casa, time_visitante, modelo, encoder, time_stats, colunas_modelo):
+def preparar_features_jogo(time_casa, time_visitante, encoder, time_stats, colunas_modelo=None):
     """
-    Prevê o resultado e as probabilidades para um jogo específico.
+    Função auxiliar para preparar a linha de dados de um único jogo.
     """
     dados_jogo = {}
-    
-    # Preencher as features com base nas estatísticas dos times
     for time, lado in [(time_casa, 'Home'), (time_visitante, 'Away')]:
         if time not in time_stats:
-            print(f"Atenção: Não há dados históricos suficientes para '{time}'. Usando valores padrão.")
-            dados_jogo[f'ForcaGeral_{lado}'] = 1.0 
+            dados_jogo[f'ForcaGeral_{lado}'] = 1.0
             dados_jogo[f'FormaPontos_{lado}'] = 0
             dados_jogo[f'MediaGolsMarcados_{lado}'] = 0
             dados_jogo[f'MediaGolsSofridos_{lado}'] = 0
         else:
-            # Evitar divisão por zero ou listas vazias
             dados_jogo[f'ForcaGeral_{lado}'] = np.mean(time_stats[time]['pontos']) if time_stats[time]['pontos'] else 1.0
             dados_jogo[f'FormaPontos_{lado}'] = sum(time_stats[time]['pontos'][-5:])
             dados_jogo[f'MediaGolsMarcados_{lado}'] = np.mean(time_stats[time]['gm'][-5:]) if time_stats[time]['gm'] else 0
             dados_jogo[f'MediaGolsSofridos_{lado}'] = np.mean(time_stats[time]['gs'][-5:]) if time_stats[time]['gs'] else 0
 
-    # Criar o DataFrame para o jogo
-    df_jogo_features_num = pd.DataFrame([dados_jogo])
+    df_jogo = pd.DataFrame([{'HomeTeam': time_casa, 'AwayTeam': time_visitante}])
+    try:
+        df_jogo_encoded = pd.DataFrame(
+            encoder.transform(df_jogo[['HomeTeam', 'AwayTeam']]), 
+            columns=encoder.get_feature_names_out(['HomeTeam', 'AwayTeam'])
+        )
+    except:
+        # Se falhar (ex: time novo), cria um DF vazio
+        df_jogo_encoded = pd.DataFrame()
+
+    df_features_num = pd.DataFrame([dados_jogo])
     
-    df_jogo_times = pd.DataFrame([{'HomeTeam': time_casa, 'AwayTeam': time_visitante}])
-    df_jogo_encoded_teams = encoder.transform(df_jogo_times[['HomeTeam', 'AwayTeam']])
-    df_jogo_encoded_df = pd.DataFrame(df_jogo_encoded_teams,
-                                      columns=encoder.get_feature_names_out(['HomeTeam', 'AwayTeam']))
+    # Concatena as partes (One-Hot + Numéricas)
+    X_input = pd.concat([df_jogo_encoded, df_features_num], axis=1)
     
-    # Combinar features numéricas e categóricas
-    df_jogo_final = pd.concat([df_jogo_encoded_df, df_jogo_features_num], axis=1)
+    # --- CORREÇÃO CRÍTICA: REORDENA AS COLUNAS ---
+    if colunas_modelo is not None:
+        # 1. Garante que todas as colunas esperadas pelo modelo existam (preenchendo com 0 as faltantes)
+        for col in colunas_modelo:
+            if col not in X_input.columns:
+                X_input[col] = 0
+        
+        # 2. Reordena as colunas para ficar IDÊNTICO ao treino
+        X_input = X_input[colunas_modelo]
+        
+    return X_input
 
-    df_jogo_final = df_jogo_final.reindex(columns=colunas_modelo, fill_value=0)
+def prever_jogo_especifico(time_casa, time_visitante, modelos, encoder, time_stats, colunas_modelo):
+    """
+    Prevê Resultado, Over 2.5 e BTTS para um jogo específico.
+    """
+    # Passa colunas_modelo para garantir a ordem correta
+    X_input = preparar_features_jogo(time_casa, time_visitante, encoder, time_stats, colunas_modelo)
+    
+    if X_input is None or X_input.empty:
+        return {}
+    
+    odds = {}
 
-    probabilidades = modelo.predict_proba(df_jogo_final)[0]
-    classes = modelo.classes_
-
-    odds = {classe: prob for classe, prob in zip(classes, probabilidades)}
+    # 1. Previsão de Resultado (1x2)
+    if 'resultado' in modelos:
+        try:
+            probs_res = modelos['resultado'].predict_proba(X_input)[0]
+            classes_res = modelos['resultado'].classes_
+            odds = {classe: prob for classe, prob in zip(classes_res, probs_res)}
+        except Exception as e:
+            print(f"Erro na previsão de resultado: {e}")
+    
+    # 2. Previsão Over 2.5
+    if 'over25' in modelos:
+        try:
+            prob_over = modelos['over25'].predict_proba(X_input)[0][1] # Probabilidade da classe 1 (Sim)
+            odds['Over25'] = prob_over
+        except:
+            odds['Over25'] = 0.0
+    
+    # 3. Previsão BTTS
+    if 'btts' in modelos:
+        try:
+            prob_btts = modelos['btts'].predict_proba(X_input)[0][1] # Probabilidade da classe 1 (Sim)
+            odds['BTTS'] = prob_btts
+        except:
+            odds['BTTS'] = 0.0
+    
     return odds
 
-def simular_campeonato(rodada_final, df_jogos_futuros, df_resultados_atuais, modelo, encoder, time_stats, colunas_modelo):
+def simular_campeonato(rodada_final, df_jogos_futuros, df_resultados_atuais, modelos, encoder, time_stats, colunas_modelo):
     """
-    Simula o campeonato até uma rodada específica.
+    Simula o restante do campeonato rodada a rodada.
     """
-    df_resultados_atuais['Resultado'] = np.where(
-        df_resultados_atuais['FTHG'] > df_resultados_atuais['FTAG'], 'Casa',
-        np.where(df_resultados_atuais['FTHG'] < df_resultados_atuais['FTAG'], 'Visitante', 'Empate')
-    )
-    
     tabela = {}
-    times_atuais = set(df_resultados_atuais['HomeTeam']).union(set(df_resultados_atuais['AwayTeam']))
-    times_futuros = set(df_jogos_futuros['HomeTeam']).union(set(df_jogos_futuros['AwayTeam']))
-    todos_times = sorted(list(times_atuais.union(times_futuros)))
-
+    todos_times = set(df_resultados_atuais['HomeTeam']).union(set(df_resultados_atuais['AwayTeam']))
+    
+    # Inicializa tabela zerada
     for time in todos_times:
         tabela[time] = {'P': 0, 'J': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
 
-    # Popula a tabela com os resultados atuais
+    # 1. Computa a tabela atual (jogos já realizados)
     for _, row in df_resultados_atuais.iterrows():
-        casa, visitante, gp_casa, gp_visitante = row['HomeTeam'], row['AwayTeam'], row['FTHG'], row['FTAG']
-        tabela[casa]['J'] += 1; tabela[visitante]['J'] += 1
-        tabela[casa]['GP'] += gp_casa; tabela[casa]['GC'] += gp_visitante
-        tabela[visitante]['GP'] += gp_visitante; tabela[visitante]['GC'] += gp_casa
-        if row['Resultado'] == 'Casa':
-            tabela[casa]['P'] += 3; tabela[casa]['V'] += 1; tabela[visitante]['D'] += 1
-        elif row['Resultado'] == 'Visitante':
-            tabela[visitante]['P'] += 3; tabela[visitante]['V'] += 1; tabela[casa]['D'] += 1
-        else:
-            tabela[casa]['P'] += 1; tabela[casa]['E'] += 1; tabela[visitante]['P'] += 1; tabela[visitante]['E'] += 1
+        casa, visitante = row['HomeTeam'], row['AwayTeam']
+        gp_casa, gp_visitante = row['FTHG'], row['FTAG']
+        
+        # Atualiza apenas se os times estiverem na lista (segurança)
+        if casa in tabela and visitante in tabela:
+            tabela[casa]['J'] += 1; tabela[visitante]['J'] += 1
+            tabela[casa]['GP'] += gp_casa; tabela[casa]['GC'] += gp_visitante
+            tabela[visitante]['GP'] += gp_visitante; tabela[visitante]['GC'] += gp_casa
+            
+            if gp_casa > gp_visitante:
+                tabela[casa]['P'] += 3; tabela[casa]['V'] += 1; tabela[visitante]['D'] += 1
+            elif gp_visitante > gp_casa:
+                tabela[visitante]['P'] += 3; tabela[visitante]['V'] += 1; tabela[casa]['D'] += 1
+            else:
+                tabela[casa]['P'] += 1; tabela[casa]['E'] += 1; tabela[visitante]['P'] += 1; tabela[visitante]['E'] += 1
 
-    # Simula os jogos futuros
+    # 2. Simula os jogos futuros
     jogos_a_simular = df_jogos_futuros[pd.to_numeric(df_jogos_futuros['Rodada']) <= rodada_final]
+    
     for _, jogo in jogos_a_simular.iterrows():
         casa, visitante = jogo['HomeTeam'], jogo['AwayTeam']
-        odds = prever_jogo_especifico(casa, visitante, modelo, encoder, time_stats, colunas_modelo)
-        if not odds: continue
-        resultado_previsto = max(odds, key=lambda k: odds[k])
-        tabela[casa]['J'] += 1; tabela[visitante]['J'] += 1
-        if resultado_previsto == 'Casa':
-            tabela[casa]['P'] += 3; tabela[casa]['V'] += 1; tabela[visitante]['D'] += 1
-        elif resultado_previsto == 'Visitante':
-            tabela[visitante]['P'] += 3; tabela[visitante]['V'] += 1; tabela[casa]['D'] += 1
-        else:
-            tabela[casa]['P'] += 1; tabela[casa]['E'] += 1; tabela[visitante]['P'] += 1; tabela[visitante]['E'] += 1
+        
+        # Se algum time não estiver na tabela inicial (ex: erro de nome), pula
+        if casa not in tabela or visitante not in tabela:
+            continue
 
+        X_input = preparar_features_jogo(casa, visitante, encoder, time_stats, colunas_modelo)
+        
+        if X_input is not None and not X_input.empty:
+            try:
+                # Usa apenas o modelo de resultado para a tabela
+                resultado_previsto = modelos['resultado'].predict(X_input)[0]
+                
+                tabela[casa]['J'] += 1; tabela[visitante]['J'] += 1
+                
+                if resultado_previsto == 'Casa':
+                    tabela[casa]['P'] += 3; tabela[casa]['V'] += 1; tabela[visitante]['D'] += 1
+                elif resultado_previsto == 'Visitante':
+                    tabela[visitante]['P'] += 3; tabela[visitante]['V'] += 1; tabela[casa]['D'] += 1
+                else:
+                    tabela[casa]['P'] += 1; tabela[casa]['E'] += 1; tabela[visitante]['P'] += 1; tabela[visitante]['E'] += 1
+            except Exception:
+                continue # Pula jogo se der erro na previsão
+
+    # 3. Formata para DataFrame
     df_tabela = pd.DataFrame.from_dict(tabela, orient='index')
-    df_tabela['SG'] = df_tabela['GP'] - df_tabela['GC']
-    df_tabela = df_tabela.sort_values(by=['P', 'V', 'SG'], ascending=False)
-
-    # Transforma o índice (que tem os nomes dos times) em uma coluna regular
-    df_tabela = df_tabela.reset_index()
-    df_tabela = df_tabela.rename(columns={'index': 'Time'})
-
-    # Insere a coluna de posição '#' na primeira posição 
-    df_tabela.insert(0, '#', np.arange(1, len(df_tabela) + 1))
-
-    return df_tabela
+    df_tabela.index.name = 'Time'
+    df_tabela.reset_index(inplace=True)
+    
+    if not df_tabela.empty:
+        df_tabela['SG'] = df_tabela['GP'] - df_tabela['GC']
+        df_tabela = df_tabela.sort_values(by=['P', 'V', 'SG'], ascending=False)
+    
+    cols = ['Time', 'P', 'J', 'V', 'E', 'D', 'GP', 'GC', 'SG']
+    # Garante que as colunas existam mesmo se o DF estiver vazio
+    return df_tabela[cols] if not df_tabela.empty else pd.DataFrame(columns=cols)
