@@ -100,7 +100,7 @@ def criar_tabela_estilizada(df: pd.DataFrame):
 
 # APP PRINCIPAL
 def main(page: ft.Page):
-    page.title = "AtletiQ Pro"
+    page.title = "AtletiQ 2.0"
     page.theme_mode = "dark" 
     page.padding = 0 
     page.bgcolor = COR_BG
@@ -390,7 +390,7 @@ def main(page: ft.Page):
 
     # HEADER & TABS
     header = ft.Container(content=ft.Row([
-        ft.Row([ft.Icon(name="sports_soccer", color=COR_ACCENT), ft.Text("AtletiQ Pro", size=20, weight="bold")]),
+        ft.Row([ft.Icon(name="sports_soccer", color=COR_ACCENT), ft.Text("AtletiQ 2.0", size=20, weight="bold")]),
         ft.IconButton(icon="settings", icon_color=COR_TEXT_SEC)
     ], alignment="spaceBetween"), padding=15, bgcolor=COR_BG, border=ft.border.only(bottom=ft.border.BorderSide(1, COR_BORDER)))
 
