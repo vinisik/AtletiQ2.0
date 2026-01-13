@@ -1,10 +1,10 @@
-# **⚽ AtletiQ Pro \- Estatísticas do Brasileirão com IA**
+# **⚽ AtletiQ \- Estatísticas do Brasileirão com IA**
 
-**AtletiQ Pro** é uma aplicação desktop moderna desenvolvida em Python e Flet que utiliza Inteligência Artificial (Machine Learning) para prever resultados, simular classificações e analisar estatísticas do Campeonato Brasileiro (Série A).
+**AtletiQ** é uma aplicação desktop moderna desenvolvida em Python e Flet que utiliza Inteligência Artificial (Machine Learning) para prever resultados, simular classificações e analisar estatísticas do Campeonato Brasileiro (Série A).
 
 ## **🎨 Sobre o Projeto**
 
-O AtletiQ Pro combina o poder da análise de dados com uma interface visual sofisticada. O sistema coleta dados em tempo real da web, processa estatísticas históricas e treina um modelo de Regressão Logística para oferecer insights sobre partidas futuras.
+O AtletiQ combina o poder da análise de dados com uma interface visual sofisticada. O sistema coleta dados em tempo real da web, processa estatísticas históricas e treina um modelo de Regressão Logística para oferecer insights sobre partidas futuras.
 
 ## **🚀 Funcionalidades Principais**
 
