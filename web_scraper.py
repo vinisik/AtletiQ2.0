@@ -3,7 +3,7 @@ import requests
 import time
 
 class AtletiQScraper:
-    def __init__(self, api_key="SUA_CHAVE_AQUI"):
+    def __init__(self, api_key="API_KEY"):
         self.api_key = api_key
         self.base_url = "https://api.football-data.org/v4/"
         self.headers = {'X-Auth-Token': self.api_key}

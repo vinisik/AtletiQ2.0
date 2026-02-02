@@ -2,29 +2,30 @@
 
 **AtletiQ** é uma aplicação desktop moderna desenvolvida em Python e Flet que utiliza Inteligência Artificial (Machine Learning) para prever resultados, simular classificações e analisar estatísticas do Campeonato Brasileiro (Série A).
 
-## **🔄 Novidades e Atualização de Fontes**
+## **🔄 Novidades e Otimizações**
 
-O projeto foi reformulado para garantir estabilidade e precisão nos dados, superando as limitações de bloqueios de acesso:
+O projeto evoluiu para uma arquitetura baseada em **Big Data** e **Performance**, superando limitações de conectividade e processamento:
 
-1. **Transição para API-Football-Data:** Abandonamos o *Web Scraping* instável do FBRef em favor de dados estruturados via JSON através da [Football-Data.org](https://www.football-data.org/). Isso garante carregamentos mais rápidos e maior fiabilidade.  
-2. **Base de Dados Histórica (CSV):** Agora o sistema utiliza o ficheiro historico\_confrontos.csv para integrar estatísticas seculares no módulo de Confronto Direto (H2H), combinando a história do futebol com dados atuais.  
-3. **Resiliência (Fallback):** O sistema agora tenta automaticamente carregar temporadas anteriores (2025) caso os dados da temporada atual (2026) ainda não estejam disponíveis ou ocorram erros de conexão.
+1. **Motor de Big Data (5 Anos):** O sistema agora procura automaticamente dados das últimas 5 temporadas. Isso permite que os modelos de IA aprendam com um volume muito maior de dados, aumentando a precisão das probabilidades.  
+2. **Sistema de Cache Inteligente:** Implementada a persistência em atletiq\_dataset.csv. O app carrega instantaneamente os dados históricos do disco e utiliza a API apenas para atualizar os resultados mais recentes, reduzindo drasticamente o tempo de inicialização.  
+3. **Interface Sofascore Style (Match Center):** Eliminámos as abas redundantes de "Previsão" e "H2H". Agora, ao clicar em qualquer partida no Calendário, abre-se um **BottomSheet** contextual com todas as probabilidades e o histórico de confronto direto daquele jogo específico.  
+4. **Tratamento Robusto de Dados:** Correção de conflitos de *timezone* (UTC) e validações de segurança para garantir que jogos futuros não interfiram nas estatísticas de vitórias passadas.
 
 ## **🚀 Funcionalidades Principais**
 
-* **🤖 Previsão de Partidas (AI):** Modelo de Regressão Logística que calcula a probabilidade de vitória (Mandante/Empate/Visitante), probabilidade de mais de 2.5 golos e "Ambas Marcam" (BTTS).  
-* **📊 Simulador de Tabela Final:** Projeta a classificação final do campeonato processando todos os jogos restantes através do motor de IA.  
-* **⚔️ Confronto Direto (H2H) Avançado:** Analisa o retrospecto entre dois clubes utilizando uma base histórica pré-carregada somada aos resultados das últimas temporadas.  
-* **📅 Calendário Inteligente:** Visualize as próximas jornadas e clique diretamente num jogo para enviar os dados para o módulo de previsão.  
-* **🌙 Interface Moderna:** Design focado em usabilidade com "Dark Mode" nativo, animações e componentes visuais sofisticados.
+* **🤖 Previsão de Partidas (AI):** Modelo de Machine Learning que calcula a probabilidade de vitória (Mandante/Empate/Visitante), Over 2.5 e "Ambas Marcam".  
+* **📊 Simulador de Tabela Final:** Projeta a classificação final do campeonato (38 rondas) processando os jogos restantes através do motor de IA.  
+* **⚔️ Match Center (H2H \+ Predictor):** Visualização integrada de probabilidades e retrospecto histórico (secular \+ recente) num único painel deslizante.  
+* **📅 Calendário Inteligente:** Navegação por jornadas com acesso direto à análise detalhada de cada confronto.  
+* **🌙 UI Moderna:** Design focado em usabilidade com "Dark Mode" nativo e componentes visuais de alta fidelidade.
 
 ## **🛠️ Tecnologias Utilizadas**
 
-* [**Python**](https://www.python.org/): Linguagem base do projeto.  
-* [**Flet**](https://flet.dev/): Framework para criação da interface gráfica (UI).  
-* [**Pandas**](https://pandas.pydata.org/): Processamento e manipulação de grandes volumes de dados.  
-* [**Scikit-learn**](https://scikit-learn.org/): Implementação dos modelos de Machine Learning.  
-* [**Requests**](https://requests.readthedocs.io/): Comunicação com a API de dados de futebol.
+* [**Python**](https://www.python.org/): Linguagem base.  
+* [**Flet**](https://flet.dev/): Framework de interface gráfica (baseado em Flutter).  
+* [**Pandas**](https://pandas.pydata.org/): Manipulação de dados e análise de séries temporais.  
+* [**Scikit-learn**](https://scikit-learn.org/): Modelagem preditiva (IA).  
+* [**Requests**](https://requests.readthedocs.io/): Consumo de dados via API REST.
 
 ## **📂 Estrutura do Projeto**
 
@@ -32,33 +33,33 @@ AtletiQ/
 
 │
 
-├── main.py \# Interface Gráfica e Lógica da UI
+├── main.py \# Interface Gráfica e Lógica Principal
 
-├── web\_scraper.py \# Consumo de dados via API e limpeza de nomes
+├── web\_scraper.py \# Consumo de dados via API (Football-Data.org)
 
-├── feature\_engineering.py \# Cálculo de força, forma recente e métricas de IA
+├── feature\_engineering.py \# Engenharia de atributos para IA
 
-├── model\_trainer.py \# Treino dos modelos (Resultado, Over 2.5, BTTS)
+├── model\_trainer.py \# Treino dos modelos (Random Forest/LogReg)
 
-├── predictor.py \# Motor de previsão e simulador de tabela
+├── predictor.py \# Motor de inferência e simulador de tabela
 
-├── analysis.py \# Processamento do histórico H2H e CSV
+├── analysis.py \# Processamento de H2H e histórico secular
 
-├── historico\_confrontos.csv \# Base de dados histórica de vitórias e empates
+├── atletiq\_dataset.csv \# \[NOVO\] Cache local de dados multi-ano
 
-├── logo.png \# Identidade visual
+├── historico\_confrontos.csv \# Base de dados histórica secular
 
-└── README.md \# Documentação
+└── README.md \# Documentação do projeto
 
 ## **⚙️ Como Instalar e Rodar**
 
 ### **1\. Obter uma API Key**
 
-Crie uma conta gratuita em [Football-Data.org](https://www.football-data.org/) e obtenha o token de acesso.
+Obtenha o  token gratuito em [Football-Data.org](https://www.football-data.org/).
 
-### **2\. Configurar o Scraper**
+### **2\. Configurar o Token**
 
-No ficheiro web\_scraper.py, insira o token:
+No ficheiro web\_scraper.py, insira o  token na variável correspondente:
 
 self.api\_key \= "API\_KEY"
 
@@ -70,6 +71,8 @@ pip install -r requirements.txt
 
 python main.py
 
+*Nota: A primeira execução pode demorar alguns segundos extra enquanto o sistema constrói o cache inicial de 5 anos.*
+
 ## **⚠️ Aviso Legal**
 
-Este software é um projeto de análise estatística. As previsões baseiam-se em probabilidades matemáticas e **não constituem garantia de resultados**. O uso das informações é de inteira responsabilidade do utilizador.
+Este software é uma ferramenta de análise estatística. As previsões baseiam-se em probabilidades matemáticas e **não constituem garantia de lucro ou resultados**. O uso para fins de apostas é de inteira responsabilidade do utilizador.
