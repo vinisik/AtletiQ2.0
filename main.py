@@ -2,190 +2,203 @@ import flet as ft
 import pandas as pd
 import numpy as np 
 from datetime import datetime, timedelta
-import time
+import os
 
+# Importação dos módulos do projeto
 try:
     from web_scraper import AtletiQScraper
-    from feature_engineering import preparar_dados_para_modelo, gerar_dados_evolucao
+    from feature_engineering import preparar_dados_para_modelo
     from model_trainer import treinar_modelo
     from predictor import prever_jogo_especifico, simular_campeonato
     from analysis import gerar_confronto_direto
 except ImportError as e:
-    print(f"Erro crítico de importação: {e}")
+    print(f"Erro crítico: {e}")
     raise e
 
-# CONFIGURAÇÕES VISUAIS
-COR_ACCENT = "#00E676"  
-COR_BG = "#121212"      
-COR_SURFACE = "#1E1E1E" 
-COR_TEXT_SEC = "#9E9E9E"
-COR_BORDER = "#333333"
+# CONFIGURAÇÕES
+COR_ACCENT, COR_BG, COR_SURFACE, COR_TEXT_SEC, COR_BORDER = "#00E676", "#121212", "#1E1E1E", "#9E9E9E", "#333333"
+CACHE_FILE = "atletiq_dataset.csv"
 
 CORES_TIMES = {
-    'Flamengo': '#C3281E', 'Palmeiras': '#006437', 'São Paulo': '#FE0000', 
-    'Corinthians': '#FFFFFF', 'Vasco': '#FFFFFF', 'Fluminense': '#9F022F',
-    'Botafogo': '#F4F4F4', 'Grêmio': '#0D80BF', 'Internacional': '#E30613',
-    'Atlético Mineiro': '#FFFFFF', 'Cruzeiro': '#005CA9', 'Bahia': '#005CA9',
-    'Fortaleza': '#11519B', 'Ceará': '#FFFFFF', 'Vitória': '#E30613',
-    'Athletico Paranaense': '#C3281E', 'Coritiba': '#00522D', 'Goiás': '#006633',
-    'Cuiabá': '#018036', 'Bragantino': '#FFFFFF', 'Juventude': '#006633'
+    'Flamengo': '#C3281E', 'Palmeiras': '#006437', 'São Paulo': '#FE0000', 'Corinthians': '#FFFFFF',
+    'Vasco': '#FFFFFF', 'Fluminense': '#9F022F', 'Botafogo': '#F4F4F4', 'Grêmio': '#0D80BF',
+    'Internacional': '#E30613', 'Atlético Mineiro': '#FFFFFF', 'Cruzeiro': '#005CA9', 'Bahia': '#005CA9',
+    'Fortaleza': '#11519B', 'Ceará': '#FFFFFF', 'Vitória': '#E30613', 'Athletico Paranaense': '#C3281E'
 }
 
+# --- AUXILIARES DE UI ---
 def criar_card(content, padding=20, on_click=None):
-    return ft.Container(
-        content=content, bgcolor=COR_SURFACE, border_radius=15, padding=padding,
-        border=ft.border.all(1, COR_BORDER), on_click=on_click,
-        shadow=ft.BoxShadow(spread_radius=1, blur_radius=10, color="#4D000000", offset=ft.Offset(0, 4))
-    )
+    return ft.Container(content=content, bgcolor=COR_SURFACE, border_radius=15, padding=padding, border=ft.border.all(1, COR_BORDER), on_click=on_click)
 
 def criar_stat_box(label, value, color="white"):
-    return ft.Container(
-        content=ft.Column([
-            ft.Text(label, size=11, color=COR_TEXT_SEC, weight="w500"), 
-            ft.Text(str(value), size=22, weight="bold", color=color)
-        ], horizontal_alignment="center", spacing=2), 
-        bgcolor="#0DFFFFFF", border_radius=10, padding=10, expand=True, alignment=ft.alignment.center
-    )
+    return ft.Container(content=ft.Column([ft.Text(label, size=10, color=COR_TEXT_SEC), ft.Text(str(value), size=20, weight="bold", color=color)], horizontal_alignment="center", spacing=2), bgcolor="#0DFFFFFF", border_radius=10, padding=10, expand=True)
 
-def criar_tabela_estilizada(df: pd.DataFrame):
-    if df is None or df.empty: return ft.Text("Sem registros encontrados.", color=COR_TEXT_SEC)
-    columns = [ft.DataColumn(ft.Text(str(col), weight="bold", color=COR_ACCENT)) for col in df.columns]
-    rows = [ft.DataRow([ft.DataCell(ft.Text(str(val), size=11)) for val in row]) for i, row in df.iterrows()]
-    return ft.DataTable(columns=columns, rows=rows, heading_row_color="#1AFFFFFF", width=float('inf'), column_spacing=15)
+def criar_tabela_estilizada(df):
+    if df is None or df.empty: return ft.Text("Sem dados disponíveis.", color=COR_TEXT_SEC)
+    cols = [ft.DataColumn(ft.Text(str(c), weight="bold", color=COR_ACCENT)) for c in df.columns]
+    rows = [ft.DataRow([ft.DataCell(ft.Text(str(v), size=11)) for v in row]) for i, row in df.iterrows()]
+    return ft.DataTable(columns=cols, rows=rows, heading_row_color="#1AFFFFFF", width=float('inf'), column_spacing=15)
 
 def main(page: ft.Page):
-    page.title = "AtletiQ 2.1"
-    page.theme_mode = "dark" 
-    page.padding = 0 
+    page.title = "AtletiQ 2.1 - Big Data"
+    page.theme_mode = "dark"
     page.bgcolor = COR_BG
+    page.padding = 0
 
     # SPLASH SCREEN
-    loading_text = ft.Text("Carregando inteligência...", color=COR_TEXT_SEC, size=12)
-    loading_bar = ft.ProgressBar(width=200, color=COR_ACCENT, bgcolor="#333333")
-    page.add(ft.Container(content=ft.Column([ft.Icon(name="sports_soccer", size=80, color=COR_ACCENT), ft.Text("AtletiQ", size=40, weight="bold"), loading_bar, loading_text], alignment="center", horizontal_alignment="center"), expand=True, bgcolor=COR_BG))
-    page.update()
+    txt_load = ft.Text("Iniciando AtletiQ...", color=COR_TEXT_SEC)
+    pb = ft.ProgressBar(width=300, color=COR_ACCENT)
+    splash = ft.Container(content=ft.Column([ft.Icon("sports_soccer", size=80, color=COR_ACCENT), ft.Text("AtletiQ", size=40, weight="bold"), pb, txt_load], alignment="center", horizontal_alignment="center"), expand=True)
+    page.add(splash); page.update()
 
-    # DADOS
+    # --- LÓGICA DE CARREGAMENTO ---
+    scraper = AtletiQScraper()
     ano_atual = datetime.now().year
-    scraper = AtletiQScraper() 
-    df_temp_atual = scraper.buscar_dados_hibrido(str(ano_atual))
-    df_temp_ant = scraper.buscar_dados_hibrido(str(ano_atual - 1))
-    df_artilharia = scraper.fetch_scorers(str(ano_atual))
+    anos_para_processar = list(range(ano_atual - 4, ano_atual + 1))
+    
+    df_cache = pd.DataFrame()
+    if os.path.exists(CACHE_FILE):
+        try:
+            df_cache = pd.read_csv(CACHE_FILE)
+            # CORREÇÃO: Forçar UTC para evitar conflito de timezone no cache
+            df_cache['Date'] = pd.to_datetime(df_cache['Date'], utc=True)
+        except:
+            df_cache = pd.DataFrame()
 
-    valid_dfs = [df for df in [df_temp_ant, df_temp_atual] if df is not None and not df.empty]
-    if not valid_dfs:
-        loading_text.value = "Erro: API indisponível."; page.update(); return
+    dfs_finais = []
+    for ano in anos_para_processar:
+        txt_load.value = f"Verificando Temporada {ano}..."
+        page.update()
+        
+        if not df_cache.empty and ano < ano_atual:
+            dados_ano = df_cache[df_cache['Date'].dt.year == ano]
+            if len(dados_ano) > 50:
+                dfs_finais.append(dados_ano)
+                continue
+        
+        try:
+            df_download = scraper.buscar_dados_hibrido(str(ano))
+            if df_download is not None and not df_download.empty:
+                # CORREÇÃO: Garantir que o download também venha como UTC antes de entrar na lista
+                df_download['Date'] = pd.to_datetime(df_download['Date'], utc=True)
+                dfs_finais.append(df_download)
+        except:
+            continue
 
-    df_total = pd.concat(valid_dfs).drop_duplicates().reset_index(drop=True)
-    df_total['Date'] = pd.to_datetime(df_total['Date']).dt.tz_localize(None) - timedelta(hours=3)
+    if not dfs_finais:
+        txt_load.value = "Erro: Sem dados (Internet ou Cache falhou)."
+        txt_load.color = "red"; pb.visible = False; page.update()
+        return
+
+    # CONCATENAÇÃO SEGURA
+    df_total = pd.concat(dfs_finais).drop_duplicates().reset_index(drop=True)
+    
+    # CORREÇÃO DEFINITIVA: Converter para datetime com utc=True antes de remover o TZ
+    df_total['Date'] = pd.to_datetime(df_total['Date'], utc=True).dt.tz_localize(None)
+    
+    # Salva Cache
+    df_total.to_csv(CACHE_FILE, index=False)
     
     df_res = df_total[df_total['FTHG'].notna()].copy()
-    df_fut = df_total[df_total['FTHG'].isna()].copy()
+    df_fut = df_total[df_total['FTHG'].isna() & (df_total['Date'].dt.year == ano_atual)].copy()
+    
+    # Treinamento e IA
     df_treino, time_stats = preparar_dados_para_modelo(df_res)
-    modelos, encoder, cols_model = treinar_modelo(df_treino) if not df_treino.empty else (None, None, None)
+    modelos, encoder, cols_model = treinar_modelo(df_treino)
+    df_artilharia = scraper.fetch_scorers(str(ano_atual))
     
     times_list = sorted(list(set(df_total['HomeTeam']).union(set(df_total['AwayTeam']))))
-    opts = [ft.dropdown.Option(t) for t in times_list]
     page.clean()
 
-    # MODAL DE DETALHES 
+    # --- UI: MODAL DETALHES ---
     def abrir_detalhes(row):
         mandante, visitante = row['HomeTeam'], row['AwayTeam']
         odds = prever_jogo_especifico(mandante, visitante, modelos, encoder, time_stats, cols_model)
         res_h2h, df_h2h = gerar_confronto_direto(df_total, mandante, visitante)
 
-        def fechar(e): 
-            modal.open = False
-            page.update()
-
+        def fechar(e): modal.open = False; page.update()
+        
         modal = ft.BottomSheet(
             ft.Container(
                 content=ft.Column([
-                    ft.Row([ft.Text("Análise da Partida", size=18, weight="bold"), ft.IconButton(ft.Icons.CLOSE, on_click=fechar)], alignment="spaceBetween"),
+                    ft.Row([ft.Text("Centro de Jogo", size=18, weight="bold"), ft.IconButton(ft.Icons.CLOSE, on_click=fechar)], alignment="spaceBetween"),
                     ft.Divider(color=COR_BORDER),
                     ft.Row([
                         ft.Text(mandante, weight="bold", size=15, expand=True, text_align="right"),
                         ft.Container(ft.Text("VS", size=10, weight="bold", color="black"), bgcolor=COR_ACCENT, padding=5, border_radius=5),
                         ft.Text(visitante, weight="bold", size=15, expand=True, text_align="left")
                     ]),
-                    ft.Text("Probabilidades AtletiQ", size=14, color=COR_ACCENT, weight="bold"),
+                    ft.Text("Probabilidades", size=13, color=COR_ACCENT, weight="bold"),
                     ft.Row([
                         criar_stat_box(mandante, f"{odds.get('Casa',0):.0%}", CORES_TIMES.get(mandante, COR_ACCENT)),
                         criar_stat_box("Empate", f"{odds.get('Empate',0):.0%}", "grey"),
-                        criar_stat_box(visitante, f"{odds.get('Visitante',0):.0%}", CORES_TIMES.get(visitante, "#00B0FF"))
+                        criar_stat_box(visitante, f"{odds.get('Visitante',0):.0%}", "#00B0FF")
                     ]),
-                    ft.Text("Histórico Recente (H2H)", size=14, color=COR_ACCENT, weight="bold"),
+                    ft.Text(f"Histórico ({res_h2h['total_partidas']} partidas)", size=13, color=COR_ACCENT, weight="bold"),
                     ft.Row([
                         criar_stat_box("Vitórias " + mandante, res_h2h['vitorias'].get(mandante, 0)),
                         criar_stat_box("Empates", res_h2h['empates']),
                         criar_stat_box("Vitórias " + visitante, res_h2h['vitorias'].get(visitante, 0)),
                     ]),
                     ft.Text("Últimos Jogos:", size=11, color=COR_TEXT_SEC),
-                    ft.Container(content=criar_tabela_estilizada(df_h2h), padding=5, bgcolor="#0AFFFFFF", border_radius=10),
+                    ft.Container(content=criar_tabela_estilizada(df_h2h.head(5)), padding=5, bgcolor="#0AFFFFFF", border_radius=10),
                 ], scroll=ft.ScrollMode.AUTO, spacing=15),
-                padding=20, bgcolor=COR_SURFACE, border_radius=ft.border_radius.only(top_left=20, top_right=20)
+                padding=25, bgcolor=COR_SURFACE, border_radius=ft.border_radius.only(top_left=20, top_right=20)
             ),
             is_scroll_controlled=True
         )
         page.overlay.append(modal); modal.open = True; page.update()
 
-    # ABA JOGOS
-    def criar_card_jogo(row):
-        return criar_card(
-            ft.Row([
-                ft.Column([
-                    ft.Text(row['Date'].strftime("%d/%m - %H:%M"), size=11, color=COR_TEXT_SEC), 
-                    ft.Row([
-                        ft.Text(row['HomeTeam'], weight="bold", size=13, expand=True, text_align="right"), 
-                        ft.Container(ft.Text("vs", size=10, color="black", weight="bold"), bgcolor=COR_ACCENT, padding=4, border_radius=4), 
-                        ft.Text(row['AwayTeam'], weight="bold", size=13, expand=True, text_align="left")
-                    ], alignment="center", spacing=10)
-                ], spacing=2, expand=True),
-                ft.Icon(ft.Icons.CHEVRON_RIGHT, color=COR_TEXT_SEC)
-            ], alignment="center"), 
-            padding=12, on_click=lambda _: abrir_detalhes(row)
-        )
-
+    # --- ABAS ---
+    # Calendário
     conteudo_jogos = []
     if not df_fut.empty:
-        df_fut_disp = df_fut.copy()
-        df_fut_disp['Rodada_Num'] = pd.to_numeric(df_fut_disp['Rodada'], errors='coerce')
-        for r in sorted(df_fut_disp['Rodada_Num'].dropna().unique()):
-            jogos_r = df_fut_disp[df_fut_disp['Rodada_Num'] == r]
+        df_fut['Rodada_Num'] = pd.to_numeric(df_fut['Rodada'], errors='coerce')
+        for r in sorted(df_fut['Rodada_Num'].dropna().unique()):
+            jogos_r = df_fut[df_fut['Rodada_Num'] == r]
             conteudo_jogos.append(ft.Text(f"Rodada {int(r)}", size=16, weight="bold", color=COR_ACCENT))
-            grid = ft.ResponsiveRow(spacing=10, run_spacing=10)
-            for _, row in jogos_r.iterrows(): grid.controls.append(ft.Container(content=criar_card_jogo(row), col={"xs": 12, "sm": 6}))
+            grid = ft.ResponsiveRow(spacing=10)
+            for _, row in jogos_r.iterrows():
+                card = criar_card(
+                    ft.Row([
+                        ft.Column([ft.Text(row['Date'].strftime("%d/%m - %H:%M"), size=10, color=COR_TEXT_SEC), 
+                        ft.Row([ft.Text(row['HomeTeam'], size=13, weight="bold", expand=True, text_align="right"), ft.Text("vs", size=10, color=COR_TEXT_SEC), ft.Text(row['AwayTeam'], size=13, weight="bold", expand=True, text_align="left")], spacing=10)], expand=True),
+                        ft.Icon(ft.Icons.CHEVRON_RIGHT, color=COR_TEXT_SEC, size=16)
+                    ], alignment="center"), padding=12, on_click=lambda _, r=row: abrir_detalhes(r))
+                grid.controls.append(ft.Container(content=card, col={"xs": 12, "sm": 6}))
             conteudo_jogos.append(grid)
-    
-    tab_jogos = ft.Container(content=ft.Column([ft.Text("Calendário", size=22, weight="bold"), ft.Divider(color=COR_BORDER), ft.Column(conteudo_jogos, scroll=ft.ScrollMode.AUTO, expand=True)], expand=True), padding=20)
 
-    # ABA JOGADORES
-    dd_time_jog = ft.Dropdown(label="Time", options=opts, expand=True)
-    area_jogadores = ft.Column()
-    def buscar_jogadores(e):
-        if not dd_time_jog.value: return
-        df_f = df_artilharia[df_artilharia['Time'].str.contains(dd_time_jog.value, case=False, na=False)].copy()
-        area_jogadores.controls = [ft.Text(f"Artilharia: {dd_time_jog.value}", size=18, weight="bold"), criar_tabela_estilizada(df_f.drop(columns=['Time']))]
-        page.update()
-    tab_jogadores = ft.Container(content=ft.Column([criar_card(ft.Row([dd_time_jog, ft.IconButton("search", on_click=buscar_jogadores)])), area_jogadores], scroll=ft.ScrollMode.AUTO), padding=20)
+    tab_jogos = ft.Container(content=ft.Column(conteudo_jogos, scroll=ft.ScrollMode.AUTO), padding=20)
 
-    # ABA SIMULAÇÃO 
-    tabela_sim_cont = ft.Column(scroll=ft.ScrollMode.AUTO)
-    def rodar_sim(e):
-        btn_sim.content = ft.ProgressRing(width=20, color="black"); page.update()
-        df_res_sim = df_temp_atual[df_temp_atual['FTHG'].notna()].copy()
-        df_fut_sim = df_temp_atual[df_temp_atual['FTHG'].isna()].copy()
-        df_simulado = simular_campeonato(38, df_fut_sim, df_res_sim, modelos, encoder, time_stats, cols_model)
-        tabela_sim_cont.controls = [criar_tabela_estilizada(df_simulado)]
-        btn_sim.content = ft.Text("RODAR SIMULAÇÃO 38 RODADAS"); page.update()
-    
-    btn_sim = ft.ElevatedButton("RODAR SIMULAÇÃO 38 RODADAS", bgcolor=COR_ACCENT, color="black", on_click=rodar_sim, width=float('inf'), height=50)
-    tab_sim = ft.Container(content=ft.Column([criar_card(ft.Column([ft.Text("Simular Tabela Final", size=18, weight="bold"), btn_sim])), tabela_sim_cont], scroll=ft.ScrollMode.AUTO), padding=20)
+    # Artilharia
+    dd_time = ft.Dropdown(label="Escolher Time", options=[ft.dropdown.Option(t) for t in sorted(times_list)], expand=True)
+    area_art = ft.Column()
+    def ver_art(e):
+        if not dd_time.value: return
+        df_f = df_artilharia[df_artilharia['Time'].str.contains(dd_time.value, na=False)].copy()
+        area_art.controls = [criar_tabela_estilizada(df_f.drop(columns=['Time']))]; page.update()
+    tab_art = ft.Container(content=ft.Column([ft.Row([dd_time, ft.IconButton("search", on_click=ver_art)]), area_art], scroll=ft.ScrollMode.AUTO), padding=20)
 
-    # UI FINAL
-    header = ft.Container(content=ft.Row([ft.Row([ft.Icon("sports_soccer", color=COR_ACCENT), ft.Text("AtletiQ 2.1", size=20, weight="bold")]), ft.IconButton("settings")], alignment="spaceBetween"), padding=15, border=ft.border.only(bottom=ft.border.BorderSide(1, COR_BORDER)))
-    tabs = ft.Tabs(selected_index=0, indicator_color=COR_ACCENT, tabs=[ft.Tab(text="Jogos", icon="calendar_today", content=tab_jogos), ft.Tab(text="Jogadores", icon="person", content=tab_jogadores), ft.Tab(text="Tabela", icon="table_chart", content=tab_sim)], expand=True)
-    page.add(header, tabs)
+    # Simulação
+    area_sim = ft.Column()
+    def rodar(e):
+        btn.content = ft.ProgressRing(width=20, color="black"); page.update()
+        df_res_at = df_total[(df_total['Date'].dt.year == ano_atual) & df_total['FTHG'].notna()]
+        df_fut_at = df_total[(df_total['Date'].dt.year == ano_atual) & df_total['FTHG'].isna()]
+        res = simular_campeonato(38, df_fut_at, df_res_at, modelos, encoder, time_stats, cols_model)
+        area_sim.controls = [criar_tabela_estilizada(res)]; btn.content = ft.Text("SIMULAR CAMPEONATO"); page.update()
+    btn = ft.ElevatedButton("SIMULAR CAMPEONATO", bgcolor=COR_ACCENT, color="black", on_click=rodar, width=float('inf'))
+    tab_sim = ft.Container(content=ft.Column([btn, area_sim], scroll=ft.ScrollMode.AUTO), padding=20)
+
+    # FINAL
+    page.add(
+        ft.Container(content=ft.Row([ft.Text("AtletiQ 2.1", size=20, weight="bold", color=COR_ACCENT), ft.Icon("analytics", color=COR_ACCENT)], alignment="center"), padding=15, border=ft.border.only(bottom=ft.border.BorderSide(1, COR_BORDER))),
+        ft.Tabs(selected_index=0, indicator_color=COR_ACCENT, tabs=[
+            ft.Tab(text="Jogos", icon="calendar_today", content=tab_jogos),
+            ft.Tab(text="Jogadores", icon="person", content=tab_art),
+            ft.Tab(text="Tabela", icon="table_chart", content=tab_sim)
+        ], expand=True)
+    )
 
 if __name__ == "__main__":
     ft.app(target=main)

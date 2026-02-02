@@ -1,0 +1,1521 @@
+Rodada,Date,HomeTeam,AwayTeam,FTHG,FTAG
+1,2023-04-15 19:00:00,Palmeiras,Cuiabá,2.0,1.0
+1,2023-04-15 19:00:00,América FC,Fluminense,0.0,3.0
+1,2023-04-15 21:30:00,Fortaleza,Internacional,1.0,1.0
+1,2023-04-15 21:30:00,CA Paranaense,Goiás,2.0,0.0
+1,2023-04-15 21:30:00,Bragantino,Bahia,2.0,1.0
+1,2023-04-15 21:30:00,Botafogo,São Paulo,2.0,1.0
+1,2023-04-16 00:00:00,CA Mineiro,CR Vasco da Gama,1.0,2.0
+1,2023-04-16 19:00:00,Corinthians,Cruzeiro,2.0,1.0
+1,2023-04-16 19:00:00,Flamengo,Coritiba FBC,3.0,0.0
+1,2023-04-16 21:30:00,Grêmio,Santos FC,1.0,0.0
+2,2023-04-22 19:00:00,Fluminense,CA Paranaense,2.0,0.0
+2,2023-04-22 21:30:00,Cuiabá,Bragantino,1.0,1.0
+2,2023-04-22 21:30:00,São Paulo,América FC,3.0,0.0
+2,2023-04-23 00:00:00,Cruzeiro,Grêmio,1.0,0.0
+2,2023-04-23 14:00:00,Internacional,Flamengo,2.0,1.0
+2,2023-04-23 19:00:00,Santos FC,CA Mineiro,0.0,0.0
+2,2023-04-23 19:00:00,CR Vasco da Gama,Palmeiras,2.0,2.0
+2,2023-04-23 21:30:00,Coritiba FBC,Fortaleza,0.0,3.0
+2,2023-04-23 22:00:00,Goiás,Corinthians,3.0,1.0
+2,2023-04-24 23:00:00,Bahia,Botafogo,1.0,2.0
+3,2023-04-29 19:30:00,Coritiba FBC,São Paulo,1.0,1.0
+3,2023-04-29 19:30:00,Fortaleza,Fluminense,4.0,2.0
+3,2023-04-29 21:30:00,Bragantino,Cruzeiro,0.0,3.0
+3,2023-04-29 21:30:00,Santos FC,América FC,3.0,2.0
+3,2023-04-29 21:30:00,Palmeiras,Corinthians,2.0,1.0
+3,2023-04-30 00:00:00,CA Mineiro,CA Paranaense,2.0,1.0
+3,2023-04-30 19:00:00,Flamengo,Botafogo,2.0,3.0
+3,2023-04-30 21:30:00,Internacional,Goiás,1.0,0.0
+3,2023-04-30 21:30:00,Cuiabá,Grêmio,1.0,2.0
+3,2023-05-01 23:00:00,CR Vasco da Gama,Bahia,0.0,1.0
+4,2023-05-06 19:00:00,Cruzeiro,Santos FC,2.0,1.0
+4,2023-05-07 00:00:00,Fluminense,CR Vasco da Gama,1.0,1.0
+4,2023-05-07 14:00:00,América FC,Cuiabá,1.0,2.0
+4,2023-05-07 19:00:00,CA Paranaense,Flamengo,2.0,1.0
+4,2023-05-07 19:00:00,Bahia,Coritiba FBC,3.0,1.0
+4,2023-05-07 19:00:00,São Paulo,Internacional,2.0,0.0
+4,2023-05-07 21:30:00,Grêmio,Bragantino,3.0,3.0
+4,2023-05-07 21:30:00,Goiás,Palmeiras,0.0,5.0
+4,2023-05-07 21:30:00,Botafogo,CA Mineiro,2.0,0.0
+4,2023-05-08 23:00:00,Corinthians,Fortaleza,1.0,1.0
+5,2023-05-10 22:00:00,Santos FC,Bahia,3.0,0.0
+5,2023-05-10 22:00:00,Bragantino,América FC,2.0,2.0
+5,2023-05-10 22:00:00,Internacional,CA Paranaense,0.0,2.0
+5,2023-05-10 23:00:00,Flamengo,Goiás,2.0,0.0
+5,2023-05-10 23:00:00,Cuiabá,CA Mineiro,0.0,4.0
+5,2023-05-11 00:30:00,Palmeiras,Grêmio,4.0,1.0
+5,2023-05-11 00:30:00,Cruzeiro,Fluminense,0.0,2.0
+5,2023-05-11 22:00:00,Coritiba FBC,CR Vasco da Gama,1.0,1.0
+5,2023-05-11 22:30:00,Botafogo,Corinthians,3.0,0.0
+5,2023-05-11 23:00:00,Fortaleza,São Paulo,0.0,0.0
+6,2023-05-13 19:00:00,Bahia,Flamengo,2.0,3.0
+6,2023-05-13 21:30:00,Fluminense,Cuiabá,2.0,0.0
+6,2023-05-13 21:30:00,Palmeiras,Bragantino,1.0,1.0
+6,2023-05-14 00:00:00,CA Mineiro,Internacional,2.0,0.0
+6,2023-05-14 19:00:00,Grêmio,Fortaleza,0.0,0.0
+6,2023-05-14 19:00:00,CR Vasco da Gama,Santos FC,0.0,1.0
+6,2023-05-14 19:00:00,Corinthians,São Paulo,1.0,1.0
+6,2023-05-14 21:30:00,América FC,Cruzeiro,0.0,4.0
+6,2023-05-14 21:30:00,CA Paranaense,Coritiba FBC,3.0,2.0
+6,2023-05-14 21:30:00,Goiás,Botafogo,2.0,1.0
+7,2023-05-20 19:00:00,Bahia,Goiás,1.0,1.0
+7,2023-05-20 21:30:00,Bragantino,CA Paranaense,2.0,0.0
+7,2023-05-20 21:30:00,América FC,Fortaleza,2.0,1.0
+7,2023-05-20 21:30:00,Coritiba FBC,CA Mineiro,1.0,2.0
+7,2023-05-20 21:30:00,Botafogo,Fluminense,1.0,0.0
+7,2023-05-20 21:30:00,São Paulo,CR Vasco da Gama,4.0,2.0
+7,2023-05-21 00:00:00,Santos FC,Palmeiras,0.0,0.0
+7,2023-05-21 19:00:00,Flamengo,Corinthians,1.0,0.0
+7,2023-05-21 21:30:00,Grêmio,Internacional,3.0,1.0
+7,2023-05-22 23:00:00,Cruzeiro,Cuiabá,0.0,1.0
+8,2023-05-27 19:00:00,Fortaleza,CR Vasco da Gama,2.0,0.0
+8,2023-05-27 19:00:00,CA Paranaense,Grêmio,1.0,2.0
+8,2023-05-27 21:30:00,Cuiabá,Coritiba FBC,1.0,1.0
+8,2023-05-27 21:30:00,Flamengo,Cruzeiro,1.0,1.0
+8,2023-05-28 00:00:00,São Paulo,Goiás,2.0,1.0
+8,2023-05-28 19:00:00,Internacional,Bahia,2.0,0.0
+8,2023-05-28 19:00:00,Corinthians,Fluminense,2.0,0.0
+8,2023-05-28 21:30:00,CA Mineiro,Palmeiras,1.0,1.0
+8,2023-05-28 21:30:00,Bragantino,Santos FC,2.0,0.0
+8,2023-05-28 22:00:00,Botafogo,América FC,2.0,0.0
+9,2023-06-03 19:00:00,Fortaleza,Bahia,0.0,0.0
+9,2023-06-03 21:30:00,Cruzeiro,CA Mineiro,0.0,1.0
+9,2023-06-03 21:30:00,América FC,Corinthians,2.0,0.0
+9,2023-06-03 21:30:00,CA Paranaense,Botafogo,1.0,0.0
+9,2023-06-04 00:00:00,Santos FC,Internacional,1.0,1.0
+9,2023-06-04 19:00:00,Fluminense,Bragantino,2.0,1.0
+9,2023-06-04 19:00:00,Grêmio,São Paulo,2.0,1.0
+9,2023-06-04 21:30:00,Palmeiras,Coritiba FBC,3.0,1.0
+9,2023-06-04 21:30:00,Goiás,Cuiabá,0.0,1.0
+9,2023-06-05 23:00:00,CR Vasco da Gama,Flamengo,1.0,4.0
+10,2023-06-10 19:00:00,Coritiba FBC,Santos FC,0.0,0.0
+10,2023-06-10 21:30:00,Bahia,Cruzeiro,2.0,2.0
+10,2023-06-10 21:30:00,CA Mineiro,Bragantino,1.0,1.0
+10,2023-06-10 21:30:00,Corinthians,Cuiabá,1.0,1.0
+10,2023-06-11 00:00:00,Botafogo,Fortaleza,2.0,0.0
+10,2023-06-11 14:00:00,América FC,CA Paranaense,2.0,2.0
+10,2023-06-11 19:00:00,Internacional,CR Vasco da Gama,2.0,1.0
+10,2023-06-11 19:00:00,São Paulo,Palmeiras,0.0,2.0
+10,2023-06-11 21:30:00,Goiás,Fluminense,2.0,2.0
+10,2023-06-11 21:30:00,Flamengo,Grêmio,3.0,0.0
+11,2023-06-21 22:00:00,Cruzeiro,Fortaleza,0.0,1.0
+11,2023-06-21 22:00:00,São Paulo,CA Paranaense,2.0,1.0
+11,2023-06-21 23:00:00,Santos FC,Corinthians,0.0,2.0
+11,2023-06-22 00:30:00,Bahia,Palmeiras,1.0,0.0
+11,2023-06-22 00:30:00,Fluminense,CA Mineiro,1.0,1.0
+11,2023-06-22 22:00:00,Grêmio,América FC,3.0,1.0
+11,2023-06-22 23:00:00,Cuiabá,Botafogo,0.0,1.0
+11,2023-06-22 23:00:00,Coritiba FBC,Internacional,0.0,1.0
+11,2023-06-22 23:00:00,CR Vasco da Gama,Goiás,0.0,1.0
+11,2023-06-23 00:30:00,Bragantino,Flamengo,4.0,0.0
+12,2023-06-24 19:00:00,CA Paranaense,Corinthians,1.0,0.0
+12,2023-06-24 21:30:00,Fortaleza,CA Mineiro,2.0,1.0
+12,2023-06-24 21:30:00,Fluminense,Bahia,2.0,1.0
+12,2023-06-25 00:00:00,Cruzeiro,São Paulo,1.0,0.0
+12,2023-06-25 19:00:00,Grêmio,Coritiba FBC,5.0,1.0
+12,2023-06-25 19:00:00,Palmeiras,Botafogo,0.0,1.0
+12,2023-06-25 21:30:00,América FC,Internacional,1.0,2.0
+12,2023-06-25 21:30:00,Bragantino,Goiás,2.0,0.0
+12,2023-06-25 21:30:00,Santos FC,Flamengo,2.0,3.0
+12,2023-06-27 00:00:00,CR Vasco da Gama,Cuiabá,1.0,0.0
+13,2023-07-01 19:00:00,São Paulo,Fluminense,1.0,0.0
+13,2023-07-01 21:30:00,Flamengo,Fortaleza,2.0,0.0
+13,2023-07-01 21:30:00,Bahia,Grêmio,1.0,2.0
+13,2023-07-02 00:00:00,Internacional,Cruzeiro,0.0,0.0
+13,2023-07-02 14:00:00,Corinthians,Bragantino,0.0,1.0
+13,2023-07-02 19:00:00,Botafogo,CR Vasco da Gama,2.0,0.0
+13,2023-07-02 19:00:00,CA Paranaense,Palmeiras,2.0,2.0
+13,2023-07-02 19:00:00,CA Mineiro,América FC,2.0,2.0
+13,2023-07-02 21:30:00,Cuiabá,Santos FC,3.0,0.0
+13,2023-07-03 23:00:00,Goiás,Coritiba FBC,1.0,2.0
+14,2023-07-08 19:00:00,Cuiabá,Bahia,1.0,1.0
+14,2023-07-08 19:00:00,CR Vasco da Gama,Cruzeiro,0.0,1.0
+14,2023-07-08 21:30:00,CA Mineiro,Corinthians,0.0,1.0
+14,2023-07-08 21:30:00,Coritiba FBC,América FC,3.0,1.0
+14,2023-07-09 00:00:00,Palmeiras,Flamengo,1.0,1.0
+14,2023-07-09 14:00:00,Santos FC,Goiás,4.0,3.0
+14,2023-07-09 19:00:00,Bragantino,São Paulo,0.0,0.0
+14,2023-07-09 19:00:00,Fluminense,Internacional,2.0,0.0
+14,2023-07-09 21:30:00,Grêmio,Botafogo,0.0,2.0
+14,2023-07-09 21:30:00,Fortaleza,CA Paranaense,1.0,0.0
+15,2023-07-16 00:00:00,Botafogo,Bragantino,2.0,0.0
+15,2023-07-16 14:00:00,Cruzeiro,Coritiba FBC,0.0,0.0
+15,2023-07-16 19:00:00,Fortaleza,Cuiabá,0.0,1.0
+15,2023-07-16 19:00:00,São Paulo,Santos FC,4.0,1.0
+15,2023-07-16 19:00:00,Fluminense,Flamengo,0.0,0.0
+15,2023-07-16 21:30:00,CA Paranaense,Bahia,2.0,0.0
+15,2023-07-16 21:30:00,Internacional,Palmeiras,0.0,0.0
+15,2023-07-17 23:00:00,Goiás,CA Mineiro,0.0,0.0
+16,2023-07-22 19:00:00,Palmeiras,Fortaleza,3.0,1.0
+16,2023-07-22 19:00:00,Flamengo,América FC,1.0,1.0
+16,2023-07-22 21:30:00,Bahia,Corinthians,0.0,0.0
+16,2023-07-22 21:30:00,Cuiabá,São Paulo,2.0,1.0
+16,2023-07-23 00:00:00,Grêmio,CA Mineiro,1.0,0.0
+16,2023-07-23 19:00:00,Cruzeiro,Goiás,0.0,1.0
+16,2023-07-23 19:00:00,Santos FC,Botafogo,2.0,2.0
+16,2023-07-23 19:00:00,Bragantino,Internacional,0.0,0.0
+16,2023-07-23 21:30:00,CR Vasco da Gama,CA Paranaense,0.0,2.0
+16,2023-07-24 22:00:00,Coritiba FBC,Fluminense,2.0,0.0
+17,2023-07-29 19:00:00,CA Paranaense,Cruzeiro,3.0,3.0
+17,2023-07-29 19:00:00,Internacional,Cuiabá,1.0,2.0
+17,2023-07-29 19:00:00,Fluminense,Santos FC,1.0,0.0
+17,2023-07-29 21:30:00,Fortaleza,Bragantino,0.0,3.0
+17,2023-07-29 21:30:00,Corinthians,CR Vasco da Gama,3.0,1.0
+17,2023-07-30 00:00:00,CA Mineiro,Flamengo,1.0,2.0
+17,2023-07-30 14:00:00,São Paulo,Bahia,0.0,0.0
+17,2023-07-30 19:00:00,América FC,Palmeiras,1.0,4.0
+17,2023-07-30 19:00:00,Botafogo,Coritiba FBC,4.0,1.0
+17,2023-07-30 21:30:00,Goiás,Grêmio,1.0,1.0
+18,2023-08-05 19:00:00,Santos FC,CA Paranaense,1.0,1.0
+18,2023-08-05 21:30:00,Internacional,Corinthians,2.0,2.0
+18,2023-08-05 21:30:00,Goiás,Fortaleza,1.0,0.0
+18,2023-08-06 00:00:00,Fluminense,Palmeiras,2.0,1.0
+18,2023-08-06 19:00:00,São Paulo,CA Mineiro,0.0,2.0
+18,2023-08-06 19:00:00,CR Vasco da Gama,Grêmio,1.0,0.0
+18,2023-08-06 21:30:00,Bahia,América FC,3.0,1.0
+18,2023-08-06 21:30:00,Coritiba FBC,Bragantino,0.0,1.0
+18,2023-08-06 21:30:00,Cruzeiro,Botafogo,0.0,0.0
+18,2023-08-06 23:00:00,Cuiabá,Flamengo,3.0,0.0
+19,2023-08-13 00:00:00,Botafogo,Internacional,3.0,1.0
+19,2023-08-13 14:00:00,CA Mineiro,Bahia,1.0,0.0
+19,2023-08-13 19:00:00,Corinthians,Coritiba FBC,3.0,1.0
+19,2023-08-13 19:00:00,Grêmio,Fluminense,2.0,1.0
+19,2023-08-13 19:00:00,América FC,Goiás,0.0,1.0
+19,2023-08-13 21:30:00,Flamengo,São Paulo,1.0,1.0
+19,2023-08-13 21:30:00,Fortaleza,Santos FC,4.0,0.0
+19,2023-08-14 22:00:00,Palmeiras,Cruzeiro,1.0,0.0
+19,2023-08-15 00:00:00,Bragantino,CR Vasco da Gama,1.0,1.0
+19,2023-08-15 23:00:00,CA Paranaense,Cuiabá,2.0,0.0
+20,2023-08-19 19:00:00,Internacional,Fortaleza,0.0,1.0
+20,2023-08-19 19:00:00,São Paulo,Botafogo,0.0,0.0
+20,2023-08-19 21:30:00,Cuiabá,Palmeiras,0.0,2.0
+20,2023-08-19 21:30:00,Fluminense,América FC,3.0,1.0
+20,2023-08-20 00:00:00,Cruzeiro,Corinthians,1.0,1.0
+20,2023-08-20 14:00:00,CR Vasco da Gama,CA Mineiro,1.0,0.0
+20,2023-08-20 19:00:00,Bahia,Bragantino,4.0,0.0
+20,2023-08-20 19:00:00,Coritiba FBC,Flamengo,2.0,3.0
+20,2023-08-20 19:00:00,Santos FC,Grêmio,2.0,1.0
+20,2023-08-21 23:00:00,Goiás,CA Paranaense,1.0,1.0
+21,2023-08-26 21:30:00,Flamengo,Internacional,0.0,0.0
+21,2023-08-27 00:00:00,Corinthians,Goiás,1.0,1.0
+21,2023-08-27 14:00:00,Bragantino,Cuiabá,2.0,0.0
+21,2023-08-27 19:00:00,América FC,São Paulo,2.0,1.0
+21,2023-08-27 19:00:00,CA Mineiro,Santos FC,2.0,0.0
+21,2023-08-27 19:00:00,Botafogo,Bahia,3.0,0.0
+21,2023-08-27 21:30:00,Fortaleza,Coritiba FBC,3.0,1.0
+21,2023-08-27 21:30:00,CA Paranaense,Fluminense,2.0,2.0
+21,2023-08-27 21:30:00,Palmeiras,CR Vasco da Gama,1.0,0.0
+21,2023-08-27 22:00:00,Grêmio,Cruzeiro,3.0,0.0
+22,2023-09-02 19:00:00,Goiás,Internacional,0.0,0.0
+22,2023-09-02 19:00:00,CA Paranaense,CA Mineiro,1.0,1.0
+22,2023-09-03 00:00:00,Botafogo,Flamengo,1.0,2.0
+22,2023-09-03 14:00:00,Grêmio,Cuiabá,2.0,0.0
+22,2023-09-03 19:00:00,Fluminense,Fortaleza,1.0,0.0
+22,2023-09-03 19:00:00,Corinthians,Palmeiras,0.0,0.0
+22,2023-09-03 21:30:00,Cruzeiro,Bragantino,0.0,0.0
+22,2023-09-03 21:30:00,Bahia,CR Vasco da Gama,1.0,1.0
+22,2023-09-03 21:30:00,América FC,Santos FC,2.0,0.0
+23,2023-09-14 00:30:00,Internacional,São Paulo,2.0,1.0
+23,2023-09-14 00:30:00,Flamengo,CA Paranaense,0.0,3.0
+23,2023-09-14 22:00:00,Fortaleza,Corinthians,2.0,1.0
+23,2023-09-14 22:00:00,Santos FC,Cruzeiro,0.0,3.0
+23,2023-09-14 23:00:00,Coritiba FBC,Bahia,2.0,4.0
+23,2023-09-15 00:30:00,Bragantino,Grêmio,2.0,0.0
+23,2023-09-15 23:00:00,Cuiabá,América FC,2.0,2.0
+23,2023-09-16 00:30:00,Palmeiras,Goiás,1.0,0.0
+23,2023-09-16 19:00:00,CR Vasco da Gama,Fluminense,4.0,2.0
+23,2023-09-17 00:00:00,CA Mineiro,Botafogo,1.0,0.0
+24,2023-09-18 23:00:00,Bahia,Santos FC,1.0,2.0
+15,2023-09-19 00:00:00,Corinthians,Grêmio,4.0,4.0
+24,2023-09-20 00:30:00,América FC,Bragantino,0.0,2.0
+24,2023-09-20 22:00:00,Goiás,Flamengo,0.0,0.0
+24,2023-09-21 00:30:00,São Paulo,Fortaleza,1.0,2.0
+24,2023-09-21 00:30:00,Fluminense,Cruzeiro,1.0,0.0
+24,2023-09-21 22:00:00,CR Vasco da Gama,Coritiba FBC,5.0,1.0
+24,2023-09-21 22:30:00,CA Paranaense,Internacional,2.0,1.0
+24,2023-09-22 00:30:00,Grêmio,Palmeiras,1.0,0.0
+24,2023-09-22 23:00:00,Corinthians,Botafogo,1.0,0.0
+24,2023-09-24 00:00:00,CA Mineiro,Cuiabá,1.0,0.0
+15,2023-09-25 23:00:00,América FC,CR Vasco da Gama,0.0,1.0
+22,2023-09-27 22:00:00,São Paulo,Coritiba FBC,2.0,1.0
+25,2023-09-30 19:00:00,Fortaleza,Grêmio,1.0,1.0
+25,2023-09-30 19:00:00,Flamengo,Bahia,1.0,0.0
+25,2023-09-30 21:30:00,Cuiabá,Fluminense,3.0,0.0
+25,2023-09-30 21:30:00,São Paulo,Corinthians,2.0,1.0
+25,2023-10-01 00:00:00,Internacional,CA Mineiro,0.0,2.0
+25,2023-10-01 19:00:00,Coritiba FBC,CA Paranaense,2.0,0.0
+25,2023-10-01 19:00:00,Cruzeiro,América FC,1.0,1.0
+25,2023-10-01 19:00:00,Santos FC,CR Vasco da Gama,4.0,1.0
+25,2023-10-01 21:30:00,Bragantino,Palmeiras,2.0,1.0
+25,2023-10-02 23:00:00,Botafogo,Goiás,1.0,1.0
+26,2023-10-07 19:00:00,Goiás,Bahia,4.0,6.0
+26,2023-10-07 21:30:00,CR Vasco da Gama,São Paulo,0.0,0.0
+26,2023-10-08 00:00:00,Corinthians,Flamengo,1.0,1.0
+26,2023-10-08 19:00:00,Palmeiras,Santos FC,1.0,2.0
+26,2023-10-08 19:00:00,Fluminense,Botafogo,0.0,2.0
+26,2023-10-08 19:00:00,Internacional,Grêmio,3.0,2.0
+26,2023-10-08 21:30:00,CA Mineiro,Coritiba FBC,1.0,2.0
+26,2023-10-08 21:30:00,Fortaleza,América FC,3.0,2.0
+26,2023-10-08 21:30:00,CA Paranaense,Bragantino,1.0,1.0
+26,2023-10-15 00:00:00,Cuiabá,Cruzeiro,0.0,0.0
+27,2023-10-18 22:00:00,Grêmio,CA Paranaense,1.0,2.0
+27,2023-10-18 23:00:00,América FC,Botafogo,1.0,2.0
+27,2023-10-18 23:00:00,Coritiba FBC,Cuiabá,0.0,3.0
+27,2023-10-19 00:30:00,Bahia,Internacional,1.0,0.0
+27,2023-10-19 00:30:00,Goiás,São Paulo,2.0,0.0
+27,2023-10-19 00:30:00,CR Vasco da Gama,Fortaleza,1.0,0.0
+27,2023-10-19 22:00:00,Cruzeiro,Flamengo,0.0,2.0
+27,2023-10-19 22:00:00,Palmeiras,CA Mineiro,0.0,2.0
+27,2023-10-19 23:00:00,Santos FC,Bragantino,1.0,3.0
+27,2023-10-20 00:30:00,Fluminense,Corinthians,3.0,3.0
+28,2023-10-21 21:30:00,São Paulo,Grêmio,3.0,0.0
+28,2023-10-21 21:30:00,Cuiabá,Goiás,1.0,1.0
+28,2023-10-21 21:30:00,Bahia,Fortaleza,2.0,0.0
+28,2023-10-22 00:00:00,Botafogo,CA Paranaense,1.0,1.0
+28,2023-10-22 19:00:00,Flamengo,CR Vasco da Gama,1.0,0.0
+28,2023-10-22 19:00:00,CA Mineiro,Cruzeiro,0.0,1.0
+28,2023-10-22 19:00:00,Internacional,Santos FC,7.0,1.0
+28,2023-10-22 21:30:00,Bragantino,Fluminense,1.0,0.0
+28,2023-10-22 21:30:00,Corinthians,América FC,1.0,1.0
+28,2023-10-22 21:30:00,Coritiba FBC,Palmeiras,0.0,2.0
+29,2023-10-25 22:00:00,CA Paranaense,América FC,3.0,2.0
+29,2023-10-25 22:00:00,Bragantino,CA Mineiro,1.0,2.0
+29,2023-10-25 22:00:00,Fluminense,Goiás,5.0,3.0
+29,2023-10-25 23:00:00,Cruzeiro,Bahia,3.0,0.0
+29,2023-10-25 23:00:00,Palmeiras,São Paulo,5.0,0.0
+29,2023-10-26 00:30:00,Cuiabá,Corinthians,0.0,1.0
+29,2023-10-26 00:30:00,Grêmio,Flamengo,3.0,2.0
+29,2023-10-26 22:00:00,CR Vasco da Gama,Internacional,1.0,2.0
+29,2023-10-27 00:30:00,Santos FC,Coritiba FBC,2.0,1.0
+30,2023-10-28 22:00:00,Palmeiras,Bahia,1.0,0.0
+30,2023-10-28 22:00:00,América FC,Grêmio,3.0,4.0
+30,2023-10-29 01:00:00,CA Mineiro,Fluminense,2.0,0.0
+30,2023-10-29 19:00:00,Goiás,CR Vasco da Gama,1.0,1.0
+30,2023-10-29 19:00:00,CA Paranaense,São Paulo,1.0,1.0
+30,2023-10-29 21:30:00,Corinthians,Santos FC,1.0,1.0
+30,2023-10-29 21:30:00,Internacional,Coritiba FBC,3.0,4.0
+30,2023-10-29 23:00:00,Botafogo,Cuiabá,0.0,1.0
+31,2023-10-31 22:00:00,Bahia,Fluminense,1.0,0.0
+31,2023-11-01 22:00:00,Corinthians,CA Paranaense,1.0,0.0
+31,2023-11-01 22:00:00,Internacional,América FC,1.0,1.0
+31,2023-11-01 23:00:00,Coritiba FBC,Grêmio,1.0,2.0
+31,2023-11-01 23:00:00,Flamengo,Santos FC,1.0,2.0
+31,2023-11-02 00:30:00,CA Mineiro,Fortaleza,3.0,1.0
+31,2023-11-02 00:30:00,Botafogo,Palmeiras,3.0,4.0
+31,2023-11-02 20:00:00,Cuiabá,CR Vasco da Gama,0.0,2.0
+31,2023-11-02 21:00:00,Goiás,Bragantino,0.0,2.0
+31,2023-11-02 23:00:00,São Paulo,Cruzeiro,1.0,0.0
+32,2023-11-04 22:30:00,Grêmio,Bahia,1.0,0.0
+32,2023-11-04 22:30:00,América FC,CA Mineiro,1.0,1.0
+32,2023-11-05 00:30:00,Palmeiras,CA Paranaense,1.0,0.0
+32,2023-11-05 19:00:00,Bragantino,Corinthians,1.0,0.0
+32,2023-11-05 19:00:00,Cruzeiro,Internacional,1.0,2.0
+32,2023-11-05 19:00:00,Fortaleza,Flamengo,0.0,2.0
+32,2023-11-05 21:30:00,Coritiba FBC,Goiás,0.0,1.0
+32,2023-11-06 22:00:00,CR Vasco da Gama,Botafogo,1.0,0.0
+32,2023-11-07 00:00:00,Santos FC,Cuiabá,0.0,0.0
+33,2023-11-08 22:00:00,Internacional,Fluminense,0.0,0.0
+33,2023-11-08 22:00:00,América FC,Coritiba FBC,0.0,3.0
+33,2023-11-08 23:00:00,São Paulo,Bragantino,1.0,0.0
+33,2023-11-08 23:00:00,CA Paranaense,Fortaleza,1.0,1.0
+33,2023-11-09 00:30:00,Flamengo,Palmeiras,3.0,0.0
+33,2023-11-09 22:00:00,Corinthians,CA Mineiro,1.0,1.0
+33,2023-11-09 22:00:00,Goiás,Santos FC,0.0,1.0
+33,2023-11-09 23:00:00,Bahia,Cuiabá,0.0,3.0
+33,2023-11-09 23:00:00,Botafogo,Grêmio,3.0,4.0
+34,2023-11-11 19:00:00,Coritiba FBC,Cruzeiro,1.0,0.0
+34,2023-11-11 21:30:00,Flamengo,Fluminense,1.0,1.0
+34,2023-11-12 00:00:00,Palmeiras,Internacional,3.0,0.0
+34,2023-11-12 19:00:00,Grêmio,Corinthians,0.0,1.0
+34,2023-11-12 19:00:00,Bragantino,Botafogo,2.0,2.0
+34,2023-11-12 21:30:00,Cuiabá,Fortaleza,2.0,1.0
+34,2023-11-12 21:30:00,Bahia,CA Paranaense,1.0,1.0
+34,2023-11-12 21:30:00,CA Mineiro,Goiás,2.0,1.0
+34,2023-11-12 21:30:00,Santos FC,São Paulo,0.0,0.0
+34,2023-11-12 21:30:00,CR Vasco da Gama,América FC,2.0,1.0
+30,2023-11-18 21:30:00,Fortaleza,Cruzeiro,0.0,1.0
+33,2023-11-22 22:00:00,Cruzeiro,CR Vasco da Gama,2.0,2.0
+32,2023-11-23 00:30:00,Fluminense,São Paulo,1.0,0.0
+29,2023-11-23 22:00:00,Fortaleza,Botafogo,2.0,2.0
+30,2023-11-24 00:30:00,Flamengo,Bragantino,1.0,0.0
+35,2023-11-25 00:00:00,Corinthians,Bahia,1.0,5.0
+35,2023-11-25 22:30:00,CA Paranaense,CR Vasco da Gama,0.0,0.0
+35,2023-11-26 00:00:00,Fluminense,Coritiba FBC,2.0,1.0
+35,2023-11-26 19:00:00,Botafogo,Santos FC,1.0,1.0
+35,2023-11-26 19:00:00,CA Mineiro,Grêmio,3.0,0.0
+35,2023-11-26 21:30:00,São Paulo,Cuiabá,0.0,0.0
+35,2023-11-26 21:30:00,América FC,Flamengo,0.0,3.0
+35,2023-11-26 21:30:00,Fortaleza,Palmeiras,2.0,2.0
+35,2023-11-26 21:30:00,Internacional,Bragantino,1.0,0.0
+35,2023-11-28 00:00:00,Goiás,Cruzeiro,0.0,1.0
+36,2023-11-29 00:30:00,CR Vasco da Gama,Corinthians,2.0,4.0
+36,2023-11-29 22:00:00,Santos FC,Fluminense,0.0,3.0
+36,2023-11-29 22:30:00,Flamengo,CA Mineiro,0.0,3.0
+36,2023-11-29 23:00:00,Bahia,São Paulo,0.0,1.0
+36,2023-11-29 23:00:00,Cuiabá,Internacional,0.0,2.0
+36,2023-11-30 00:30:00,Coritiba FBC,Botafogo,1.0,1.0
+36,2023-11-30 00:30:00,Palmeiras,América FC,4.0,0.0
+36,2023-11-30 22:00:00,Grêmio,Goiás,2.0,1.0
+36,2023-11-30 23:00:00,Cruzeiro,CA Paranaense,1.0,1.0
+36,2023-11-30 23:30:00,Bragantino,Fortaleza,1.0,2.0
+37,2023-12-02 21:00:00,Corinthians,Internacional,1.0,2.0
+37,2023-12-03 00:00:00,CA Mineiro,São Paulo,2.0,1.0
+37,2023-12-03 19:00:00,Flamengo,Cuiabá,2.0,1.0
+37,2023-12-03 19:00:00,Palmeiras,Fluminense,1.0,0.0
+37,2023-12-03 21:30:00,Botafogo,Cruzeiro,0.0,0.0
+37,2023-12-03 21:30:00,Bragantino,Coritiba FBC,1.0,0.0
+37,2023-12-03 21:30:00,Grêmio,CR Vasco da Gama,1.0,0.0
+37,2023-12-03 21:30:00,CA Paranaense,Santos FC,3.0,0.0
+37,2023-12-03 21:30:00,Fortaleza,Goiás,1.0,0.0
+37,2023-12-03 21:30:00,América FC,Bahia,3.0,2.0
+38,2023-12-06 22:00:00,Goiás,América FC,1.0,0.0
+38,2023-12-07 00:30:00,Cuiabá,CA Paranaense,3.0,0.0
+38,2023-12-07 00:30:00,Bahia,CA Mineiro,4.0,1.0
+38,2023-12-07 00:30:00,Coritiba FBC,Corinthians,0.0,2.0
+38,2023-12-07 00:30:00,Internacional,Botafogo,3.0,1.0
+38,2023-12-07 00:30:00,Cruzeiro,Palmeiras,1.0,1.0
+38,2023-12-07 00:30:00,Fluminense,Grêmio,2.0,3.0
+38,2023-12-07 00:30:00,CR Vasco da Gama,Bragantino,2.0,1.0
+38,2023-12-07 00:30:00,São Paulo,Flamengo,1.0,0.0
+38,2023-12-07 00:30:00,Santos FC,Fortaleza,1.0,2.0
+1,2024-04-13 21:30:00,Internacional,Bahia,2.0,1.0
+1,2024-04-13 21:30:00,Criciúma,EC Juventude,1.0,1.0
+1,2024-04-14 00:00:00,Fluminense,Bragantino,2.0,2.0
+1,2024-04-14 00:00:00,São Paulo,Fortaleza,1.0,2.0
+1,2024-04-14 19:00:00,CR Vasco da Gama,Grêmio,2.0,1.0
+1,2024-04-14 19:00:00,Corinthians,CA Mineiro,0.0,0.0
+1,2024-04-14 19:00:00,CA Paranaense,Cuiabá,4.0,0.0
+1,2024-04-14 19:00:00,AC Goianiense,Flamengo,1.0,2.0
+1,2024-04-14 20:00:00,Cruzeiro,Botafogo,3.0,2.0
+1,2024-04-14 21:30:00,Vitória,Palmeiras,0.0,1.0
+2,2024-04-17 00:30:00,Bahia,Fluminense,2.0,1.0
+2,2024-04-17 22:00:00,Bragantino,CR Vasco da Gama,2.0,1.0
+2,2024-04-17 22:00:00,Grêmio,CA Paranaense,2.0,0.0
+2,2024-04-17 23:00:00,CA Mineiro,Criciúma,1.0,1.0
+2,2024-04-17 23:00:00,Fortaleza,Cruzeiro,1.0,1.0
+2,2024-04-17 23:00:00,EC Juventude,Corinthians,2.0,0.0
+2,2024-04-17 23:00:00,Palmeiras,Internacional,0.0,1.0
+2,2024-04-18 00:30:00,Flamengo,São Paulo,2.0,1.0
+2,2024-04-19 00:30:00,Botafogo,AC Goianiense,1.0,0.0
+3,2024-04-20 19:00:00,Fluminense,CR Vasco da Gama,2.0,1.0
+3,2024-04-20 21:30:00,Bragantino,Corinthians,1.0,0.0
+3,2024-04-20 21:30:00,Grêmio,Cuiabá,1.0,0.0
+3,2024-04-21 00:00:00,CA Mineiro,Cruzeiro,3.0,0.0
+3,2024-04-21 19:00:00,CA Paranaense,Internacional,1.0,0.0
+3,2024-04-21 19:00:00,Palmeiras,Flamengo,0.0,0.0
+3,2024-04-21 19:00:00,Vitória,Bahia,2.0,2.0
+3,2024-04-21 21:30:00,AC Goianiense,São Paulo,0.0,3.0
+3,2024-04-21 21:30:00,Botafogo,EC Juventude,5.0,1.0
+4,2024-04-27 19:00:00,CR Vasco da Gama,Criciúma,0.0,4.0
+4,2024-04-27 21:30:00,Cuiabá,CA Mineiro,0.0,3.0
+4,2024-04-28 00:00:00,Bahia,Grêmio,1.0,0.0
+4,2024-04-28 14:00:00,Flamengo,Botafogo,0.0,2.0
+4,2024-04-28 19:00:00,Corinthians,Fluminense,3.0,0.0
+4,2024-04-28 19:00:00,Cruzeiro,Vitória,3.0,1.0
+4,2024-04-28 21:30:00,Fortaleza,Bragantino,1.0,1.0
+4,2024-04-28 21:30:00,EC Juventude,CA Paranaense,1.0,1.0
+4,2024-04-28 23:00:00,Internacional,AC Goianiense,1.0,1.0
+4,2024-04-29 23:00:00,São Paulo,Palmeiras,0.0,0.0
+5,2024-05-04 19:00:00,Fluminense,CA Mineiro,2.0,2.0
+5,2024-05-04 21:30:00,Bragantino,Flamengo,1.0,1.0
+5,2024-05-05 00:00:00,Corinthians,Fortaleza,0.0,0.0
+5,2024-05-05 19:00:00,CA Paranaense,CR Vasco da Gama,1.0,0.0
+5,2024-05-05 19:00:00,Vitória,São Paulo,1.0,3.0
+5,2024-05-05 21:30:00,Botafogo,Bahia,1.0,2.0
+5,2024-05-05 21:30:00,Cuiabá,Palmeiras,0.0,2.0
+6,2024-05-11 19:00:00,Flamengo,Corinthians,2.0,0.0
+6,2024-05-12 19:00:00,AC Goianiense,Cruzeiro,0.0,1.0
+6,2024-05-12 19:00:00,Fortaleza,Botafogo,1.0,1.0
+6,2024-05-12 19:00:00,Palmeiras,CA Paranaense,0.0,2.0
+6,2024-05-12 21:30:00,Bahia,Bragantino,1.0,0.0
+6,2024-05-12 21:30:00,CR Vasco da Gama,Vitória,2.0,1.0
+6,2024-05-13 23:00:00,São Paulo,Fluminense,2.0,1.0
+7,2024-06-01 19:00:00,Grêmio,Bragantino,0.0,2.0
+7,2024-06-01 19:00:00,Vitória,AC Goianiense,0.0,2.0
+7,2024-06-01 21:30:00,Cuiabá,Internacional,0.0,1.0
+7,2024-06-01 21:30:00,Fluminense,EC Juventude,1.0,1.0
+7,2024-06-02 00:00:00,Corinthians,Botafogo,0.0,1.0
+7,2024-06-02 19:00:00,CA Mineiro,Bahia,1.0,1.0
+7,2024-06-02 19:00:00,Criciúma,Palmeiras,1.0,2.0
+7,2024-06-02 19:00:00,CR Vasco da Gama,Flamengo,1.0,6.0
+7,2024-06-02 21:30:00,Fortaleza,CA Paranaense,1.0,0.0
+7,2024-06-02 21:30:00,São Paulo,Cruzeiro,2.0,0.0
+5,2024-06-05 22:00:00,EC Juventude,AC Goianiense,1.0,0.0
+2,2024-06-05 23:00:00,Cuiabá,Vitória,0.0,0.0
+6,2024-06-09 19:00:00,Criciúma,Cuiabá,2.0,5.0
+8,2024-06-11 22:00:00,AC Goianiense,Corinthians,2.0,2.0
+8,2024-06-11 22:00:00,EC Juventude,Vitória,1.0,1.0
+8,2024-06-11 23:00:00,Botafogo,Fluminense,1.0,0.0
+8,2024-06-12 00:30:00,Bragantino,CA Mineiro,1.0,2.0
+8,2024-06-13 22:00:00,Cruzeiro,Cuiabá,2.0,1.0
+8,2024-06-13 23:00:00,Flamengo,Grêmio,2.0,1.0
+8,2024-06-13 23:00:00,Internacional,São Paulo,0.0,0.0
+8,2024-06-13 23:00:00,CA Paranaense,Criciúma,3.0,1.0
+8,2024-06-14 00:30:00,Bahia,Fortaleza,1.0,0.0
+8,2024-06-14 00:30:00,Palmeiras,CR Vasco da Gama,2.0,0.0
+9,2024-06-15 21:30:00,Bragantino,EC Juventude,2.0,1.0
+9,2024-06-16 00:00:00,Fluminense,AC Goianiense,1.0,2.0
+9,2024-06-16 19:00:00,CA Paranaense,Flamengo,1.0,1.0
+9,2024-06-16 19:00:00,Corinthians,São Paulo,2.0,2.0
+9,2024-06-16 19:00:00,Vitória,Internacional,2.0,1.0
+9,2024-06-16 21:30:00,Criciúma,Bahia,2.0,2.0
+9,2024-06-16 21:30:00,Cuiabá,Fortaleza,5.0,0.0
+9,2024-06-16 21:30:00,Grêmio,Botafogo,1.0,2.0
+9,2024-06-16 21:30:00,CR Vasco da Gama,Cruzeiro,0.0,0.0
+9,2024-06-17 23:30:00,CA Mineiro,Palmeiras,0.0,4.0
+10,2024-06-19 22:00:00,AC Goianiense,Criciúma,1.0,2.0
+10,2024-06-19 22:00:00,Botafogo,CA Paranaense,1.0,1.0
+10,2024-06-19 23:00:00,Fortaleza,Grêmio,1.0,0.0
+10,2024-06-19 23:00:00,EC Juventude,CR Vasco da Gama,2.0,0.0
+10,2024-06-19 23:00:00,São Paulo,Cuiabá,0.0,1.0
+10,2024-06-20 00:30:00,Cruzeiro,Fluminense,2.0,0.0
+10,2024-06-20 00:30:00,Internacional,Corinthians,1.0,0.0
+10,2024-06-20 21:30:00,Vitória,CA Mineiro,4.0,2.0
+10,2024-06-20 23:00:00,Flamengo,Bahia,2.0,1.0
+10,2024-06-21 00:30:00,Palmeiras,Bragantino,2.0,1.0
+11,2024-06-22 19:00:00,Criciúma,Botafogo,2.0,1.0
+11,2024-06-22 20:30:00,Grêmio,Internacional,0.0,1.0
+11,2024-06-22 21:30:00,Cuiabá,AC Goianiense,0.0,0.0
+11,2024-06-23 00:30:00,CR Vasco da Gama,São Paulo,4.0,1.0
+11,2024-06-23 19:00:00,CA Paranaense,Corinthians,1.0,1.0
+11,2024-06-23 19:00:00,Bahia,Cruzeiro,4.0,1.0
+11,2024-06-23 19:00:00,Fluminense,Flamengo,0.0,1.0
+11,2024-06-23 21:30:00,CA Mineiro,Fortaleza,1.0,1.0
+11,2024-06-23 21:30:00,Bragantino,Vitória,2.0,1.0
+11,2024-06-23 21:30:00,Palmeiras,EC Juventude,3.0,1.0
+12,2024-06-26 22:00:00,Botafogo,Bragantino,2.0,1.0
+12,2024-06-26 22:00:00,Cruzeiro,CA Paranaense,2.0,0.0
+12,2024-06-26 23:00:00,AC Goianiense,Grêmio,1.0,1.0
+12,2024-06-26 23:00:00,Corinthians,Cuiabá,1.0,1.0
+12,2024-06-26 23:00:00,EC Juventude,Flamengo,2.0,1.0
+12,2024-06-27 00:30:00,Bahia,CR Vasco da Gama,2.0,1.0
+12,2024-06-27 00:30:00,Fortaleza,Palmeiras,3.0,0.0
+12,2024-06-27 00:30:00,Internacional,CA Mineiro,1.0,2.0
+12,2024-06-27 22:00:00,Fluminense,Vitória,0.0,1.0
+12,2024-06-27 23:00:00,São Paulo,Criciúma,2.0,1.0
+13,2024-06-29 21:30:00,Cuiabá,Bragantino,1.0,1.0
+13,2024-06-29 21:30:00,CR Vasco da Gama,Botafogo,1.0,1.0
+13,2024-06-30 14:00:00,CA Mineiro,AC Goianiense,1.0,1.0
+13,2024-06-30 19:00:00,Fortaleza,EC Juventude,2.0,1.0
+13,2024-06-30 19:00:00,Grêmio,Fluminense,1.0,0.0
+13,2024-06-30 19:00:00,São Paulo,Bahia,3.0,1.0
+13,2024-06-30 21:30:00,Criciúma,Internacional,1.0,1.0
+13,2024-06-30 21:30:00,Flamengo,Cruzeiro,2.0,1.0
+13,2024-06-30 21:30:00,Vitória,CA Paranaense,0.0,1.0
+13,2024-07-01 23:00:00,Palmeiras,Corinthians,2.0,0.0
+14,2024-07-03 22:00:00,Cuiabá,Botafogo,1.0,2.0
+14,2024-07-03 23:00:00,Criciúma,Cruzeiro,1.0,0.0
+14,2024-07-03 23:00:00,CR Vasco da Gama,Fortaleza,2.0,0.0
+14,2024-07-04 00:30:00,CA Paranaense,São Paulo,1.0,2.0
+14,2024-07-04 00:30:00,CA Mineiro,Flamengo,2.0,4.0
+14,2024-07-04 00:30:00,Bragantino,AC Goianiense,3.0,1.0
+14,2024-07-04 22:00:00,Bahia,EC Juventude,2.0,0.0
+14,2024-07-04 22:00:00,Grêmio,Palmeiras,2.0,2.0
+14,2024-07-04 23:00:00,Corinthians,Vitória,3.0,2.0
+14,2024-07-04 23:00:00,Fluminense,Internacional,1.0,1.0
+15,2024-07-06 23:00:00,Flamengo,Cuiabá,1.0,1.0
+15,2024-07-06 23:00:00,São Paulo,Bragantino,2.0,0.0
+15,2024-07-07 19:00:00,Cruzeiro,Corinthians,3.0,0.0
+15,2024-07-07 19:00:00,Fortaleza,Fluminense,1.0,0.0
+15,2024-07-07 19:00:00,EC Juventude,Grêmio,3.0,0.0
+15,2024-07-07 21:00:00,Internacional,CR Vasco da Gama,1.0,2.0
+15,2024-07-07 21:30:00,AC Goianiense,CA Paranaense,1.0,2.0
+15,2024-07-07 21:30:00,Palmeiras,Bahia,2.0,0.0
+15,2024-07-07 21:30:00,Vitória,Criciúma,2.0,1.0
+15,2024-07-07 23:30:00,Botafogo,CA Mineiro,3.0,0.0
+16,2024-07-10 21:30:00,Grêmio,Cruzeiro,0.0,2.0
+16,2024-07-10 22:00:00,CA Paranaense,Bahia,1.0,3.0
+16,2024-07-10 22:00:00,CR Vasco da Gama,Corinthians,2.0,0.0
+16,2024-07-11 22:30:00,Palmeiras,AC Goianiense,3.0,1.0
+16,2024-07-11 23:00:00,Criciúma,Fluminense,1.0,1.0
+16,2024-07-11 23:00:00,Flamengo,Fortaleza,1.0,2.0
+16,2024-07-12 00:30:00,CA Mineiro,São Paulo,2.0,1.0
+16,2024-07-12 00:30:00,Vitória,Botafogo,0.0,1.0
+17,2024-07-13 19:00:00,Bahia,Cuiabá,1.0,2.0
+17,2024-07-13 19:00:00,Cruzeiro,Bragantino,2.0,1.0
+17,2024-07-16 22:00:00,EC Juventude,CA Mineiro,1.0,1.0
+17,2024-07-17 00:00:00,Corinthians,Criciúma,2.0,1.0
+17,2024-07-17 22:00:00,AC Goianiense,CR Vasco da Gama,0.0,1.0
+17,2024-07-17 23:00:00,São Paulo,Grêmio,1.0,0.0
+17,2024-07-18 00:30:00,Botafogo,Palmeiras,1.0,0.0
+17,2024-07-18 00:30:00,Fortaleza,Vitória,3.0,1.0
+18,2024-07-20 19:00:00,Flamengo,Criciúma,2.0,1.0
+18,2024-07-20 21:30:00,Botafogo,Internacional,1.0,0.0
+18,2024-07-21 00:00:00,Palmeiras,Cruzeiro,2.0,0.0
+18,2024-07-21 14:00:00,Grêmio,Vitória,2.0,0.0
+18,2024-07-21 19:00:00,CA Mineiro,CR Vasco da Gama,2.0,0.0
+18,2024-07-21 19:00:00,Bahia,Corinthians,0.0,1.0
+18,2024-07-21 21:30:00,Bragantino,CA Paranaense,1.0,0.0
+18,2024-07-21 21:30:00,Fortaleza,AC Goianiense,3.0,1.0
+18,2024-07-21 21:30:00,EC Juventude,São Paulo,0.0,0.0
+18,2024-07-21 23:00:00,Cuiabá,Fluminense,0.0,1.0
+19,2024-07-24 22:00:00,Cruzeiro,EC Juventude,2.0,0.0
+3,2024-07-24 22:00:00,Criciúma,Fortaleza,1.0,1.0
+19,2024-07-24 22:30:00,São Paulo,Botafogo,2.0,2.0
+19,2024-07-24 23:00:00,Vitória,Flamengo,1.0,2.0
+19,2024-07-25 00:30:00,AC Goianiense,Bahia,1.0,1.0
+19,2024-07-25 00:30:00,Fluminense,Palmeiras,1.0,0.0
+19,2024-07-25 23:00:00,Corinthians,Grêmio,2.0,2.0
+20,2024-07-27 22:00:00,EC Juventude,Criciúma,1.0,2.0
+20,2024-07-27 22:00:00,Palmeiras,Vitória,0.0,2.0
+20,2024-07-27 23:00:00,Bahia,Internacional,1.0,1.0
+20,2024-07-28 00:30:00,Botafogo,Cruzeiro,0.0,3.0
+20,2024-07-28 00:30:00,Fortaleza,São Paulo,1.0,0.0
+20,2024-07-28 14:00:00,Bragantino,Fluminense,0.0,1.0
+20,2024-07-28 19:00:00,Flamengo,AC Goianiense,2.0,0.0
+20,2024-07-28 22:00:00,CA Mineiro,Corinthians,2.0,1.0
+20,2024-07-28 22:00:00,Cuiabá,CA Paranaense,1.0,2.0
+20,2024-07-28 22:00:00,Grêmio,CR Vasco da Gama,1.0,0.0
+21,2024-08-03 19:00:00,Vitória,Cuiabá,1.0,0.0
+21,2024-08-03 22:00:00,CR Vasco da Gama,Bragantino,2.0,2.0
+21,2024-08-03 23:00:00,AC Goianiense,Botafogo,1.0,4.0
+21,2024-08-03 23:00:00,Criciúma,CA Mineiro,2.0,1.0
+21,2024-08-04 00:30:00,São Paulo,Flamengo,1.0,0.0
+21,2024-08-04 19:00:00,CA Paranaense,Grêmio,0.0,2.0
+21,2024-08-04 19:00:00,Corinthians,EC Juventude,1.0,1.0
+21,2024-08-04 19:00:00,Fluminense,Bahia,1.0,0.0
+21,2024-08-04 20:00:00,Internacional,Palmeiras,1.0,1.0
+21,2024-08-06 00:00:00,Cruzeiro,Fortaleza,1.0,2.0
+22,2024-08-10 19:00:00,Fortaleza,Criciúma,1.0,0.0
+22,2024-08-10 22:00:00,Cuiabá,Grêmio,1.0,3.0
+22,2024-08-11 00:30:00,Corinthians,Bragantino,1.0,1.0
+22,2024-08-11 00:30:00,Cruzeiro,CA Mineiro,0.0,0.0
+22,2024-08-11 00:30:00,CR Vasco da Gama,Fluminense,2.0,0.0
+22,2024-08-11 14:00:00,EC Juventude,Botafogo,3.0,2.0
+22,2024-08-11 19:00:00,Bahia,Vitória,2.0,0.0
+22,2024-08-11 19:00:00,Flamengo,Palmeiras,1.0,1.0
+22,2024-08-11 19:00:00,São Paulo,AC Goianiense,1.0,0.0
+22,2024-08-11 22:00:00,Internacional,CA Paranaense,2.0,2.0
+6,2024-08-14 22:30:00,Internacional,EC Juventude,2.0,1.0
+23,2024-08-17 19:00:00,CA Mineiro,Cuiabá,1.0,1.0
+23,2024-08-17 19:00:00,Grêmio,Bahia,0.0,2.0
+23,2024-08-17 21:30:00,Bragantino,Fortaleza,1.0,2.0
+23,2024-08-18 00:00:00,Fluminense,Corinthians,0.0,0.0
+23,2024-08-18 19:00:00,AC Goianiense,Internacional,1.0,0.0
+23,2024-08-18 19:00:00,Criciúma,CR Vasco da Gama,2.0,2.0
+23,2024-08-18 19:00:00,Palmeiras,São Paulo,2.0,1.0
+23,2024-08-18 21:30:00,CA Paranaense,EC Juventude,1.0,2.0
+23,2024-08-18 21:30:00,Botafogo,Flamengo,4.0,1.0
+23,2024-08-19 23:00:00,Vitória,Cruzeiro,2.0,2.0
+24,2024-08-24 19:00:00,AC Goianiense,EC Juventude,2.0,1.0
+24,2024-08-24 21:30:00,Palmeiras,Cuiabá,5.0,0.0
+24,2024-08-25 00:00:00,CA Mineiro,Fluminense,0.0,2.0
+24,2024-08-25 19:00:00,Bahia,Botafogo,0.0,0.0
+24,2024-08-25 19:00:00,Criciúma,Grêmio,0.0,1.0
+24,2024-08-25 19:00:00,Fortaleza,Corinthians,1.0,0.0
+24,2024-08-25 21:30:00,São Paulo,Vitória,2.0,1.0
+24,2024-08-25 22:00:00,Internacional,Cruzeiro,1.0,0.0
+24,2024-08-25 23:00:00,Flamengo,Bragantino,2.0,1.0
+24,2024-08-27 00:00:00,CR Vasco da Gama,CA Paranaense,2.0,1.0
+19,2024-08-28 22:30:00,Criciúma,Bragantino,1.0,0.0
+5,2024-08-28 22:30:00,Cruzeiro,Internacional,0.0,0.0
+25,2024-08-31 21:30:00,Cuiabá,Criciúma,2.0,1.0
+25,2024-09-01 00:00:00,Botafogo,Fortaleza,2.0,0.0
+25,2024-09-01 14:00:00,Cruzeiro,AC Goianiense,3.0,1.0
+25,2024-09-01 14:00:00,Grêmio,CA Mineiro,2.0,3.0
+25,2024-09-01 19:00:00,Corinthians,Flamengo,2.0,1.0
+25,2024-09-01 21:30:00,CA Paranaense,Palmeiras,0.0,2.0
+25,2024-09-01 21:30:00,Bragantino,Bahia,2.0,1.0
+25,2024-09-01 21:30:00,Fluminense,São Paulo,2.0,0.0
+25,2024-09-01 21:30:00,EC Juventude,Internacional,1.0,3.0
+25,2024-09-01 21:30:00,Vitória,CR Vasco da Gama,0.0,1.0
+16,2024-09-05 23:00:00,Cuiabá,EC Juventude,0.0,0.0
+19,2024-09-11 22:30:00,Internacional,Fortaleza,2.0,1.0
+26,2024-09-14 19:00:00,AC Goianiense,Vitória,0.0,2.0
+26,2024-09-14 21:30:00,CA Paranaense,Fortaleza,1.0,1.0
+26,2024-09-15 00:00:00,Botafogo,Corinthians,2.0,1.0
+26,2024-09-15 19:00:00,Bragantino,Grêmio,2.0,2.0
+26,2024-09-15 19:00:00,EC Juventude,Fluminense,2.0,1.0
+26,2024-09-15 19:00:00,Palmeiras,Criciúma,5.0,0.0
+26,2024-09-15 21:30:00,Bahia,CA Mineiro,3.0,0.0
+26,2024-09-15 21:30:00,Cruzeiro,São Paulo,0.0,1.0
+26,2024-09-15 21:30:00,Flamengo,CR Vasco da Gama,1.0,1.0
+26,2024-09-16 23:00:00,Internacional,Cuiabá,3.0,0.0
+27,2024-09-21 19:00:00,Corinthians,AC Goianiense,3.0,0.0
+27,2024-09-21 19:00:00,Vitória,EC Juventude,1.0,0.0
+27,2024-09-21 21:30:00,Fluminense,Botafogo,0.0,1.0
+27,2024-09-22 00:00:00,Fortaleza,Bahia,4.0,1.0
+27,2024-09-22 19:00:00,CA Mineiro,Bragantino,3.0,0.0
+27,2024-09-22 19:00:00,CR Vasco da Gama,Palmeiras,0.0,1.0
+27,2024-09-22 21:30:00,Cuiabá,Cruzeiro,0.0,0.0
+27,2024-09-22 21:30:00,Grêmio,Flamengo,3.0,2.0
+27,2024-09-22 21:30:00,São Paulo,Internacional,1.0,3.0
+27,2024-09-22 23:00:00,Criciúma,CA Paranaense,0.0,0.0
+16,2024-09-25 22:00:00,Bragantino,Internacional,2.0,2.0
+5,2024-09-25 22:00:00,Grêmio,Criciúma,1.0,2.0
+28,2024-09-28 21:30:00,Palmeiras,CA Mineiro,2.0,1.0
+28,2024-09-29 00:00:00,Botafogo,Grêmio,0.0,0.0
+28,2024-09-29 14:00:00,EC Juventude,Bragantino,1.0,1.0
+28,2024-09-29 19:00:00,AC Goianiense,Fluminense,1.0,0.0
+28,2024-09-29 19:00:00,Fortaleza,Cuiabá,1.0,0.0
+28,2024-09-29 19:00:00,São Paulo,Corinthians,3.0,1.0
+28,2024-09-29 21:30:00,Bahia,Criciúma,1.0,0.0
+28,2024-09-29 21:30:00,Cruzeiro,CR Vasco da Gama,1.0,1.0
+28,2024-09-29 21:30:00,Internacional,Vitória,3.0,1.0
+28,2024-09-29 23:00:00,Flamengo,CA Paranaense,1.0,0.0
+29,2024-10-03 22:00:00,Criciúma,AC Goianiense,2.0,0.0
+29,2024-10-04 00:30:00,Fluminense,Cruzeiro,1.0,0.0
+29,2024-10-05 00:30:00,Grêmio,Fortaleza,3.0,1.0
+29,2024-10-05 19:30:00,CA Paranaense,Botafogo,0.0,1.0
+29,2024-10-05 19:30:00,CA Mineiro,Vitória,2.0,2.0
+29,2024-10-05 19:30:00,Bragantino,Palmeiras,0.0,0.0
+29,2024-10-05 22:00:00,Bahia,Flamengo,0.0,2.0
+29,2024-10-05 22:00:00,Corinthians,Internacional,2.0,2.0
+29,2024-10-05 22:00:00,Cuiabá,São Paulo,2.0,0.0
+29,2024-10-06 00:00:00,CR Vasco da Gama,EC Juventude,1.0,1.0
+6,2024-10-09 22:30:00,CA Mineiro,Grêmio,2.0,1.0
+30,2024-10-17 00:45:00,Fortaleza,CA Mineiro,1.0,1.0
+30,2024-10-17 00:45:00,São Paulo,CR Vasco da Gama,3.0,0.0
+30,2024-10-17 23:00:00,Corinthians,CA Paranaense,5.0,2.0
+30,2024-10-17 23:00:00,Flamengo,Fluminense,0.0,2.0
+30,2024-10-18 22:00:00,AC Goianiense,Cuiabá,0.0,0.0
+30,2024-10-18 23:00:00,Botafogo,Criciúma,1.0,1.0
+30,2024-10-19 00:30:00,Cruzeiro,Bahia,1.0,1.0
+30,2024-10-19 19:00:00,Internacional,Grêmio,1.0,0.0
+30,2024-10-19 19:00:00,Vitória,Bragantino,1.0,0.0
+30,2024-10-20 23:00:00,EC Juventude,Palmeiras,3.0,5.0
+17,2024-10-22 22:30:00,Fluminense,CA Paranaense,1.0,0.0
+19,2024-10-24 22:00:00,CR Vasco da Gama,Cuiabá,1.0,0.0
+31,2024-10-26 19:30:00,Flamengo,EC Juventude,4.0,2.0
+31,2024-10-26 19:30:00,Grêmio,AC Goianiense,3.0,1.0
+31,2024-10-26 19:30:00,Palmeiras,Fortaleza,2.0,2.0
+31,2024-10-26 19:30:00,Vitória,Fluminense,2.0,1.0
+31,2024-10-26 21:30:00,CA Paranaense,Cruzeiro,3.0,0.0
+31,2024-10-26 22:00:00,CA Mineiro,Internacional,1.0,3.0
+31,2024-10-26 22:00:00,Bragantino,Botafogo,0.0,1.0
+31,2024-10-27 01:00:00,Criciúma,São Paulo,1.0,1.0
+31,2024-10-28 22:00:00,Cuiabá,Corinthians,0.0,1.0
+31,2024-10-29 00:00:00,CR Vasco da Gama,Bahia,3.0,2.0
+17,2024-10-30 22:00:00,Internacional,Flamengo,1.0,1.0
+32,2024-11-02 00:00:00,Fluminense,Grêmio,2.0,2.0
+32,2024-11-02 19:00:00,Bragantino,Cuiabá,0.0,0.0
+32,2024-11-02 21:30:00,CA Paranaense,Vitória,1.0,2.0
+32,2024-11-02 21:30:00,EC Juventude,Fortaleza,0.0,3.0
+32,2024-11-04 23:00:00,Corinthians,Palmeiras,2.0,0.0
+32,2024-11-06 00:30:00,Bahia,São Paulo,0.0,3.0
+32,2024-11-06 00:30:00,Botafogo,CR Vasco da Gama,3.0,0.0
+32,2024-11-06 00:30:00,Internacional,Criciúma,2.0,0.0
+32,2024-11-07 00:00:00,AC Goianiense,CA Mineiro,1.0,0.0
+32,2024-11-07 00:00:00,Cruzeiro,Flamengo,0.0,1.0
+33,2024-11-08 22:00:00,Internacional,Fluminense,2.0,0.0
+33,2024-11-09 00:30:00,Palmeiras,Grêmio,1.0,0.0
+33,2024-11-09 19:30:00,Vitória,Corinthians,1.0,2.0
+33,2024-11-09 19:30:00,Botafogo,Cuiabá,0.0,0.0
+33,2024-11-09 22:00:00,AC Goianiense,Bragantino,0.0,0.0
+33,2024-11-09 22:00:00,Cruzeiro,Criciúma,2.0,1.0
+33,2024-11-09 22:00:00,Fortaleza,CR Vasco da Gama,3.0,0.0
+33,2024-11-09 22:00:00,EC Juventude,Bahia,2.0,1.0
+33,2024-11-10 00:00:00,São Paulo,CA Paranaense,2.0,1.0
+33,2024-11-13 23:00:00,Flamengo,CA Mineiro,0.0,0.0
+19,2024-11-16 21:30:00,CA Paranaense,CA Mineiro,1.0,0.0
+34,2024-11-20 14:00:00,Corinthians,Cruzeiro,2.0,1.0
+34,2024-11-20 19:30:00,CA Paranaense,AC Goianiense,2.0,0.0
+34,2024-11-20 19:30:00,Bragantino,São Paulo,1.0,1.0
+34,2024-11-20 19:30:00,Criciúma,Vitória,0.0,1.0
+34,2024-11-20 21:00:00,Bahia,Palmeiras,1.0,2.0
+34,2024-11-20 22:00:00,Cuiabá,Flamengo,1.0,2.0
+34,2024-11-20 22:00:00,Grêmio,EC Juventude,2.0,2.0
+34,2024-11-21 00:30:00,CA Mineiro,Botafogo,0.0,0.0
+34,2024-11-21 23:00:00,CR Vasco da Gama,Internacional,0.0,1.0
+34,2024-11-23 00:30:00,Fluminense,Fortaleza,2.0,2.0
+35,2024-11-23 22:30:00,AC Goianiense,Palmeiras,0.0,1.0
+35,2024-11-23 22:30:00,Botafogo,Vitória,1.0,1.0
+35,2024-11-23 22:30:00,EC Juventude,Cuiabá,1.0,1.0
+35,2024-11-24 00:30:00,São Paulo,CA Mineiro,2.0,2.0
+35,2024-11-24 19:00:00,Bahia,CA Paranaense,1.0,1.0
+35,2024-11-24 19:00:00,Corinthians,CR Vasco da Gama,3.0,1.0
+35,2024-11-24 19:00:00,Internacional,Bragantino,4.0,1.0
+35,2024-11-26 22:00:00,Fluminense,Criciúma,0.0,0.0
+35,2024-11-26 23:00:00,Fortaleza,Flamengo,0.0,0.0
+36,2024-11-27 00:30:00,CA Mineiro,EC Juventude,2.0,3.0
+36,2024-11-27 00:30:00,Palmeiras,Botafogo,1.0,3.0
+35,2024-11-28 00:00:00,Cruzeiro,Grêmio,1.0,1.0
+36,2024-11-30 22:30:00,Criciúma,Corinthians,2.0,4.0
+36,2024-11-30 22:30:00,Cuiabá,Bahia,1.0,2.0
+36,2024-12-01 00:30:00,CR Vasco da Gama,AC Goianiense,2.0,2.0
+36,2024-12-01 19:00:00,Flamengo,Internacional,3.0,2.0
+36,2024-12-01 19:00:00,Grêmio,São Paulo,2.0,1.0
+36,2024-12-01 21:30:00,CA Paranaense,Fluminense,1.0,1.0
+36,2024-12-01 21:30:00,Bragantino,Cruzeiro,1.0,1.0
+36,2024-12-01 21:30:00,Vitória,Fortaleza,2.0,0.0
+37,2024-12-03 23:00:00,Corinthians,Bahia,3.0,0.0
+37,2024-12-04 22:00:00,CR Vasco da Gama,CA Mineiro,2.0,0.0
+37,2024-12-04 23:00:00,Criciúma,Flamengo,0.0,3.0
+37,2024-12-04 23:00:00,São Paulo,EC Juventude,1.0,2.0
+37,2024-12-04 23:00:00,Vitória,Grêmio,1.0,1.0
+37,2024-12-05 00:30:00,AC Goianiense,Fortaleza,3.0,1.0
+37,2024-12-05 00:30:00,Cruzeiro,Palmeiras,1.0,2.0
+37,2024-12-05 00:30:00,Internacional,Botafogo,0.0,1.0
+37,2024-12-05 23:00:00,CA Paranaense,Bragantino,1.0,2.0
+37,2024-12-05 23:00:00,Fluminense,Cuiabá,1.0,0.0
+38,2024-12-08 19:00:00,CA Mineiro,CA Paranaense,1.0,0.0
+38,2024-12-08 19:00:00,Bahia,AC Goianiense,2.0,0.0
+38,2024-12-08 19:00:00,Botafogo,São Paulo,2.0,1.0
+38,2024-12-08 19:00:00,Bragantino,Criciúma,5.0,1.0
+38,2024-12-08 19:00:00,Cuiabá,CR Vasco da Gama,1.0,2.0
+38,2024-12-08 19:00:00,Flamengo,Vitória,2.0,2.0
+38,2024-12-08 19:00:00,Fortaleza,Internacional,3.0,0.0
+38,2024-12-08 19:00:00,Grêmio,Corinthians,0.0,3.0
+38,2024-12-08 19:00:00,EC Juventude,Cruzeiro,0.0,1.0
+38,2024-12-08 19:00:00,Palmeiras,Fluminense,0.0,1.0
+1,2025-03-29 21:30:00,São Paulo,SC Recife,0.0,0.0
+1,2025-03-29 21:30:00,Cruzeiro,Mirassol FC,2.0,1.0
+1,2025-03-29 21:30:00,Grêmio,CA Mineiro,2.0,1.0
+1,2025-03-29 21:30:00,Fortaleza,Fluminense,2.0,0.0
+1,2025-03-29 21:30:00,EC Juventude,Vitória,2.0,0.0
+1,2025-03-30 00:00:00,Flamengo,Internacional,1.0,1.0
+1,2025-03-30 19:00:00,Palmeiras,Botafogo,0.0,0.0
+1,2025-03-30 21:30:00,CR Vasco da Gama,Santos FC,2.0,1.0
+1,2025-03-30 23:00:00,Bahia,Corinthians,1.0,1.0
+1,2025-03-31 23:00:00,Bragantino,Ceará SC,2.0,2.0
+2,2025-04-05 21:30:00,Corinthians,CR Vasco da Gama,3.0,0.0
+2,2025-04-05 21:30:00,Ceará SC,Grêmio,2.0,0.0
+2,2025-04-06 00:00:00,Botafogo,EC Juventude,2.0,0.0
+2,2025-04-06 19:00:00,Fluminense,Bragantino,2.0,1.0
+2,2025-04-06 19:00:00,CA Mineiro,São Paulo,0.0,0.0
+2,2025-04-06 21:30:00,Mirassol FC,Fortaleza,1.0,1.0
+2,2025-04-06 21:30:00,Internacional,Cruzeiro,3.0,0.0
+2,2025-04-06 21:30:00,Vitória,Flamengo,1.0,2.0
+2,2025-04-06 21:30:00,SC Recife,Palmeiras,1.0,2.0
+2,2025-04-06 23:30:00,Santos FC,Bahia,2.0,2.0
+3,2025-04-12 19:00:00,Bragantino,Botafogo,1.0,0.0
+3,2025-04-12 19:00:00,EC Juventude,Ceará SC,2.0,1.0
+3,2025-04-12 21:30:00,Palmeiras,Corinthians,2.0,0.0
+3,2025-04-13 00:00:00,CR Vasco da Gama,SC Recife,3.0,1.0
+3,2025-04-13 19:00:00,Bahia,Mirassol FC,1.0,1.0
+3,2025-04-13 20:30:00,São Paulo,Cruzeiro,1.0,1.0
+3,2025-04-13 20:30:00,Grêmio,Flamengo,0.0,2.0
+3,2025-04-13 22:30:00,Fluminense,Santos FC,1.0,0.0
+3,2025-04-13 23:00:00,Fortaleza,Internacional,0.0,0.0
+3,2025-04-13 23:30:00,CA Mineiro,Vitória,2.0,2.0
+4,2025-04-16 00:30:00,Ceará SC,CR Vasco da Gama,2.0,1.0
+4,2025-04-16 21:30:00,Botafogo,São Paulo,2.0,2.0
+4,2025-04-16 22:00:00,Mirassol FC,Grêmio,4.0,1.0
+4,2025-04-16 22:00:00,SC Recife,Bragantino,0.0,1.0
+4,2025-04-16 22:30:00,Corinthians,Fluminense,0.0,2.0
+4,2025-04-16 22:30:00,Internacional,Palmeiras,0.0,1.0
+4,2025-04-17 00:30:00,Flamengo,EC Juventude,6.0,0.0
+4,2025-04-17 00:30:00,Santos FC,CA Mineiro,2.0,0.0
+4,2025-04-17 00:30:00,Vitória,Fortaleza,2.0,1.0
+4,2025-04-18 00:30:00,Cruzeiro,Bahia,3.0,0.0
+5,2025-04-19 19:00:00,Corinthians,SC Recife,2.0,1.0
+5,2025-04-19 21:30:00,CR Vasco da Gama,Flamengo,0.0,0.0
+5,2025-04-20 00:00:00,Grêmio,Internacional,1.0,1.0
+5,2025-04-20 14:00:00,EC Juventude,Mirassol FC,2.0,2.0
+5,2025-04-20 19:00:00,São Paulo,Santos FC,2.0,1.0
+5,2025-04-20 19:00:00,CA Mineiro,Botafogo,1.0,0.0
+5,2025-04-20 21:30:00,Fluminense,Vitória,1.0,1.0
+5,2025-04-20 21:30:00,Fortaleza,Palmeiras,1.0,2.0
+5,2025-04-20 23:30:00,Bragantino,Cruzeiro,1.0,0.0
+5,2025-04-21 23:00:00,Bahia,Ceará SC,1.0,0.0
+6,2025-04-26 19:00:00,Internacional,EC Juventude,3.0,1.0
+6,2025-04-26 21:30:00,Mirassol FC,CA Mineiro,2.0,2.0
+6,2025-04-26 21:30:00,Ceará SC,São Paulo,1.0,1.0
+6,2025-04-26 23:00:00,SC Recife,Fortaleza,0.0,0.0
+6,2025-04-27 00:00:00,Botafogo,Fluminense,2.0,0.0
+6,2025-04-27 19:00:00,Flamengo,Corinthians,4.0,0.0
+6,2025-04-27 21:30:00,Palmeiras,Bahia,0.0,1.0
+6,2025-04-27 21:30:00,Cruzeiro,CR Vasco da Gama,1.0,0.0
+6,2025-04-27 21:30:00,Vitória,Grêmio,1.0,1.0
+6,2025-04-27 23:30:00,Santos FC,Bragantino,1.0,2.0
+7,2025-05-03 00:30:00,São Paulo,Fortaleza,0.0,0.0
+7,2025-05-03 21:30:00,Fluminense,SC Recife,2.0,1.0
+7,2025-05-03 21:30:00,Corinthians,Internacional,4.0,2.0
+7,2025-05-03 21:30:00,Ceará SC,Vitória,1.0,0.0
+7,2025-05-04 00:00:00,Bahia,Botafogo,1.0,0.0
+7,2025-05-04 19:00:00,CR Vasco da Gama,Palmeiras,0.0,1.0
+7,2025-05-04 19:00:00,Grêmio,Santos FC,1.0,0.0
+7,2025-05-04 21:30:00,Cruzeiro,Flamengo,2.0,1.0
+7,2025-05-05 22:00:00,Bragantino,Mirassol FC,1.0,0.0
+7,2025-05-05 23:00:00,EC Juventude,CA Mineiro,0.0,1.0
+8,2025-05-10 19:00:00,Fortaleza,EC Juventude,5.0,0.0
+8,2025-05-10 21:30:00,Mirassol FC,Corinthians,2.0,1.0
+8,2025-05-10 21:30:00,Grêmio,Bragantino,1.0,1.0
+8,2025-05-10 21:30:00,Vitória,CR Vasco da Gama,2.0,1.0
+8,2025-05-11 00:00:00,Flamengo,Bahia,1.0,0.0
+8,2025-05-11 19:00:00,SC Recife,Cruzeiro,0.0,4.0
+8,2025-05-11 20:30:00,Palmeiras,São Paulo,1.0,0.0
+8,2025-05-11 20:30:00,CA Mineiro,Fluminense,3.0,2.0
+8,2025-05-11 23:00:00,Botafogo,Internacional,4.0,0.0
+8,2025-05-12 23:00:00,Santos FC,Ceará SC,0.0,0.0
+9,2025-05-17 19:00:00,Ceará SC,SC Recife,2.0,0.0
+9,2025-05-17 21:30:00,CR Vasco da Gama,Fortaleza,3.0,0.0
+9,2025-05-18 00:00:00,São Paulo,Grêmio,2.0,1.0
+9,2025-05-18 19:00:00,Corinthians,Santos FC,1.0,0.0
+9,2025-05-18 19:00:00,Bahia,Vitória,2.0,1.0
+9,2025-05-18 19:00:00,EC Juventude,Fluminense,1.0,1.0
+9,2025-05-18 21:30:00,Flamengo,Botafogo,0.0,0.0
+9,2025-05-18 21:30:00,Bragantino,Palmeiras,1.0,2.0
+9,2025-05-18 23:30:00,Cruzeiro,CA Mineiro,0.0,0.0
+9,2025-05-18 23:30:00,Internacional,Mirassol FC,1.0,1.0
+10,2025-05-24 21:30:00,Fluminense,CR Vasco da Gama,2.0,1.0
+10,2025-05-24 21:30:00,São Paulo,Mirassol FC,0.0,2.0
+10,2025-05-25 00:00:00,CA Mineiro,Corinthians,0.0,0.0
+10,2025-05-25 14:00:00,Grêmio,Bahia,1.0,0.0
+10,2025-05-25 19:00:00,Palmeiras,Flamengo,0.0,2.0
+10,2025-05-25 19:00:00,SC Recife,Internacional,1.0,1.0
+10,2025-05-25 21:30:00,Vitória,Santos FC,0.0,1.0
+10,2025-05-25 23:30:00,Fortaleza,Cruzeiro,0.0,2.0
+10,2025-05-26 23:00:00,Bragantino,EC Juventude,1.0,0.0
+11,2025-05-31 21:30:00,Bahia,São Paulo,2.0,1.0
+11,2025-06-01 00:00:00,CR Vasco da Gama,Bragantino,0.0,2.0
+11,2025-06-01 14:00:00,Mirassol FC,SC Recife,1.0,0.0
+11,2025-06-01 19:00:00,EC Juventude,Grêmio,0.0,2.0
+11,2025-06-01 19:00:00,Santos FC,Botafogo,0.0,1.0
+11,2025-06-01 21:30:00,Ceará SC,CA Mineiro,0.0,1.0
+11,2025-06-01 21:30:00,Flamengo,Fortaleza,5.0,0.0
+11,2025-06-01 21:30:00,Corinthians,Vitória,0.0,0.0
+11,2025-06-01 22:30:00,Cruzeiro,Palmeiras,2.0,1.0
+11,2025-06-01 23:30:00,Internacional,Fluminense,0.0,2.0
+10,2025-06-04 23:00:00,Botafogo,Ceará SC,3.0,2.0
+12,2025-06-12 22:00:00,Bragantino,Bahia,0.0,3.0
+12,2025-06-12 22:00:00,Vitória,Cruzeiro,0.0,0.0
+12,2025-06-12 22:30:00,Fortaleza,Santos FC,2.0,3.0
+12,2025-06-12 23:00:00,Grêmio,Corinthians,1.0,1.0
+12,2025-06-13 00:30:00,São Paulo,CR Vasco da Gama,1.0,3.0
+12,2025-06-13 00:30:00,CA Mineiro,Internacional,2.0,0.0
+13,2025-07-12 19:30:00,Flamengo,São Paulo,2.0,0.0
+13,2025-07-12 19:30:00,Internacional,Vitória,1.0,0.0
+13,2025-07-12 21:30:00,CR Vasco da Gama,Botafogo,0.0,2.0
+13,2025-07-13 00:00:00,Bahia,CA Mineiro,2.0,1.0
+13,2025-07-13 22:00:00,Corinthians,Bragantino,1.0,2.0
+13,2025-07-13 23:30:00,Cruzeiro,Grêmio,4.0,1.0
+13,2025-07-13 23:30:00,Fortaleza,Ceará SC,0.0,1.0
+13,2025-07-14 23:00:00,EC Juventude,SC Recife,2.0,0.0
+14,2025-07-16 22:00:00,Palmeiras,Mirassol FC,1.0,1.0
+14,2025-07-16 22:30:00,Ceará SC,Corinthians,0.0,1.0
+14,2025-07-16 23:00:00,Santos FC,Flamengo,1.0,0.0
+14,2025-07-17 00:30:00,Botafogo,Vitória,0.0,0.0
+14,2025-07-17 00:30:00,Bragantino,São Paulo,2.0,2.0
+14,2025-07-17 22:30:00,Fluminense,Cruzeiro,0.0,2.0
+15,2025-07-19 19:00:00,Fortaleza,Bahia,1.0,1.0
+15,2025-07-19 20:30:00,CR Vasco da Gama,Grêmio,1.0,1.0
+15,2025-07-19 21:30:00,Mirassol FC,Santos FC,3.0,0.0
+15,2025-07-20 00:00:00,São Paulo,Corinthians,2.0,0.0
+15,2025-07-20 14:00:00,Internacional,Ceará SC,1.0,0.0
+15,2025-07-20 19:00:00,Cruzeiro,EC Juventude,4.0,0.0
+15,2025-07-20 19:00:00,Vitória,Bragantino,1.0,0.0
+15,2025-07-20 20:30:00,Palmeiras,CA Mineiro,3.0,2.0
+15,2025-07-20 20:30:00,SC Recife,Botafogo,0.0,1.0
+15,2025-07-20 22:30:00,Flamengo,Fluminense,1.0,0.0
+16,2025-07-23 22:00:00,Fluminense,Palmeiras,1.0,2.0
+16,2025-07-23 22:00:00,Ceará SC,Mirassol FC,0.0,2.0
+16,2025-07-23 22:30:00,Corinthians,Cruzeiro,0.0,0.0
+16,2025-07-24 00:30:00,Santos FC,Internacional,1.0,2.0
+16,2025-07-24 00:30:00,Bragantino,Flamengo,1.0,2.0
+16,2025-07-24 00:30:00,Vitória,SC Recife,2.0,2.0
+16,2025-07-24 22:00:00,EC Juventude,São Paulo,0.0,1.0
+17,2025-07-26 21:30:00,Botafogo,Corinthians,1.0,1.0
+17,2025-07-26 21:30:00,Mirassol FC,Vitória,1.0,1.0
+17,2025-07-26 21:30:00,Fortaleza,Bragantino,3.0,1.0
+17,2025-07-26 21:30:00,SC Recife,Santos FC,2.0,2.0
+17,2025-07-27 00:00:00,Palmeiras,Grêmio,1.0,0.0
+17,2025-07-27 19:00:00,São Paulo,Fluminense,3.0,1.0
+17,2025-07-27 19:00:00,Cruzeiro,Ceará SC,1.0,2.0
+17,2025-07-27 21:30:00,Internacional,CR Vasco da Gama,1.0,1.0
+17,2025-07-27 21:30:00,Bahia,EC Juventude,3.0,0.0
+17,2025-07-27 23:30:00,Flamengo,CA Mineiro,1.0,0.0
+14,2025-07-29 23:30:00,Grêmio,Fortaleza,2.0,1.0
+18,2025-08-02 19:00:00,SC Recife,Bahia,0.0,0.0
+18,2025-08-02 21:30:00,Mirassol FC,CR Vasco da Gama,3.0,2.0
+18,2025-08-03 00:00:00,Fluminense,Grêmio,1.0,0.0
+18,2025-08-03 19:00:00,Botafogo,Cruzeiro,0.0,2.0
+18,2025-08-03 19:00:00,Corinthians,Fortaleza,1.0,1.0
+18,2025-08-03 21:30:00,CA Mineiro,Bragantino,2.0,1.0
+18,2025-08-03 21:30:00,Ceará SC,Flamengo,1.0,1.0
+18,2025-08-03 22:30:00,Vitória,Palmeiras,2.0,2.0
+18,2025-08-03 23:30:00,Internacional,São Paulo,1.0,2.0
+18,2025-08-04 23:00:00,Santos FC,EC Juventude,3.0,1.0
+19,2025-08-09 21:30:00,Flamengo,Mirassol FC,2.0,1.0
+19,2025-08-09 21:30:00,São Paulo,Vitória,2.0,0.0
+19,2025-08-09 21:30:00,Bragantino,Internacional,1.0,3.0
+19,2025-08-09 23:30:00,Fortaleza,Botafogo,0.0,5.0
+19,2025-08-10 00:00:00,Bahia,Fluminense,3.0,3.0
+19,2025-08-10 19:00:00,CR Vasco da Gama,CA Mineiro,1.0,1.0
+19,2025-08-10 19:00:00,Palmeiras,Ceará SC,2.0,1.0
+19,2025-08-10 21:30:00,Cruzeiro,Santos FC,1.0,2.0
+19,2025-08-10 23:30:00,Grêmio,SC Recife,0.0,1.0
+19,2025-08-11 23:00:00,EC Juventude,Corinthians,2.0,1.0
+20,2025-08-16 19:00:00,Fluminense,Fortaleza,2.0,1.0
+20,2025-08-16 19:00:00,Ceará SC,Bragantino,1.0,0.0
+20,2025-08-16 21:30:00,Vitória,EC Juventude,2.0,2.0
+20,2025-08-16 21:30:00,SC Recife,São Paulo,2.0,2.0
+20,2025-08-17 00:00:00,Corinthians,Bahia,1.0,2.0
+20,2025-08-17 19:00:00,Santos FC,CR Vasco da Gama,0.0,6.0
+20,2025-08-17 19:00:00,CA Mineiro,Grêmio,1.0,3.0
+20,2025-08-17 21:30:00,Internacional,Flamengo,1.0,3.0
+20,2025-08-17 23:30:00,Botafogo,Palmeiras,0.0,1.0
+20,2025-08-18 23:00:00,Mirassol FC,Cruzeiro,1.0,1.0
+14,2025-08-20 22:00:00,EC Juventude,CR Vasco da Gama,2.0,0.0
+21,2025-08-23 19:00:00,Bragantino,Fluminense,4.0,2.0
+21,2025-08-23 21:30:00,Cruzeiro,Internacional,2.0,1.0
+21,2025-08-24 00:00:00,Grêmio,Ceará SC,0.0,0.0
+21,2025-08-24 19:00:00,CR Vasco da Gama,Corinthians,2.0,3.0
+21,2025-08-24 19:00:00,Bahia,Santos FC,2.0,0.0
+21,2025-08-24 21:30:00,Fortaleza,Mirassol FC,0.0,1.0
+21,2025-08-24 21:30:00,EC Juventude,Botafogo,1.0,3.0
+21,2025-08-24 23:30:00,São Paulo,CA Mineiro,2.0,0.0
+21,2025-08-25 22:00:00,Palmeiras,SC Recife,3.0,0.0
+21,2025-08-26 00:00:00,Flamengo,Vitória,8.0,0.0
+22,2025-08-30 19:00:00,Ceará SC,EC Juventude,0.0,1.0
+22,2025-08-30 21:30:00,Botafogo,Bragantino,4.0,1.0
+22,2025-08-31 00:00:00,Cruzeiro,São Paulo,1.0,0.0
+22,2025-08-31 19:00:00,Flamengo,Grêmio,1.0,1.0
+22,2025-08-31 19:00:00,Santos FC,Fluminense,0.0,0.0
+22,2025-08-31 21:30:00,Corinthians,Palmeiras,1.0,1.0
+22,2025-08-31 21:30:00,Mirassol FC,Bahia,5.0,1.0
+22,2025-08-31 21:30:00,Vitória,CA Mineiro,1.0,0.0
+22,2025-08-31 23:30:00,Internacional,Fortaleza,2.0,1.0
+22,2025-08-31 23:30:00,SC Recife,CR Vasco da Gama,2.0,3.0
+23,2025-09-13 19:00:00,Grêmio,Mirassol FC,0.0,1.0
+23,2025-09-13 19:00:00,Fortaleza,Vitória,2.0,0.0
+23,2025-09-13 21:30:00,Palmeiras,Internacional,4.0,1.0
+23,2025-09-14 00:00:00,Fluminense,Corinthians,0.0,1.0
+23,2025-09-14 14:00:00,Bragantino,SC Recife,1.0,1.0
+23,2025-09-14 19:00:00,CA Mineiro,Santos FC,1.0,1.0
+23,2025-09-14 19:00:00,EC Juventude,Flamengo,0.0,2.0
+23,2025-09-14 20:30:00,São Paulo,Botafogo,1.0,0.0
+23,2025-09-14 23:30:00,CR Vasco da Gama,Ceará SC,2.0,2.0
+23,2025-09-15 23:00:00,Bahia,Cruzeiro,1.0,2.0
+12,2025-09-17 22:30:00,Botafogo,Mirassol FC,3.0,3.0
+24,2025-09-20 19:00:00,Vitória,Fluminense,0.0,1.0
+24,2025-09-20 21:30:00,Botafogo,CA Mineiro,1.0,0.0
+24,2025-09-20 21:30:00,Ceará SC,Bahia,1.0,1.0
+24,2025-09-21 00:00:00,Palmeiras,Fortaleza,4.0,1.0
+24,2025-09-21 19:00:00,Mirassol FC,EC Juventude,2.0,0.0
+24,2025-09-21 20:30:00,Flamengo,CR Vasco da Gama,1.0,1.0
+24,2025-09-21 20:30:00,Internacional,Grêmio,2.0,3.0
+24,2025-09-21 20:30:00,SC Recife,Corinthians,1.0,0.0
+24,2025-09-21 23:30:00,Santos FC,São Paulo,1.0,0.0
+24,2025-09-21 23:30:00,Cruzeiro,Bragantino,2.0,1.0
+16,2025-09-24 22:30:00,CR Vasco da Gama,Bahia,3.0,1.0
+16,2025-09-24 22:30:00,Grêmio,Botafogo,1.0,1.0
+25,2025-09-27 19:00:00,Fortaleza,SC Recife,1.0,0.0
+25,2025-09-27 21:30:00,CR Vasco da Gama,Cruzeiro,2.0,0.0
+25,2025-09-27 21:30:00,EC Juventude,Internacional,1.0,1.0
+25,2025-09-28 00:00:00,CA Mineiro,Mirassol FC,1.0,0.0
+25,2025-09-28 14:00:00,Grêmio,Vitória,3.0,1.0
+25,2025-09-28 19:00:00,Fluminense,Botafogo,2.0,0.0
+25,2025-09-28 19:00:00,Bahia,Palmeiras,1.0,0.0
+25,2025-09-28 21:30:00,Bragantino,Santos FC,2.0,2.0
+25,2025-09-28 23:30:00,Corinthians,Flamengo,1.0,2.0
+25,2025-09-29 23:00:00,São Paulo,Ceará SC,0.0,1.0
+26,2025-10-01 00:30:00,CA Mineiro,EC Juventude,0.0,0.0
+26,2025-10-01 22:00:00,Palmeiras,CR Vasco da Gama,3.0,0.0
+26,2025-10-01 22:00:00,Mirassol FC,Bragantino,1.0,1.0
+26,2025-10-01 22:00:00,SC Recife,Fluminense,2.0,2.0
+26,2025-10-01 22:30:00,Internacional,Corinthians,1.0,1.0
+26,2025-10-02 00:30:00,Botafogo,Bahia,2.0,1.0
+26,2025-10-02 00:30:00,Santos FC,Grêmio,1.0,1.0
+26,2025-10-02 22:00:00,Vitória,Ceará SC,1.0,0.0
+26,2025-10-02 22:30:00,Fortaleza,São Paulo,0.0,2.0
+26,2025-10-02 23:30:00,Flamengo,Cruzeiro,0.0,0.0
+27,2025-10-04 21:30:00,Fluminense,CA Mineiro,3.0,0.0
+27,2025-10-04 21:30:00,Bragantino,Grêmio,1.0,0.0
+27,2025-10-04 21:30:00,Internacional,Botafogo,2.0,0.0
+27,2025-10-05 00:00:00,Corinthians,Mirassol FC,3.0,0.0
+27,2025-10-05 19:00:00,CR Vasco da Gama,Vitória,4.0,3.0
+27,2025-10-05 19:00:00,São Paulo,Palmeiras,2.0,3.0
+27,2025-10-05 21:30:00,Bahia,Flamengo,1.0,0.0
+27,2025-10-05 21:30:00,EC Juventude,Fortaleza,1.0,2.0
+27,2025-10-05 23:30:00,Cruzeiro,SC Recife,1.0,1.0
+27,2025-10-05 23:30:00,Ceará SC,Santos FC,3.0,0.0
+14,2025-10-08 22:00:00,CA Mineiro,SC Recife,3.0,1.0
+13,2025-10-09 00:00:00,Mirassol FC,Fluminense,2.0,1.0
+12,2025-10-11 22:00:00,Palmeiras,EC Juventude,4.0,1.0
+28,2025-10-15 22:00:00,Palmeiras,Bragantino,5.0,1.0
+28,2025-10-15 22:30:00,Botafogo,Flamengo,0.0,3.0
+28,2025-10-15 23:00:00,Mirassol FC,Internacional,3.0,1.0
+28,2025-10-15 23:00:00,SC Recife,Ceará SC,1.0,1.0
+28,2025-10-16 00:30:00,Santos FC,Corinthians,3.0,1.0
+28,2025-10-16 00:30:00,CA Mineiro,Cruzeiro,1.0,1.0
+28,2025-10-16 00:30:00,Fortaleza,CR Vasco da Gama,0.0,2.0
+28,2025-10-16 22:00:00,Grêmio,São Paulo,2.0,0.0
+28,2025-10-17 00:30:00,Fluminense,EC Juventude,1.0,0.0
+28,2025-10-17 00:30:00,Vitória,Bahia,2.0,1.0
+29,2025-10-18 21:30:00,Corinthians,CA Mineiro,1.0,0.0
+29,2025-10-19 00:00:00,Cruzeiro,Fortaleza,1.0,0.0
+29,2025-10-19 19:00:00,Flamengo,Palmeiras,3.0,2.0
+29,2025-10-19 21:30:00,Mirassol FC,São Paulo,3.0,0.0
+29,2025-10-19 21:30:00,Internacional,SC Recife,2.0,0.0
+29,2025-10-19 21:30:00,Ceará SC,Botafogo,0.0,2.0
+29,2025-10-19 23:30:00,Bahia,Grêmio,4.0,0.0
+29,2025-10-20 22:00:00,EC Juventude,Bragantino,1.0,0.0
+29,2025-10-20 22:30:00,CR Vasco da Gama,Fluminense,2.0,0.0
+29,2025-10-21 00:30:00,Santos FC,Vitória,0.0,1.0
+14,2025-10-22 22:00:00,Bahia,Internacional,1.0,0.0
+30,2025-10-25 19:00:00,CA Mineiro,Ceará SC,1.0,0.0
+30,2025-10-25 19:00:00,Vitória,Corinthians,0.0,1.0
+30,2025-10-25 20:30:00,Fluminense,Internacional,1.0,0.0
+30,2025-10-25 21:30:00,SC Recife,Mirassol FC,1.0,2.0
+30,2025-10-25 22:30:00,Fortaleza,Flamengo,1.0,0.0
+30,2025-10-26 01:30:00,São Paulo,Bahia,2.0,0.0
+30,2025-10-26 19:00:00,Botafogo,Santos FC,2.0,2.0
+30,2025-10-26 19:00:00,Grêmio,EC Juventude,3.0,1.0
+30,2025-10-26 21:30:00,Bragantino,CR Vasco da Gama,0.0,3.0
+30,2025-10-26 23:30:00,Palmeiras,Cruzeiro,0.0,0.0
+12,2025-10-29 22:00:00,Fluminense,Ceará SC,1.0,0.0
+31,2025-11-01 19:00:00,Santos FC,Fortaleza,1.0,1.0
+31,2025-11-01 19:00:00,Cruzeiro,Vitória,3.0,1.0
+31,2025-11-01 21:00:00,Mirassol FC,Botafogo,0.0,0.0
+31,2025-11-02 00:00:00,Flamengo,SC Recife,3.0,0.0
+31,2025-11-02 19:00:00,Corinthians,Grêmio,2.0,0.0
+31,2025-11-02 19:00:00,Bahia,Bragantino,2.0,1.0
+31,2025-11-02 19:00:00,Ceará SC,Fluminense,2.0,0.0
+31,2025-11-02 21:30:00,Internacional,CA Mineiro,0.0,0.0
+31,2025-11-02 21:30:00,EC Juventude,Palmeiras,0.0,2.0
+31,2025-11-02 23:30:00,CR Vasco da Gama,São Paulo,0.0,2.0
+32,2025-11-05 22:00:00,Bragantino,Corinthians,2.0,1.0
+32,2025-11-05 22:00:00,Vitória,Internacional,1.0,0.0
+32,2025-11-05 22:00:00,SC Recife,EC Juventude,0.0,2.0
+32,2025-11-05 22:30:00,Botafogo,CR Vasco da Gama,3.0,0.0
+32,2025-11-05 23:00:00,CA Mineiro,Bahia,3.0,0.0
+32,2025-11-05 23:00:00,Grêmio,Cruzeiro,0.0,1.0
+32,2025-11-06 00:30:00,São Paulo,Flamengo,2.0,2.0
+32,2025-11-06 22:30:00,Fluminense,Mirassol FC,1.0,0.0
+32,2025-11-06 23:00:00,Ceará SC,Fortaleza,1.0,1.0
+32,2025-11-07 00:30:00,Palmeiras,Santos FC,2.0,0.0
+33,2025-11-08 19:00:00,SC Recife,CA Mineiro,2.0,4.0
+33,2025-11-08 21:00:00,CR Vasco da Gama,EC Juventude,1.0,3.0
+33,2025-11-08 21:30:00,Internacional,Bahia,2.0,2.0
+33,2025-11-09 00:00:00,São Paulo,Bragantino,0.0,1.0
+33,2025-11-09 19:00:00,Corinthians,Ceará SC,0.0,1.0
+33,2025-11-09 19:00:00,Cruzeiro,Fluminense,0.0,0.0
+33,2025-11-09 19:00:00,Vitória,Botafogo,0.0,0.0
+33,2025-11-09 21:30:00,Flamengo,Santos FC,3.0,2.0
+33,2025-11-09 23:30:00,Mirassol FC,Palmeiras,2.0,1.0
+33,2025-11-09 23:30:00,Fortaleza,Grêmio,2.0,2.0
+16,2025-11-12 23:30:00,CA Mineiro,Fortaleza,3.0,3.0
+12,2025-11-15 21:30:00,SC Recife,Flamengo,1.0,5.0
+13,2025-11-16 00:00:00,Santos FC,Palmeiras,1.0,0.0
+37,2025-11-16 22:00:00,Bragantino,CA Mineiro,2.0,0.0
+34,2025-11-18 23:30:00,Botafogo,SC Recife,3.0,2.0
+37,2025-11-19 22:30:00,Palmeiras,Vitória,0.0,0.0
+34,2025-11-20 00:30:00,Fluminense,Flamengo,2.0,1.0
+34,2025-11-20 00:30:00,Santos FC,Mirassol FC,1.0,1.0
+34,2025-11-20 00:30:00,Grêmio,CR Vasco da Gama,2.0,0.0
+34,2025-11-20 19:00:00,EC Juventude,Cruzeiro,3.0,3.0
+34,2025-11-20 21:00:00,Bahia,Fortaleza,2.0,3.0
+34,2025-11-20 22:30:00,Corinthians,São Paulo,3.0,1.0
+34,2025-11-21 00:30:00,Ceará SC,Internacional,1.0,2.0
+35,2025-11-22 22:30:00,Botafogo,Grêmio,3.0,2.0
+35,2025-11-23 00:30:00,Flamengo,Bragantino,3.0,0.0
+35,2025-11-23 00:30:00,Palmeiras,Fluminense,0.0,0.0
+35,2025-11-23 19:00:00,São Paulo,EC Juventude,2.0,1.0
+35,2025-11-23 19:00:00,Bahia,CR Vasco da Gama,1.0,0.0
+35,2025-11-23 21:30:00,SC Recife,Vitória,1.0,3.0
+35,2025-11-23 23:30:00,Cruzeiro,Corinthians,3.0,0.0
+35,2025-11-24 22:00:00,Mirassol FC,Ceará SC,3.0,0.0
+35,2025-11-25 00:00:00,Internacional,Santos FC,1.0,1.0
+36,2025-11-26 00:30:00,CA Mineiro,Flamengo,1.0,1.0
+36,2025-11-26 00:30:00,Grêmio,Palmeiras,3.0,2.0
+36,2025-11-26 22:00:00,Bragantino,Fortaleza,0.0,1.0
+36,2025-11-27 23:30:00,Fluminense,São Paulo,6.0,0.0
+36,2025-11-28 22:00:00,EC Juventude,Bahia,1.0,1.0
+36,2025-11-28 22:30:00,CR Vasco da Gama,Internacional,5.0,1.0
+36,2025-11-29 00:30:00,Santos FC,SC Recife,3.0,0.0
+36,2025-11-29 19:00:00,Vitória,Mirassol FC,2.0,0.0
+36,2025-11-30 00:00:00,Ceará SC,Cruzeiro,1.0,1.0
+36,2025-11-30 19:00:00,Corinthians,Botafogo,2.0,2.0
+35,2025-11-30 21:30:00,Fortaleza,CA Mineiro,1.0,0.0
+37,2025-12-02 22:00:00,CR Vasco da Gama,Mirassol FC,0.0,2.0
+37,2025-12-03 00:30:00,Grêmio,Fluminense,1.0,2.0
+37,2025-12-03 22:00:00,Fortaleza,Corinthians,2.0,1.0
+34,2025-12-03 22:00:00,Bragantino,Vitória,4.0,0.0
+37,2025-12-03 22:30:00,EC Juventude,Santos FC,0.0,3.0
+37,2025-12-03 23:00:00,São Paulo,Internacional,3.0,0.0
+37,2025-12-03 23:00:00,Bahia,SC Recife,2.0,0.0
+34,2025-12-04 00:30:00,CA Mineiro,Palmeiras,0.0,3.0
+37,2025-12-04 00:30:00,Flamengo,Ceará SC,1.0,0.0
+37,2025-12-04 22:30:00,Cruzeiro,Botafogo,2.0,2.0
+38,2025-12-06 21:30:00,Mirassol FC,Flamengo,3.0,3.0
+38,2025-12-07 19:00:00,Fluminense,Bahia,2.0,0.0
+38,2025-12-07 19:00:00,Botafogo,Fortaleza,4.0,2.0
+38,2025-12-07 19:00:00,Corinthians,EC Juventude,1.0,1.0
+38,2025-12-07 19:00:00,Santos FC,Cruzeiro,3.0,0.0
+38,2025-12-07 19:00:00,CA Mineiro,CR Vasco da Gama,5.0,0.0
+38,2025-12-07 19:00:00,Internacional,Bragantino,3.0,1.0
+38,2025-12-07 19:00:00,Vitória,São Paulo,1.0,0.0
+38,2025-12-07 19:00:00,Ceará SC,Palmeiras,1.0,3.0
+38,2025-12-07 19:00:00,SC Recife,Grêmio,0.0,4.0
+1,2026-01-28 22:00:00,CA Mineiro,Palmeiras,2.0,2.0
+1,2026-01-28 22:00:00,Coritiba FBC,Bragantino,0.0,1.0
+1,2026-01-28 22:00:00,Internacional,CA Paranaense,0.0,1.0
+1,2026-01-28 22:00:00,Vitória,Clube do Remo,2.0,0.0
+1,2026-01-28 22:30:00,Fluminense,Grêmio,2.0,1.0
+1,2026-01-28 23:00:00,Chapecoense AF,Santos FC,4.0,2.0
+1,2026-01-28 23:00:00,Corinthians,Bahia,1.0,2.0
+1,2026-01-29 00:30:00,São Paulo,Flamengo,2.0,1.0
+1,2026-01-29 23:00:00,Mirassol FC,CR Vasco da Gama,2.0,1.0
+1,2026-01-30 00:30:00,Botafogo,Cruzeiro,4.0,0.0
+2,2026-02-04 22:00:00,Bragantino,CA Mineiro,,
+2,2026-02-04 22:00:00,Flamengo,Internacional,,
+2,2026-02-04 23:00:00,Clube do Remo,Mirassol FC,,
+2,2026-02-04 23:00:00,Santos FC,São Paulo,,
+2,2026-02-05 00:30:00,Grêmio,Botafogo,,
+2,2026-02-05 00:30:00,Palmeiras,Vitória,,
+2,2026-02-05 22:00:00,Bahia,Fluminense,,
+2,2026-02-05 23:00:00,CR Vasco da Gama,Chapecoense AF,,
+2,2026-02-06 00:30:00,Cruzeiro,Coritiba FBC,,
+3,2026-02-11 00:30:00,Vitória,Flamengo,,
+3,2026-02-11 22:00:00,Chapecoense AF,Coritiba FBC,,
+3,2026-02-11 22:00:00,Mirassol FC,Cruzeiro,,
+3,2026-02-11 23:00:00,CA Mineiro,Clube do Remo,,
+3,2026-02-12 00:30:00,São Paulo,Grêmio,,
+3,2026-02-12 00:30:00,CR Vasco da Gama,Bahia,,
+3,2026-02-12 22:00:00,CA Paranaense,Santos FC,,
+3,2026-02-12 22:30:00,Fluminense,Botafogo,,
+3,2026-02-12 23:00:00,Corinthians,Bragantino,,
+3,2026-02-13 00:30:00,Internacional,Palmeiras,,
+2,2026-02-18 22:30:00,CA Paranaense,Corinthians,,
+4,2026-02-25 00:00:00,Bahia,Chapecoense AF,,
+4,2026-02-25 00:00:00,Botafogo,Vitória,,
+4,2026-02-25 00:00:00,Flamengo,Mirassol FC,,
+4,2026-02-25 22:00:00,Bragantino,CA Paranaense,,
+4,2026-02-25 22:00:00,Clube do Remo,Internacional,,
+4,2026-02-25 23:00:00,Cruzeiro,Corinthians,,
+4,2026-02-26 00:30:00,Grêmio,CA Mineiro,,
+4,2026-02-26 00:30:00,Palmeiras,Fluminense,,
+4,2026-02-26 22:00:00,Santos FC,CR Vasco da Gama,,
+4,2026-02-26 23:00:00,Coritiba FBC,São Paulo,,
+5,2026-03-11 00:30:00,Mirassol FC,Santos FC,,
+5,2026-03-11 22:00:00,CA Paranaense,Botafogo,,
+5,2026-03-11 22:00:00,CA Mineiro,Internacional,,
+5,2026-03-11 23:00:00,Bahia,Vitória,,
+5,2026-03-12 00:30:00,Corinthians,Coritiba FBC,,
+5,2026-03-12 00:30:00,Flamengo,Cruzeiro,,
+5,2026-03-12 22:00:00,Clube do Remo,Fluminense,,
+5,2026-03-12 22:30:00,CR Vasco da Gama,Palmeiras,,
+5,2026-03-12 23:00:00,São Paulo,Chapecoense AF,,
+5,2026-03-13 00:30:00,Grêmio,Bragantino,,
+6,2026-03-14 21:30:00,Vitória,CA Mineiro,,
+6,2026-03-14 23:30:00,Botafogo,Flamengo,,
+6,2026-03-15 19:00:00,Fluminense,CA Paranaense,,
+6,2026-03-15 19:00:00,Internacional,Bahia,,
+6,2026-03-15 19:00:00,Santos FC,Corinthians,,
+6,2026-03-15 21:30:00,Coritiba FBC,Clube do Remo,,
+6,2026-03-15 21:30:00,Palmeiras,Mirassol FC,,
+6,2026-03-15 23:30:00,Bragantino,São Paulo,,
+6,2026-03-15 23:30:00,Cruzeiro,CR Vasco da Gama,,
+6,2026-03-16 23:00:00,Chapecoense AF,Grêmio,,
+7,2026-03-18 22:00:00,Bahia,Bragantino,,
+7,2026-03-18 22:00:00,Palmeiras,Botafogo,,
+7,2026-03-18 22:30:00,CA Paranaense,Cruzeiro,,
+7,2026-03-18 23:00:00,CA Mineiro,São Paulo,,
+7,2026-03-18 23:00:00,Mirassol FC,Coritiba FBC,,
+7,2026-03-19 00:30:00,Santos FC,Internacional,,
+7,2026-03-19 00:30:00,CR Vasco da Gama,Fluminense,,
+7,2026-03-19 22:00:00,Grêmio,Vitória,,
+7,2026-03-19 23:00:00,Flamengo,Clube do Remo,,
+7,2026-03-20 00:30:00,Chapecoense AF,Corinthians,,
+8,2026-03-21 19:00:00,Bragantino,Botafogo,,
+8,2026-03-21 21:30:00,Fluminense,CA Mineiro,,
+8,2026-03-22 00:00:00,São Paulo,Palmeiras,,
+8,2026-03-22 19:00:00,CA Paranaense,Coritiba FBC,,
+8,2026-03-22 19:00:00,Cruzeiro,Santos FC,,
+8,2026-03-22 19:00:00,Clube do Remo,Bahia,,
+8,2026-03-22 19:00:00,CR Vasco da Gama,Grêmio,,
+8,2026-03-22 21:30:00,Internacional,Chapecoense AF,,
+8,2026-03-22 21:30:00,Vitória,Mirassol FC,,
+8,2026-03-22 23:30:00,Corinthians,Flamengo,,
+9,2026-04-01 00:00:00,Bahia,CA Paranaense,,
+9,2026-04-01 00:00:00,Botafogo,Mirassol FC,,
+9,2026-04-01 00:00:00,Bragantino,Flamengo,,
+9,2026-04-01 00:00:00,Chapecoense AF,CA Mineiro,,
+9,2026-04-01 00:00:00,Coritiba FBC,CR Vasco da Gama,,
+9,2026-04-01 00:00:00,Cruzeiro,Vitória,,
+9,2026-04-01 00:00:00,Fluminense,Corinthians,,
+9,2026-04-01 00:00:00,Internacional,São Paulo,,
+9,2026-04-01 00:00:00,Palmeiras,Grêmio,,
+9,2026-04-01 00:00:00,Santos FC,Clube do Remo,,
+10,2026-04-04 00:00:00,CA Mineiro,CA Paranaense,,
+10,2026-04-04 00:00:00,Bahia,Palmeiras,,
+10,2026-04-04 00:00:00,Chapecoense AF,Vitória,,
+10,2026-04-04 00:00:00,Corinthians,Internacional,,
+10,2026-04-04 00:00:00,Coritiba FBC,Fluminense,,
+10,2026-04-04 00:00:00,Flamengo,Santos FC,,
+10,2026-04-04 00:00:00,Grêmio,Clube do Remo,,
+10,2026-04-04 00:00:00,Mirassol FC,Bragantino,,
+10,2026-04-04 00:00:00,São Paulo,Cruzeiro,,
+10,2026-04-04 00:00:00,CR Vasco da Gama,Botafogo,,
+11,2026-04-11 00:00:00,CA Paranaense,Chapecoense AF,,
+11,2026-04-11 00:00:00,Botafogo,Coritiba FBC,,
+11,2026-04-11 00:00:00,Corinthians,Palmeiras,,
+11,2026-04-11 00:00:00,Cruzeiro,Bragantino,,
+11,2026-04-11 00:00:00,Fluminense,Flamengo,,
+11,2026-04-11 00:00:00,Internacional,Grêmio,,
+11,2026-04-11 00:00:00,Mirassol FC,Bahia,,
+11,2026-04-11 00:00:00,Clube do Remo,CR Vasco da Gama,,
+11,2026-04-11 00:00:00,Santos FC,CA Mineiro,,
+11,2026-04-11 00:00:00,Vitória,São Paulo,,
+12,2026-04-18 00:00:00,Bragantino,Clube do Remo,,
+12,2026-04-18 00:00:00,Chapecoense AF,Botafogo,,
+12,2026-04-18 00:00:00,Coritiba FBC,CA Mineiro,,
+12,2026-04-18 00:00:00,Cruzeiro,Grêmio,,
+12,2026-04-18 00:00:00,Flamengo,Bahia,,
+12,2026-04-18 00:00:00,Internacional,Mirassol FC,,
+12,2026-04-18 00:00:00,Palmeiras,CA Paranaense,,
+12,2026-04-18 00:00:00,Santos FC,Fluminense,,
+12,2026-04-18 00:00:00,CR Vasco da Gama,São Paulo,,
+12,2026-04-18 00:00:00,Vitória,Corinthians,,
+13,2026-04-25 00:00:00,CA Paranaense,Vitória,,
+13,2026-04-25 00:00:00,CA Mineiro,Flamengo,,
+13,2026-04-25 00:00:00,Bahia,Santos FC,,
+13,2026-04-25 00:00:00,Botafogo,Internacional,,
+13,2026-04-25 00:00:00,Bragantino,Palmeiras,,
+13,2026-04-25 00:00:00,Corinthians,CR Vasco da Gama,,
+13,2026-04-25 00:00:00,Fluminense,Chapecoense AF,,
+13,2026-04-25 00:00:00,Grêmio,Coritiba FBC,,
+13,2026-04-25 00:00:00,Clube do Remo,Cruzeiro,,
+13,2026-04-25 00:00:00,São Paulo,Mirassol FC,,
+14,2026-05-02 00:00:00,CA Paranaense,Grêmio,,
+14,2026-05-02 00:00:00,Botafogo,Clube do Remo,,
+14,2026-05-02 00:00:00,Chapecoense AF,Bragantino,,
+14,2026-05-02 00:00:00,Cruzeiro,CA Mineiro,,
+14,2026-05-02 00:00:00,Flamengo,CR Vasco da Gama,,
+14,2026-05-02 00:00:00,Internacional,Fluminense,,
+14,2026-05-02 00:00:00,Mirassol FC,Corinthians,,
+14,2026-05-02 00:00:00,Palmeiras,Santos FC,,
+14,2026-05-02 00:00:00,São Paulo,Bahia,,
+14,2026-05-02 00:00:00,Vitória,Coritiba FBC,,
+15,2026-05-09 00:00:00,CA Mineiro,Botafogo,,
+15,2026-05-09 00:00:00,Bahia,Cruzeiro,,
+15,2026-05-09 00:00:00,Corinthians,São Paulo,,
+15,2026-05-09 00:00:00,Coritiba FBC,Internacional,,
+15,2026-05-09 00:00:00,Fluminense,Vitória,,
+15,2026-05-09 00:00:00,Grêmio,Flamengo,,
+15,2026-05-09 00:00:00,Mirassol FC,Chapecoense AF,,
+15,2026-05-09 00:00:00,Clube do Remo,Palmeiras,,
+15,2026-05-09 00:00:00,Santos FC,Bragantino,,
+15,2026-05-09 00:00:00,CR Vasco da Gama,CA Paranaense,,
+16,2026-05-16 00:00:00,CA Paranaense,Flamengo,,
+16,2026-05-16 00:00:00,CA Mineiro,Mirassol FC,,
+16,2026-05-16 00:00:00,Bahia,Grêmio,,
+16,2026-05-16 00:00:00,Botafogo,Corinthians,,
+16,2026-05-16 00:00:00,Bragantino,Vitória,,
+16,2026-05-16 00:00:00,Chapecoense AF,Clube do Remo,,
+16,2026-05-16 00:00:00,Fluminense,São Paulo,,
+16,2026-05-16 00:00:00,Internacional,CR Vasco da Gama,,
+16,2026-05-16 00:00:00,Palmeiras,Cruzeiro,,
+16,2026-05-16 00:00:00,Santos FC,Coritiba FBC,,
+17,2026-05-23 00:00:00,Corinthians,CA Mineiro,,
+17,2026-05-23 00:00:00,Coritiba FBC,Bahia,,
+17,2026-05-23 00:00:00,Cruzeiro,Chapecoense AF,,
+17,2026-05-23 00:00:00,Flamengo,Palmeiras,,
+17,2026-05-23 00:00:00,Grêmio,Santos FC,,
+17,2026-05-23 00:00:00,Mirassol FC,Fluminense,,
+17,2026-05-23 00:00:00,Clube do Remo,CA Paranaense,,
+17,2026-05-23 00:00:00,São Paulo,Botafogo,,
+17,2026-05-23 00:00:00,CR Vasco da Gama,Bragantino,,
+17,2026-05-23 00:00:00,Vitória,Internacional,,
+18,2026-05-30 00:00:00,CA Paranaense,Mirassol FC,,
+18,2026-05-30 00:00:00,Bahia,Botafogo,,
+18,2026-05-30 00:00:00,Bragantino,Internacional,,
+18,2026-05-30 00:00:00,Cruzeiro,Fluminense,,
+18,2026-05-30 00:00:00,Flamengo,Coritiba FBC,,
+18,2026-05-30 00:00:00,Grêmio,Corinthians,,
+18,2026-05-30 00:00:00,Palmeiras,Chapecoense AF,,
+18,2026-05-30 00:00:00,Clube do Remo,São Paulo,,
+18,2026-05-30 00:00:00,Santos FC,Vitória,,
+18,2026-05-30 00:00:00,CR Vasco da Gama,CA Mineiro,,
+19,2026-07-22 00:00:00,CA Mineiro,Bahia,,
+19,2026-07-22 00:00:00,Botafogo,Santos FC,,
+19,2026-07-22 00:00:00,Chapecoense AF,Flamengo,,
+19,2026-07-22 00:00:00,Corinthians,Clube do Remo,,
+19,2026-07-22 00:00:00,Coritiba FBC,Palmeiras,,
+19,2026-07-22 00:00:00,Fluminense,Bragantino,,
+19,2026-07-22 00:00:00,Internacional,Cruzeiro,,
+19,2026-07-22 00:00:00,Mirassol FC,Grêmio,,
+19,2026-07-22 00:00:00,São Paulo,CA Paranaense,,
+19,2026-07-22 00:00:00,Vitória,CR Vasco da Gama,,
+20,2026-07-25 00:00:00,CA Paranaense,Internacional,,
+20,2026-07-25 00:00:00,Bahia,Corinthians,,
+20,2026-07-25 00:00:00,Bragantino,Coritiba FBC,,
+20,2026-07-25 00:00:00,Cruzeiro,Botafogo,,
+20,2026-07-25 00:00:00,Flamengo,São Paulo,,
+20,2026-07-25 00:00:00,Grêmio,Fluminense,,
+20,2026-07-25 00:00:00,Palmeiras,CA Mineiro,,
+20,2026-07-25 00:00:00,Clube do Remo,Vitória,,
+20,2026-07-25 00:00:00,Santos FC,Chapecoense AF,,
+20,2026-07-25 00:00:00,CR Vasco da Gama,Mirassol FC,,
+21,2026-07-29 00:00:00,CA Mineiro,Bragantino,,
+21,2026-07-29 00:00:00,Botafogo,Grêmio,,
+21,2026-07-29 00:00:00,Chapecoense AF,CR Vasco da Gama,,
+21,2026-07-29 00:00:00,Corinthians,CA Paranaense,,
+21,2026-07-29 00:00:00,Coritiba FBC,Cruzeiro,,
+21,2026-07-29 00:00:00,Fluminense,Bahia,,
+21,2026-07-29 00:00:00,Internacional,Flamengo,,
+21,2026-07-29 00:00:00,Mirassol FC,Clube do Remo,,
+21,2026-07-29 00:00:00,São Paulo,Santos FC,,
+21,2026-07-29 00:00:00,Vitória,Palmeiras,,
+22,2026-08-08 00:00:00,Bahia,CR Vasco da Gama,,
+22,2026-08-08 00:00:00,Botafogo,Fluminense,,
+22,2026-08-08 00:00:00,Bragantino,Corinthians,,
+22,2026-08-08 00:00:00,Coritiba FBC,Chapecoense AF,,
+22,2026-08-08 00:00:00,Cruzeiro,Mirassol FC,,
+22,2026-08-08 00:00:00,Flamengo,Vitória,,
+22,2026-08-08 00:00:00,Grêmio,São Paulo,,
+22,2026-08-08 00:00:00,Palmeiras,Internacional,,
+22,2026-08-08 00:00:00,Clube do Remo,CA Mineiro,,
+22,2026-08-08 00:00:00,Santos FC,CA Paranaense,,
+23,2026-08-15 00:00:00,CA Paranaense,Bragantino,,
+23,2026-08-15 00:00:00,CA Mineiro,Grêmio,,
+23,2026-08-15 00:00:00,Chapecoense AF,Bahia,,
+23,2026-08-15 00:00:00,Corinthians,Cruzeiro,,
+23,2026-08-15 00:00:00,Fluminense,Palmeiras,,
+23,2026-08-15 00:00:00,Internacional,Clube do Remo,,
+23,2026-08-15 00:00:00,Mirassol FC,Flamengo,,
+23,2026-08-15 00:00:00,São Paulo,Coritiba FBC,,
+23,2026-08-15 00:00:00,CR Vasco da Gama,Santos FC,,
+23,2026-08-15 00:00:00,Vitória,Botafogo,,
+24,2026-08-22 00:00:00,Botafogo,CA Paranaense,,
+24,2026-08-22 00:00:00,Bragantino,Grêmio,,
+24,2026-08-22 00:00:00,Chapecoense AF,São Paulo,,
+24,2026-08-22 00:00:00,Coritiba FBC,Corinthians,,
+24,2026-08-22 00:00:00,Cruzeiro,Flamengo,,
+24,2026-08-22 00:00:00,Fluminense,Clube do Remo,,
+24,2026-08-22 00:00:00,Internacional,CA Mineiro,,
+24,2026-08-22 00:00:00,Palmeiras,CR Vasco da Gama,,
+24,2026-08-22 00:00:00,Santos FC,Mirassol FC,,
+24,2026-08-22 00:00:00,Vitória,Bahia,,
+25,2026-08-29 00:00:00,CA Paranaense,Fluminense,,
+25,2026-08-29 00:00:00,CA Mineiro,Vitória,,
+25,2026-08-29 00:00:00,Bahia,Internacional,,
+25,2026-08-29 00:00:00,Corinthians,Santos FC,,
+25,2026-08-29 00:00:00,Flamengo,Botafogo,,
+25,2026-08-29 00:00:00,Grêmio,Chapecoense AF,,
+25,2026-08-29 00:00:00,Mirassol FC,Palmeiras,,
+25,2026-08-29 00:00:00,Clube do Remo,Coritiba FBC,,
+25,2026-08-29 00:00:00,São Paulo,Bragantino,,
+25,2026-08-29 00:00:00,CR Vasco da Gama,Cruzeiro,,
+26,2026-09-05 00:00:00,Botafogo,Palmeiras,,
+26,2026-09-05 00:00:00,Bragantino,Bahia,,
+26,2026-09-05 00:00:00,Corinthians,Chapecoense AF,,
+26,2026-09-05 00:00:00,Coritiba FBC,Mirassol FC,,
+26,2026-09-05 00:00:00,Cruzeiro,CA Paranaense,,
+26,2026-09-05 00:00:00,Fluminense,CR Vasco da Gama,,
+26,2026-09-05 00:00:00,Internacional,Santos FC,,
+26,2026-09-05 00:00:00,Clube do Remo,Flamengo,,
+26,2026-09-05 00:00:00,São Paulo,CA Mineiro,,
+26,2026-09-05 00:00:00,Vitória,Grêmio,,
+27,2026-09-12 00:00:00,Palmeiras,São Paulo,,
+27,2026-09-12 00:00:00,Santos FC,Cruzeiro,,
+27,2026-09-12 00:00:00,CA Mineiro,Fluminense,,
+27,2026-09-12 00:00:00,Bahia,Clube do Remo,,
+27,2026-09-12 00:00:00,Botafogo,Bragantino,,
+27,2026-09-12 00:00:00,Chapecoense AF,Internacional,,
+27,2026-09-12 00:00:00,Coritiba FBC,CA Paranaense,,
+27,2026-09-12 00:00:00,Flamengo,Corinthians,,
+27,2026-09-12 00:00:00,Grêmio,CR Vasco da Gama,,
+27,2026-09-12 00:00:00,Mirassol FC,Vitória,,
+28,2026-09-19 00:00:00,CA Paranaense,Bahia,,
+28,2026-09-19 00:00:00,CA Mineiro,Chapecoense AF,,
+28,2026-09-19 00:00:00,Corinthians,Fluminense,,
+28,2026-09-19 00:00:00,Flamengo,Bragantino,,
+28,2026-09-19 00:00:00,Grêmio,Palmeiras,,
+28,2026-09-19 00:00:00,Mirassol FC,Botafogo,,
+28,2026-09-19 00:00:00,Clube do Remo,Santos FC,,
+28,2026-09-19 00:00:00,São Paulo,Internacional,,
+28,2026-09-19 00:00:00,CR Vasco da Gama,Coritiba FBC,,
+28,2026-09-19 00:00:00,Vitória,Cruzeiro,,
+29,2026-10-07 00:00:00,CA Paranaense,CA Mineiro,,
+29,2026-10-07 00:00:00,Botafogo,CR Vasco da Gama,,
+29,2026-10-07 00:00:00,Bragantino,Mirassol FC,,
+29,2026-10-07 00:00:00,Cruzeiro,São Paulo,,
+29,2026-10-07 00:00:00,Fluminense,Coritiba FBC,,
+29,2026-10-07 00:00:00,Internacional,Corinthians,,
+29,2026-10-07 00:00:00,Palmeiras,Bahia,,
+29,2026-10-07 00:00:00,Clube do Remo,Grêmio,,
+29,2026-10-07 00:00:00,Santos FC,Flamengo,,
+29,2026-10-07 00:00:00,Vitória,Chapecoense AF,,
+30,2026-10-10 00:00:00,CA Mineiro,Santos FC,,
+30,2026-10-10 00:00:00,Bahia,Mirassol FC,,
+30,2026-10-10 00:00:00,Bragantino,Cruzeiro,,
+30,2026-10-10 00:00:00,Chapecoense AF,CA Paranaense,,
+30,2026-10-10 00:00:00,Coritiba FBC,Botafogo,,
+30,2026-10-10 00:00:00,Flamengo,Fluminense,,
+30,2026-10-10 00:00:00,Grêmio,Internacional,,
+30,2026-10-10 00:00:00,Palmeiras,Corinthians,,
+30,2026-10-10 00:00:00,São Paulo,Vitória,,
+30,2026-10-10 00:00:00,CR Vasco da Gama,Clube do Remo,,
+31,2026-10-17 00:00:00,CA Paranaense,Palmeiras,,
+31,2026-10-17 00:00:00,CA Mineiro,Coritiba FBC,,
+31,2026-10-17 00:00:00,Bahia,Flamengo,,
+31,2026-10-17 00:00:00,Botafogo,Chapecoense AF,,
+31,2026-10-17 00:00:00,Corinthians,Vitória,,
+31,2026-10-17 00:00:00,Fluminense,Santos FC,,
+31,2026-10-17 00:00:00,Grêmio,Cruzeiro,,
+31,2026-10-17 00:00:00,Mirassol FC,Internacional,,
+31,2026-10-17 00:00:00,Clube do Remo,Bragantino,,
+31,2026-10-17 00:00:00,São Paulo,CR Vasco da Gama,,
+32,2026-10-24 00:00:00,Chapecoense AF,Fluminense,,
+32,2026-10-24 00:00:00,Coritiba FBC,Grêmio,,
+32,2026-10-24 00:00:00,Cruzeiro,Clube do Remo,,
+32,2026-10-24 00:00:00,Flamengo,CA Mineiro,,
+32,2026-10-24 00:00:00,Internacional,Botafogo,,
+32,2026-10-24 00:00:00,Mirassol FC,São Paulo,,
+32,2026-10-24 00:00:00,Palmeiras,Bragantino,,
+32,2026-10-24 00:00:00,Santos FC,Bahia,,
+32,2026-10-24 00:00:00,CR Vasco da Gama,Corinthians,,
+32,2026-10-24 00:00:00,Vitória,CA Paranaense,,
+33,2026-10-28 00:00:00,CA Mineiro,Cruzeiro,,
+33,2026-10-28 00:00:00,Bahia,São Paulo,,
+33,2026-10-28 00:00:00,Bragantino,Chapecoense AF,,
+33,2026-10-28 00:00:00,Corinthians,Mirassol FC,,
+33,2026-10-28 00:00:00,Coritiba FBC,Vitória,,
+33,2026-10-28 00:00:00,Fluminense,Internacional,,
+33,2026-10-28 00:00:00,Grêmio,CA Paranaense,,
+33,2026-10-28 00:00:00,Clube do Remo,Botafogo,,
+33,2026-10-28 00:00:00,Santos FC,Palmeiras,,
+33,2026-10-28 00:00:00,CR Vasco da Gama,Flamengo,,
+34,2026-11-04 00:00:00,CA Paranaense,CR Vasco da Gama,,
+34,2026-11-04 00:00:00,Botafogo,CA Mineiro,,
+34,2026-11-04 00:00:00,Bragantino,Santos FC,,
+34,2026-11-04 00:00:00,Chapecoense AF,Mirassol FC,,
+34,2026-11-04 00:00:00,Cruzeiro,Bahia,,
+34,2026-11-04 00:00:00,Flamengo,Grêmio,,
+34,2026-11-04 00:00:00,Internacional,Coritiba FBC,,
+34,2026-11-04 00:00:00,Palmeiras,Clube do Remo,,
+34,2026-11-04 00:00:00,São Paulo,Corinthians,,
+34,2026-11-04 00:00:00,Vitória,Fluminense,,
+35,2026-11-18 00:00:00,Corinthians,Botafogo,,
+35,2026-11-18 00:00:00,Coritiba FBC,Santos FC,,
+35,2026-11-18 00:00:00,Cruzeiro,Palmeiras,,
+35,2026-11-18 00:00:00,Flamengo,CA Paranaense,,
+35,2026-11-18 00:00:00,Grêmio,Bahia,,
+35,2026-11-18 00:00:00,Mirassol FC,CA Mineiro,,
+35,2026-11-18 00:00:00,Clube do Remo,Chapecoense AF,,
+35,2026-11-18 00:00:00,São Paulo,Fluminense,,
+35,2026-11-18 00:00:00,CR Vasco da Gama,Internacional,,
+35,2026-11-18 00:00:00,Vitória,Bragantino,,
+36,2026-11-21 00:00:00,CA Paranaense,Clube do Remo,,
+36,2026-11-21 00:00:00,CA Mineiro,Corinthians,,
+36,2026-11-21 00:00:00,Bahia,Coritiba FBC,,
+36,2026-11-21 00:00:00,Botafogo,São Paulo,,
+36,2026-11-21 00:00:00,Bragantino,CR Vasco da Gama,,
+36,2026-11-21 00:00:00,Chapecoense AF,Cruzeiro,,
+36,2026-11-21 00:00:00,Fluminense,Mirassol FC,,
+36,2026-11-21 00:00:00,Internacional,Vitória,,
+36,2026-11-21 00:00:00,Palmeiras,Flamengo,,
+36,2026-11-21 00:00:00,Santos FC,Grêmio,,
+37,2026-11-28 00:00:00,CA Mineiro,CR Vasco da Gama,,
+37,2026-11-28 00:00:00,Botafogo,Bahia,,
+37,2026-11-28 00:00:00,Chapecoense AF,Palmeiras,,
+37,2026-11-28 00:00:00,Corinthians,Grêmio,,
+37,2026-11-28 00:00:00,Coritiba FBC,Flamengo,,
+37,2026-11-28 00:00:00,Fluminense,Cruzeiro,,
+37,2026-11-28 00:00:00,Internacional,Bragantino,,
+37,2026-11-28 00:00:00,Mirassol FC,CA Paranaense,,
+37,2026-11-28 00:00:00,São Paulo,Clube do Remo,,
+37,2026-11-28 00:00:00,Vitória,Santos FC,,
+38,2026-12-02 00:00:00,CA Paranaense,São Paulo,,
+38,2026-12-02 00:00:00,Bahia,CA Mineiro,,
+38,2026-12-02 00:00:00,Bragantino,Fluminense,,
+38,2026-12-02 00:00:00,Cruzeiro,Internacional,,
+38,2026-12-02 00:00:00,Flamengo,Chapecoense AF,,
+38,2026-12-02 00:00:00,Grêmio,Mirassol FC,,
+38,2026-12-02 00:00:00,Palmeiras,Coritiba FBC,,
+38,2026-12-02 00:00:00,Clube do Remo,Corinthians,,
+38,2026-12-02 00:00:00,Santos FC,Botafogo,,
+38,2026-12-02 00:00:00,CR Vasco da Gama,Vitória,,
