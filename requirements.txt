@@ -1,7 +1,7 @@
+flet
 pandas
+numpy
 scikit-learn
 requests
-numpy
-streamlit
-cloudscraper
 lxml
+cloudscraper
