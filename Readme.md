@@ -1,4 +1,4 @@
-# **⚽ AtletiQ \- Estatísticas do Brasileirão com IA**
+# **⚽ AtletiQ \- Estatísticas do Brasileirão com IA (Descontinuado devido ao fim do fornecimento de dados pelo Fbref)**
 
 **AtletiQ** é uma aplicação desktop moderna desenvolvida em Python e Flet que utiliza Inteligência Artificial (Machine Learning) para prever resultados, simular classificações e analisar estatísticas do Campeonato Brasileiro (Série A).
 
