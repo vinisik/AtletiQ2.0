@@ -185,7 +185,7 @@ def main(page: ft.Page):
 
         modal_content = ft.Column([
             ft.Row([
-                ft.Text("Match Center", size=18, weight="bold"),
+                ft.Text("Detalhes do Confronto", size=18, weight="bold"),
                 ft.IconButton(ft.Icons.CLOSE, on_click=fechar)
             ], alignment="spaceBetween"),
             ft.Divider(color=COR_BORDER),
@@ -335,7 +335,94 @@ def main(page: ft.Page):
         padding=20
     )
 
-    # ABA 3: SIMULAÇÃO
+    # ABA 3: EVOLUÇÃO 
+    dd_time_ev = ft.Dropdown(
+        label="Selecione o Time para Análise",
+        options=[ft.dropdown.Option(t) for t in times_list],
+        expand=True
+    )
+
+    chart = ft.LineChart(
+        data_series=[],
+        border=ft.border.all(1, COR_BORDER),
+        horizontal_grid_lines=ft.ChartGridLines(
+            interval=5, color=ft.Colors.with_opacity(0.1, COR_TEXT_SEC), width=1
+        ),
+        vertical_grid_lines=ft.ChartGridLines(
+            interval=1, color=ft.Colors.with_opacity(0.1, COR_TEXT_SEC), width=1
+        ),
+        left_axis=ft.ChartAxis(
+            labels=[ft.ChartAxisLabel(value=i, label=ft.Text(str(i), size=10))
+                    for i in range(0, 120, 10)],
+            title=ft.Text("Pontos Acumulados", size=12, weight="bold"),
+            title_size=40
+        ),
+        bottom_axis=ft.ChartAxis(
+            title=ft.Text("Jornadas", size=12, weight="bold"),
+            title_size=40
+        ),
+        tooltip_bgcolor=ft.Colors.with_opacity(0.8, COR_SURFACE),
+        expand=True
+    )
+
+    def gerar_grafico(e):
+        if not dd_time_ev.value:
+            return
+        
+        time_sel = dd_time_ev.value
+        # Filtra jogos do ano atual realizados onde o time participou
+        mask_time = (
+            (df_res['HomeTeam'] == time_sel) | (df_res['AwayTeam'] == time_sel)
+        ) & (df_res['Date'].dt.year == ano_atual)
+        
+        jogos_time = df_res[mask_time].sort_values('Date').copy()
+        
+        pontos_acumulados = 0
+        data_points = [ft.LineChartDataPoint(0, 0)]
+        
+        for idx, row in enumerate(jogos_time.itertuples(), 1):
+            if row.HomeTeam == time_sel:
+                pts = 3 if row.FTHG > row.FTAG else (1 if row.FTHG == row.FTAG else 0)
+            else:
+                pts = 3 if row.FTAG > row.FTHG else (1 if row.FTAG == row.FTHG else 0)
+            
+            pontos_acumulados += pts
+            data_points.append(ft.LineChartDataPoint(idx, pontos_acumulados))
+        
+        chart.data_series = [
+            ft.LineChartData(
+                data_points=data_points,
+                stroke_width=4,
+                color=COR_ACCENT,
+                curved=True,
+                below_line_bgcolor=ft.Colors.with_opacity(0.1, COR_ACCENT),
+                below_line_gradient=ft.LinearGradient(
+                    begin=ft.alignment.top_center,
+                    end=ft.alignment.bottom_center,
+                    colors=[ft.Colors.with_opacity(0.2, COR_ACCENT), ft.Colors.TRANSPARENT]
+                ),
+                point=True
+            )
+        ]
+        page.update()
+
+    dd_time_ev.on_change = gerar_grafico
+    tab_evolucao = ft.Container(
+        content=ft.Column([
+            ft.Text("Evolução de Pontos na Temporada", size=20, weight="bold"),
+            criar_card(dd_time_ev),
+            ft.Container(
+                content=chart,
+                height=400,
+                padding=20,
+                bgcolor=ft.Colors.with_opacity(0.05, ft.Colors.WHITE),
+                border_radius=15
+            )
+        ], scroll=ft.ScrollMode.AUTO, spacing=20),
+        padding=20
+    )
+
+    # ABA 4: SIMULAÇÃO
     area_sim = ft.Column()
 
     def rodar(e):
@@ -359,7 +446,20 @@ def main(page: ft.Page):
         color="black", on_click=rodar, width=float('inf')
     )
     tab_sim = ft.Container(
-        content=ft.Column([btn_s, area_sim], scroll=ft.ScrollMode.AUTO),
+        content=ft.Column([
+            ft.Text(
+                "Tabela simulada utilizando o modelo de IA da AtletiQ\n"
+                "Os resultados são imparciais e baseados puramente em cálculos"\
+                " matemáticos.",
+                color=COR_TEXT_SEC,
+            ),
+            ft.Divider(height=20, color=ft.Colors.TRANSPARENT), 
+            
+            btn_s, 
+            
+            ft.Text("Resultado da Simulação:", size=18, weight="bold"),
+            area_sim
+        ], scroll=ft.ScrollMode.AUTO),
         padding=20
     )
 
@@ -382,6 +482,7 @@ def main(page: ft.Page):
         indicator_color=COR_ACCENT,
         tabs=[
             ft.Tab(text="Jogos", icon="calendar_today", content=tab_jogos),
+            ft.Tab(text="Evolução", icon="show_chart", content=tab_evolucao),
             ft.Tab(text="Artilharia", icon="local_fire_department", content=tab_artilharia),
             ft.Tab(text="Simulação", icon="table_chart", content=tab_sim)
         ],
