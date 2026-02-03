@@ -28,13 +28,28 @@ class AtletiQScraper:
             data = response.json()
             matches = []
             
-            # Mapeamento de nomes para padronização interna (De-Para)
+            # Mapeamento de nomes para padronização interna 
             de_para = {
-                'Botafogo FR': 'Botafogo', 'CR Flamengo': 'Flamengo', 'Fluminense FC': 'Fluminense',
-                'São Paulo FC': 'São Paulo', 'SE Palmeiras': 'Palmeiras', 'SC Internacional': 'Internacional',
-                'Grêmio FBPA': 'Grêmio', 'Clube Atlético Mineiro': 'Atlético Mineiro', 'EC Bahia': 'Bahia',
-                'Fortaleza EC': 'Fortaleza', 'Cuiabá EC': 'Cuiabá', 'Vasco da Gama': 'Vasco',
-                'SC Corinthians Paulista': 'Corinthians', 'EC Vitória': 'Vitória', 'RB Bragantino': 'Bragantino'
+                'CA Mineiro': 'Atlético-MG',
+                'CA Paranaense': 'Athletico-PR',
+                'EC Bahia': 'Bahia',
+                'RB Bragantino': 'Bragantino',
+                'Botafogo FR': 'Botafogo',
+                'SC Corinthians Paulista': 'Corinthians',
+                'Coritiba FBC': 'Coritiba',
+                'Cuiabá EC': 'Cuiabá',
+                'Chapecoense AC': 'Chapecoense',
+                'CR Flamengo': 'Flamengo',
+                'Fluminense FC': 'Fluminense',
+                'Fortaleza EC': 'Fortaleza',
+                'Grêmio FBPA': 'Grêmio',
+                'Mirassol FC': 'Mirassol',
+                'SE Palmeiras': 'Palmeiras',
+                'São Paulo FC': 'São Paulo',
+                'Santos FC': 'Santos',
+                'EC Vitória': 'Vitória',
+                'CR Vasco da Gama': 'Vasco',
+                'Clube do Remo': 'Remo'
             }
             
             for m in data.get('matches', []):

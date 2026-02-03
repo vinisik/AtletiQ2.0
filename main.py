@@ -412,77 +412,113 @@ def main(page: ft.Page):
         page.update()
 
     # ABA 1: CALENDÁRIO
-    conteudo_jogos = []
-    if not df_calendario.empty:
-        df_calendario['Rodada_Num'] = pd.to_numeric(df_calendario['Rodada'], errors='coerce')
-        # Ordena para que as rodadas apareçam na sequência correta
-        for r in sorted(df_calendario['Rodada_Num'].dropna().unique()):
+    times_atuais = sorted(list(
+        set(df_calendario['HomeTeam']).union(set(df_calendario['AwayTeam']))
+    ))
+    
+    lista_jogos_container = ft.Column()
+
+    # Filtrar o calendário por times
+    def filtrar_calendario(e):
+        termo = dd_filtro_jogos.value
+        conteudo_filtrado = []
+
+        if termo != "Todos os Times":
+            mask = (df_calendario['HomeTeam'] == termo) | \
+                   (df_calendario['AwayTeam'] == termo)
+            df_f = df_calendario[mask].copy()
+        else:
+            df_f = df_calendario.copy()
+
+        if df_f.empty:
+            lista_jogos_container.controls = [
+                ft.Text("Nenhum jogo encontrado.", color=COR_TEXT_SEC)
+            ]
+            page.update()
+            return
+
+        df_f['Rodada_Num'] = pd.to_numeric(df_f['Rodada'], errors='coerce')
+
+        for r in sorted(df_f['Rodada_Num'].dropna().unique()):
             jogos_r = ft.ResponsiveRow(spacing=10)
-            df_rodada = df_calendario[df_calendario['Rodada_Num'] == r]
-            
-            conteudo_jogos.append(
-                ft.Text(f"Rodada {int(r)}", size=16, weight="bold", color=COR_ACCENT)
-            )
-            
-            for _, row in df_rodada.iterrows():
-                # Lógica para exibir Placar 
-                foi_realizado = pd.notna(row['FTHG'])
-                
-                status_label = ft.Container(
-                content=ft.Text(
-                    "ENCERRADO" if foi_realizado else "AGENDADO",
-                    size=9, weight="bold", color="black"
-                ),
-                bgcolor=COR_ENCERRADO if foi_realizado else COR_TEXT_SEC,
-                padding=ft.padding.symmetric(horizontal=8, vertical=2),
-                border_radius=5,
-                margin=ft.margin.only(bottom=5)
+            df_rodada = df_f[df_f['Rodada_Num'] == r]
+
+            conteudo_filtrado.append(
+                ft.Text(f"Rodada {int(r)}", size=16,
+                        weight="bold", color=COR_ACCENT)
             )
 
+            for _, row in df_rodada.iterrows():
+                foi_realizado = pd.notna(row['FTHG'])
+                status_txt = "ENCERRADO" if foi_realizado else "AGENDADO"
+                status_bg = COR_ENCERRADO if foi_realizado else COR_TEXT_SEC
+
+                status_label = ft.Container(
+                    content=ft.Text(status_txt, size=9,
+                                    weight="bold", color="black"),
+                    bgcolor=status_bg,
+                    padding=ft.padding.symmetric(horizontal=8, vertical=2),
+                    border_radius=5,
+                    margin=ft.margin.only(bottom=5)
+                )
+
                 if foi_realizado:
-                    # Exibe o placar
                     info_central = ft.Row([
-                        ft.Text(str(int(row['FTHG'])), size=14, weight="bold", color=COR_ACCENT),
+                        ft.Text(str(int(row['FTHG'])), size=14,
+                                weight="bold", color=COR_ACCENT),
                         ft.Text("x", size=12, color=COR_TEXT_SEC),
-                        ft.Text(str(int(row['FTAG'])), size=14, weight="bold", color=COR_ACCENT),
+                        ft.Text(str(int(row['FTAG'])), size=14,
+                                weight="bold", color=COR_ACCENT)
                     ], spacing=10)
                 else:
                     info_central = ft.Text("vs", size=10, color=COR_TEXT_SEC)
 
                 card_content = ft.Row([
-                ft.Column([
-                    ft.Row([
-                        status_label,
-                        ft.Text(
-                            row['Date'].strftime("%d/%m - %H:%M"),
-                            size=11, color=COR_TEXT_SEC, weight="bold"
-                        ),
-                    ], spacing=10, vertical_alignment="center"), 
-                    
-                    ft.Row([
-                        ft.Text(
-                            row['HomeTeam'], size=13, weight="bold",
-                            expand=True, text_align="right"
-                        ),
-                        info_central,
-                        ft.Text(
-                            row['AwayTeam'], size=13, weight="bold",
-                            expand=True, text_align="left"
-                        )
-                    ], spacing=10)
-                ], expand=True),
-                ft.Icon(ft.Icons.CHEVRON_RIGHT, color=COR_TEXT_SEC, size=16)
-            ], alignment="center")
+                    ft.Column([
+                        ft.Row([
+                            status_label,
+                            ft.Text(row['Date'].strftime("%d/%m - %H:%M"),
+                                    size=11, color=COR_TEXT_SEC, weight="bold")
+                        ], spacing=10),
+                        ft.Row([
+                            ft.Text(row['HomeTeam'], size=13, weight="bold",
+                                    expand=True, text_align="right"),
+                            info_central,
+                            ft.Text(row['AwayTeam'], size=13, weight="bold",
+                                    expand=True, text_align="left")
+                        ], spacing=10)
+                    ], expand=True),
+                    ft.Icon(ft.Icons.CHEVRON_RIGHT, color=COR_TEXT_SEC, size=16)
+                ], alignment="center")
 
                 card = criar_card(
                     card_content, padding=12,
                     on_click=lambda _, r=row: abrir_detalhes(r)
                 )
-                jogos_r.controls.append(ft.Container(content=card, col={"xs": 12, "sm": 6}))
-            conteudo_jogos.append(jogos_r)
+                jogos_r.controls.append(
+                    ft.Container(content=card, col={"xs": 12, "sm": 6})
+                )
+            conteudo_filtrado.append(jogos_r)
+
+        lista_jogos_container.controls = conteudo_filtrado
+        page.update()
+
+    dd_filtro_jogos = ft.Dropdown(
+        label="Filtrar Calendário por Time",
+        options=[ft.dropdown.Option("Todos os Times")] +
+                [ft.dropdown.Option(t) for t in times_atuais],
+        value="Todos os Times",
+        on_change=filtrar_calendario,
+        expand=True
+    )
+
+    filtrar_calendario(None)
 
     tab_jogos = ft.Container(
-        content=ft.Column(conteudo_jogos, scroll=ft.ScrollMode.AUTO),
+        content=ft.Column([
+            criar_card(ft.Row([dd_filtro_jogos, ft.IconButton(ft.Icons.REFRESH, on_click=lambda _: setattr(dd_filtro_jogos, "value", "Todos os Times") or filtrar_calendario(None))])),
+            lista_jogos_container
+        ], scroll=ft.ScrollMode.AUTO),
         padding=20
     )
 
