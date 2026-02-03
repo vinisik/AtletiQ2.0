@@ -155,17 +155,17 @@ def criar_tabela_estilizada(df):
 
 
 def main(page: ft.Page):
-    page.title = "AtletiQ 2.1"
+    page.title = "AtletiQ 2.5"
     page.theme_mode = "dark"
     page.bgcolor = COR_BG
     page.padding = 0
 
     # SPLASH SCREEN
-    txt_load = ft.Text("Iniciando AtletiQ 2.1...", color=COR_TEXT_SEC)
+    txt_load = ft.Text("Iniciando AtletiQ 2.5...", color=COR_TEXT_SEC)
     pb = ft.ProgressBar(width=300, color=COR_ACCENT)
     splash_content = ft.Column([
         ft.Icon("sports_soccer", size=80, color=COR_ACCENT),
-        ft.Text("AtletiQ 2.1", size=40, weight="bold"),
+        ft.Text("AtletiQ 2.5", size=40, weight="bold"),
         pb,
         txt_load
     ], alignment="center", horizontal_alignment="center")
@@ -233,6 +233,10 @@ def main(page: ft.Page):
 
     # UI: MODAL DETALHES
     def abrir_detalhes(row):
+
+        mandante, visitante = row['HomeTeam'], row['AwayTeam']
+        ano_atual = datetime.now().year # Garante que os dados sejam do ano atual
+
         foi_realizado = pd.notna(row['FTHG'])
         status_text = "PARTIDA ENCERRADA" if foi_realizado else "PARTIDA AGENDADA"
         status_color = COR_ACCENT if foi_realizado else COR_TEXT_SEC
@@ -242,6 +246,43 @@ def main(page: ft.Page):
         foi_realizado = pd.notna(row['FTHG'])
         placar_mandante = str(int(row['FTHG'])) if foi_realizado else "-"
         placar_visitante = str(int(row['FTAG'])) if foi_realizado else "-"
+
+        # Adicionar bolinhas com resultados dos últimos jogos 
+        def obter_forma(time):
+            # Filtra jogos do time no ano atual que já possuem resultado
+            jogos_time = df_total[
+                ((df_total['HomeTeam'] == time) | (df_total['AwayTeam'] == time)) & 
+                (df_total['FTHG'].notna()) &
+                (df_total['Date'].dt.year == ano_atual)
+            ].sort_values(by='Date', ascending=False).head(5)
+            
+            icones_forma = []
+            resultados = []
+            
+            for _, j in jogos_time.iterrows():
+                if j['FTHG'] == j['FTAG']:
+                    resultados.append("E")
+                elif (j['HomeTeam'] == time and j['FTHG'] > j['FTAG']) or \
+                    (j['AwayTeam'] == time and j['FTAG'] > j['FTHG']):
+                    resultados.append("V")
+                else:
+                    resultados.append("D")
+
+            resultados.reverse() 
+
+            for i in range(5):
+                if i < len(resultados):
+                    res = resultados[i]
+                    cor = COR_ACCENT if res == "V" else "red" if res == "D" else "grey"
+                    icones_forma.append(ft.Container(width=8, height=8, bgcolor=cor, border_radius=4))
+                else:
+                    # Bolinhas vazias para completar as 5
+                    icones_forma.append(ft.Container(width=8, height=8, border=ft.border.all(1, COR_TEXT_SEC), border_radius=4))
+            
+            return ft.Row(icones_forma, spacing=3, alignment="center")
+
+        forma_mandante = obter_forma(mandante)
+        forma_visitante = obter_forma(visitante)
         
         odds_ia = prever_jogo_especifico(
             mandante, visitante, modelos, encoder, time_stats, cols_model
@@ -268,20 +309,26 @@ def main(page: ft.Page):
         modal_content = ft.Column([
             ft.Row([
                 ft.Column([
-                    ft.Text(status_text, size=10, weight="bold", color=status_color),
+                    ft.Container(
+                        content=ft.Text(status_text, size=10, weight="bold", color="black"),
+                        bgcolor=status_color, padding=ft.padding.symmetric(horizontal=8, vertical=2), border_radius=5,
+                    ),
                     ft.Text(row['Date'].strftime("%d/%m/%Y - %H:%M"), size=12, weight="bold"),
-                ]),
+                ], spacing=5),
                 ft.IconButton(ft.Icons.CLOSE, on_click=fechar)
             ], alignment="spaceBetween"),
+
             ft.Divider(color=COR_BORDER),
             
             # Cabeçalho com Placar
             ft.Container(
                 content=ft.Row([
                     ft.Column([
-                        ft.Text(mandante, weight="bold", size=16, text_align="right"),
-                        ft.Text("Mandante", size=10, color=COR_TEXT_SEC, text_align="right"),
-                    ], expand=True, horizontal_alignment="end"),
+                        # ft.Text("Mandante", size=10, color=COR_TEXT_SEC, text_align="center"),
+                        ft.Text(mandante, weight="bold", size=20, text_align="center"),
+                        ft.Text("Últimos jogos", size=9),
+                        forma_mandante, # Bolinhas dos úlimos jogos
+                    ], expand=True, horizontal_alignment="center", spacing=5),
                     
                     # Área do Placar Central
                     ft.Container(
@@ -296,11 +343,13 @@ def main(page: ft.Page):
                     ),
                     
                     ft.Column([
-                        ft.Text(visitante, weight="bold", size=16, text_align="left"),
-                        ft.Text("Visitante", size=10, color=COR_TEXT_SEC, text_align="left"),
-                    ], expand=True, horizontal_alignment="start"),
+                        # ft.Text("Visitante", size=10, color=COR_TEXT_SEC, text_align="center"),
+                        ft.Text(visitante, weight="bold", size=20, text_align="center"),
+                        ft.Text("Últimos jogos", size=9),
+                        forma_visitante, # Bolinhas dos úlimos jogos
+                    ], expand=True, horizontal_alignment="center", spacing=5),
                 ], alignment="center"),
-                margin=ft.margin.only(bottom=10)
+                margin=ft.margin.symmetric(vertical=10)
             ),
 
             ft.Text("Análise de Probabilidades (IA)", size=13, color=COR_ACCENT, weight="bold"),
@@ -616,7 +665,7 @@ def main(page: ft.Page):
     header_content = ft.Row([
         ft.Row([
             ft.Icon("sports_soccer", color=COR_ACCENT),
-            ft.Text("AtletiQ 2.1", size=22, weight="bold", color="white")
+            ft.Text("AtletiQ 2.5", size=22, weight="bold", color="white")
         ]),
         ft.Text("v2.1", size=10, color=COR_TEXT_SEC)
     ], alignment="spaceBetween")
