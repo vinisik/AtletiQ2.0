@@ -220,6 +220,9 @@ def main(page: ft.Page):
 
     # UI: MODAL DETALHES
     def abrir_detalhes(row):
+        foi_realizado = pd.notna(row['FTHG'])
+        status_text = "PARTIDA ENCERRADA" if foi_realizado else "PARTIDA AGENDADA"
+        status_color = COR_ACCENT if foi_realizado else COR_TEXT_SEC
         mandante, visitante = row['HomeTeam'], row['AwayTeam']
         
         # Lógica de Placar
@@ -240,7 +243,10 @@ def main(page: ft.Page):
 
         modal_content = ft.Column([
             ft.Row([
-                ft.Text("Detalhes do Confronto", size=18, weight="bold"),
+                ft.Column([
+                    ft.Text(status_text, size=10, weight="bold", color=status_color),
+                    ft.Text(row['Date'].strftime("%d/%m/%Y - %H:%M"), size=12, weight="bold"),
+                ]),
                 ft.IconButton(ft.Icons.CLOSE, on_click=fechar)
             ], alignment="spaceBetween"),
             ft.Divider(color=COR_BORDER),
@@ -361,26 +367,29 @@ def main(page: ft.Page):
                     info_central = ft.Text("vs", size=10, color=COR_TEXT_SEC)
 
                 card_content = ft.Row([
-                    ft.Column([
+                ft.Column([
+                    ft.Row([
                         status_label,
                         ft.Text(
                             row['Date'].strftime("%d/%m - %H:%M"),
-                            size=10, color=COR_TEXT_SEC
+                            size=11, color=COR_TEXT_SEC, weight="bold"
                         ),
-                        ft.Row([
-                            ft.Text(
-                                row['HomeTeam'], size=13, weight="bold",
-                                expand=True, text_align="right"
-                            ),
-                            info_central, 
-                            ft.Text(
-                                row['AwayTeam'], size=13, weight="bold",
-                                expand=True, text_align="left"
-                            )
-                        ], spacing=10)
-                    ], expand=True),
-                    ft.Icon(ft.Icons.CHEVRON_RIGHT, color=COR_TEXT_SEC, size=16)
-                ], alignment="center")
+                    ], spacing=10, vertical_alignment="center"), # Alinhamento horizontal
+                    
+                    ft.Row([
+                        ft.Text(
+                            row['HomeTeam'], size=13, weight="bold",
+                            expand=True, text_align="right"
+                        ),
+                        info_central,
+                        ft.Text(
+                            row['AwayTeam'], size=13, weight="bold",
+                            expand=True, text_align="left"
+                        )
+                    ], spacing=10)
+                ], expand=True),
+                ft.Icon(ft.Icons.CHEVRON_RIGHT, color=COR_TEXT_SEC, size=16)
+            ], alignment="center")
 
                 card = criar_card(
                     card_content, padding=12,
