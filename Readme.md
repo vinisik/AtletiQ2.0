@@ -14,7 +14,7 @@ O projeto evoluiu para uma arquitetura baseada em **Big Data** e **Performance**
 ## **🚀 Funcionalidades Principais**
 
 * **🤖 Previsão de Partidas (AI):** Modelo de Machine Learning que calcula a probabilidade de vitória (Mandante/Empate/Visitante), Over 2.5 e "Ambas Marcam".  
-* **📊 Simulador de Tabela Final:** Projeta a classificação final do campeonato (38 rondas) processando os jogos restantes através do motor de IA.  
+* **📊 Simulador de Tabela Final:** Projeta a classificação final do campeonato processando os jogos restantes através do motor de IA.  
 * **⚔️ Match Center (H2H \+ Predictor):** Visualização integrada de probabilidades e retrospecto histórico (secular \+ recente) num único painel deslizante.  
 * **📅 Calendário Inteligente:** Navegação por jornadas com acesso direto à análise detalhada de cada confronto.  
 * **🌙 UI Moderna:** Design focado em usabilidade com "Dark Mode" nativo e componentes visuais de alta fidelidade.
