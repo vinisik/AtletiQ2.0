@@ -23,6 +23,7 @@ COR_BG = "#121212"
 COR_SURFACE = "#1E1E1E"
 COR_TEXT_SEC = "#9E9E9E"
 COR_BORDER = "#333333"
+COR_ENCERRADO = "#797979"
 CACHE_FILE = "atletiq_dataset.csv"
 
 CORES_TIMES = {
@@ -200,14 +201,13 @@ def main(page: ft.Page):
         return
 
     df_total = pd.concat(dfs_finais).drop_duplicates().reset_index(drop=True)
-    df_total['Date'] = pd.to_datetime(
-        df_total['Date'], utc=True
-    ).dt.tz_localize(None)
+    df_total['Date'] = pd.to_datetime(df_total['Date'], utc=True)
+    # Converte para o horário de Brasília (UTC-3)
+    df_total['Date'] = df_total['Date'].dt.tz_convert('America/Sao_Paulo')
     df_total.to_csv(CACHE_FILE, index=False)
 
     df_res = df_total[df_total['FTHG'].notna()].copy()
-    mask_fut = (df_total['FTHG'].isna()) & (df_total['Date'].dt.year == ano_atual)
-    df_fut = df_total[mask_fut].copy()
+    df_calendario = df_total[df_total['Date'].dt.year == ano_atual].copy()
 
     df_treino, time_stats = preparar_dados_para_modelo(df_res)
     modelos, encoder, cols_model = treinar_modelo(df_treino)
@@ -221,6 +221,12 @@ def main(page: ft.Page):
     # UI: MODAL DETALHES
     def abrir_detalhes(row):
         mandante, visitante = row['HomeTeam'], row['AwayTeam']
+        
+        # Lógica de Placar
+        foi_realizado = pd.notna(row['FTHG'])
+        placar_mandante = str(int(row['FTHG'])) if foi_realizado else "-"
+        placar_visitante = str(int(row['FTAG'])) if foi_realizado else "-"
+        
         odds = prever_jogo_especifico(
             mandante, visitante, modelos, encoder, time_stats, cols_model
         )
@@ -238,33 +244,49 @@ def main(page: ft.Page):
                 ft.IconButton(ft.Icons.CLOSE, on_click=fechar)
             ], alignment="spaceBetween"),
             ft.Divider(color=COR_BORDER),
-            ft.Row([
-                ft.Text(
-                    mandante, weight="bold", size=15,
-                    expand=True, text_align="right"
-                ),
-                ft.Container(
-                    ft.Text("VS", size=10, weight="bold", color="black"),
-                    bgcolor=COR_ACCENT, padding=5, border_radius=5
-                ),
-                ft.Text(
-                    visitante, weight="bold", size=15,
-                    expand=True, text_align="left"
-                )
-            ]),
-            ft.Text("IA Predictor", size=13, color=COR_ACCENT, weight="bold"),
+            
+            # Cabeçalho com Placar
+            ft.Container(
+                content=ft.Row([
+                    ft.Column([
+                        ft.Text(mandante, weight="bold", size=16, text_align="right"),
+                        ft.Text("Mandante", size=10, color=COR_TEXT_SEC, text_align="right"),
+                    ], expand=True, horizontal_alignment="end"),
+                    
+                    # Área do Placar Central
+                    ft.Container(
+                        content=ft.Row([
+                            ft.Text(placar_mandante, size=24, weight="bold"),
+                            ft.Text("x", size=14, color=COR_TEXT_SEC),
+                            ft.Text(placar_visitante, size=24, weight="bold"),
+                        ], alignment="center", spacing=15),
+                        bgcolor="#1AFFFFFF",
+                        padding=ft.padding.symmetric(horizontal=20, vertical=10),
+                        border_radius=10,
+                    ),
+                    
+                    ft.Column([
+                        ft.Text(visitante, weight="bold", size=16, text_align="left"),
+                        ft.Text("Visitante", size=10, color=COR_TEXT_SEC, text_align="left"),
+                    ], expand=True, horizontal_alignment="start"),
+                ], alignment="center"),
+                margin=ft.margin.only(bottom=10)
+            ),
+
+            ft.Text("Análise de Probabilidades (IA)", size=13, color=COR_ACCENT, weight="bold"),
             ft.Row([
                 criar_stat_box(
-                    mandante, f"{odds.get('Casa', 0):.0%}",
+                    "Vitória " + mandante, f"{odds.get('Casa', 0):.0%}",
                     CORES_TIMES.get(mandante, COR_ACCENT)
                 ),
                 criar_stat_box("Empate", f"{odds.get('Empate', 0):.0%}", "grey"),
                 criar_stat_box(
-                    visitante, f"{odds.get('Visitante', 0):.0%}", "#00B0FF"
+                    "Vitória " + visitante, f"{odds.get('Visitante', 0):.0%}", "#00B0FF"
                 )
             ]),
+            
             ft.Text(
-                f"Histórico ({res_h2h['total_partidas']} partidas)",
+                f"Histórico Geral ({res_h2h['total_partidas']} partidas)",
                 size=13, color=COR_ACCENT, weight="bold"
             ),
             ft.Row([
@@ -277,7 +299,8 @@ def main(page: ft.Page):
                     res_h2h['vitorias'].get(visitante, 0)
                 ),
             ]),
-            ft.Text("Últimos resultados:", size=11, color=COR_TEXT_SEC),
+            
+            ft.Text("Últimos confrontos diretos:", size=11, color=COR_TEXT_SEC),
             ft.Container(
                 content=criar_tabela_estilizada(df_h2h.head(5)),
                 padding=5,
@@ -301,17 +324,45 @@ def main(page: ft.Page):
 
     # ABA 1: CALENDÁRIO
     conteudo_jogos = []
-    if not df_fut.empty:
-        df_fut['Rodada_Num'] = pd.to_numeric(df_fut['Rodada'], errors='coerce')
-        for r in sorted(df_fut['Rodada_Num'].dropna().unique()):
+    if not df_calendario.empty:
+        df_calendario['Rodada_Num'] = pd.to_numeric(df_calendario['Rodada'], errors='coerce')
+        # Ordena para que as rodadas apareçam na sequência correta
+        for r in sorted(df_calendario['Rodada_Num'].dropna().unique()):
             jogos_r = ft.ResponsiveRow(spacing=10)
-            df_rodada = df_fut[df_fut['Rodada_Num'] == r]
+            df_rodada = df_calendario[df_calendario['Rodada_Num'] == r]
+            
             conteudo_jogos.append(
                 ft.Text(f"Rodada {int(r)}", size=16, weight="bold", color=COR_ACCENT)
             )
+            
             for _, row in df_rodada.iterrows():
+                # Lógica para exibir Placar 
+                foi_realizado = pd.notna(row['FTHG'])
+                
+                status_label = ft.Container(
+                content=ft.Text(
+                    "ENCERRADO" if foi_realizado else "AGENDADO",
+                    size=9, weight="bold", color="black"
+                ),
+                bgcolor=COR_ENCERRADO if foi_realizado else COR_TEXT_SEC,
+                padding=ft.padding.symmetric(horizontal=8, vertical=2),
+                border_radius=5,
+                margin=ft.margin.only(bottom=5)
+            )
+
+                if foi_realizado:
+                    # Exibe o placar
+                    info_central = ft.Row([
+                        ft.Text(str(int(row['FTHG'])), size=14, weight="bold", color=COR_ACCENT),
+                        ft.Text("x", size=12, color=COR_TEXT_SEC),
+                        ft.Text(str(int(row['FTAG'])), size=14, weight="bold", color=COR_ACCENT),
+                    ], spacing=10)
+                else:
+                    info_central = ft.Text("vs", size=10, color=COR_TEXT_SEC)
+
                 card_content = ft.Row([
                     ft.Column([
+                        status_label,
                         ft.Text(
                             row['Date'].strftime("%d/%m - %H:%M"),
                             size=10, color=COR_TEXT_SEC
@@ -321,7 +372,7 @@ def main(page: ft.Page):
                                 row['HomeTeam'], size=13, weight="bold",
                                 expand=True, text_align="right"
                             ),
-                            ft.Text("vs", size=10, color=COR_TEXT_SEC),
+                            info_central, 
                             ft.Text(
                                 row['AwayTeam'], size=13, weight="bold",
                                 expand=True, text_align="left"
@@ -337,6 +388,7 @@ def main(page: ft.Page):
                 )
                 jogos_r.controls.append(ft.Container(content=card, col={"xs": 12, "sm": 6}))
             conteudo_jogos.append(jogos_r)
+
     tab_jogos = ft.Container(
         content=ft.Column(conteudo_jogos, scroll=ft.ScrollMode.AUTO),
         padding=20
