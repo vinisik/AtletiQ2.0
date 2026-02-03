@@ -1,3 +1,12 @@
+# Variáveis de ambiente
 .env
+
 .idea/
+
+# Csv com dados de confrontos (dados variam e devem ser atualizados sempre)
 atletiq_dataset.csv
+
+# Bytecode Python
+__pycache__/
+*.py[cod]
+*$py.class
