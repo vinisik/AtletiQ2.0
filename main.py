@@ -58,12 +58,25 @@ def criar_card(content, padding=20, on_click=None):
     )
 
 
-def criar_stat_box(label, value, color="white"):
+def criar_stat_box(label, value, color="white", odd=None):
+    # Probabilidades em porcentagens
+    content_list = [
+        ft.Text(label, size=10, color=COR_TEXT_SEC),
+        ft.Text(str(value), size=20, weight="bold", color=color)
+    ]
+    
+    # Odds decimais
+    if odd:
+        content_list.append(
+            ft.Text(f"Odd: {odd:.2f}", size=11, color=COR_TEXT_SEC, italic=True)
+        )
+
     return ft.Container(
-        content=ft.Column([
-            ft.Text(label, size=10, color=COR_TEXT_SEC),
-            ft.Text(str(value), size=20, weight="bold", color=color)
-        ], horizontal_alignment="center", spacing=2),
+        content=ft.Column(
+            content_list, 
+            horizontal_alignment="center", 
+            spacing=2
+        ),
         bgcolor="#0DFFFFFF",
         border_radius=10,
         padding=10,
@@ -230,9 +243,20 @@ def main(page: ft.Page):
         placar_mandante = str(int(row['FTHG'])) if foi_realizado else "-"
         placar_visitante = str(int(row['FTAG'])) if foi_realizado else "-"
         
-        odds = prever_jogo_especifico(
+        odds_ia = prever_jogo_especifico(
             mandante, visitante, modelos, encoder, time_stats, cols_model
         )
+
+        # Probabilidades em %
+        prob_casa = odds_ia.get('Casa', 0)
+        prob_empate = odds_ia.get('Empate', 0)
+        prob_visitante = odds_ia.get('Visitante', 0)
+
+        # Cálculo de odds decimais
+        odd_casa = 1 / prob_casa if prob_casa > 0 else 0
+        odd_empate = 1 / prob_empate if prob_empate > 0 else 0
+        odd_visitante = 1 / prob_visitante if prob_visitante > 0 else 0
+
         res_h2h, df_h2h = gerar_confronto_direto(
             df_total, mandante, visitante
         )
@@ -282,14 +306,24 @@ def main(page: ft.Page):
             ft.Text("Análise de Probabilidades (IA)", size=13, color=COR_ACCENT, weight="bold"),
             ft.Row([
                 criar_stat_box(
-                    "Vitória " + mandante, f"{odds.get('Casa', 0):.0%}",
-                    CORES_TIMES.get(mandante, COR_ACCENT)
+                    "Vitória " + mandante, 
+                    f"{prob_casa:.0%}",
+                    CORES_TIMES.get(mandante, COR_ACCENT),
+                    odd=odd_casa
                 ),
-                criar_stat_box("Empate", f"{odds.get('Empate', 0):.0%}", "grey"),
                 criar_stat_box(
-                    "Vitória " + visitante, f"{odds.get('Visitante', 0):.0%}", "#00B0FF"
+                    "Empate", 
+                    f"{prob_empate:.0%}", 
+                    "grey",
+                    odd=odd_empate
+                ),
+                criar_stat_box(
+                    "Vitória " + visitante, 
+                    f"{prob_visitante:.0%}", 
+                    "#00B0FF",
+                    odd=odd_visitante
                 )
-            ]),
+            ], spacing=10),
             
             ft.Text(
                 f"Histórico Geral ({res_h2h['total_partidas']} partidas)",
@@ -304,7 +338,7 @@ def main(page: ft.Page):
                     "Vitórias " + visitante,
                     res_h2h['vitorias'].get(visitante, 0)
                 ),
-            ]),
+            ], spacing=10),
             
             ft.Text("Últimos confrontos diretos:", size=11, color=COR_TEXT_SEC),
             ft.Container(
@@ -374,7 +408,7 @@ def main(page: ft.Page):
                             row['Date'].strftime("%d/%m - %H:%M"),
                             size=11, color=COR_TEXT_SEC, weight="bold"
                         ),
-                    ], spacing=10, vertical_alignment="center"), # Alinhamento horizontal
+                    ], spacing=10, vertical_alignment="center"), 
                     
                     ft.Row([
                         ft.Text(
@@ -595,6 +629,8 @@ def main(page: ft.Page):
     tabs = ft.Tabs(
         selected_index=0,
         indicator_color=COR_ACCENT,
+        label_color=COR_ACCENT,     
+        unselected_label_color=COR_TEXT_SEC,
         tabs=[
             ft.Tab(text="Jogos", icon="calendar_today", content=tab_jogos),
             ft.Tab(text="Evolução", icon="show_chart", content=tab_evolucao),
