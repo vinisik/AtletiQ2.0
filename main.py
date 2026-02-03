@@ -70,18 +70,67 @@ def criar_stat_box(label, value, color="white"):
     )
 
 
+def criar_legenda_tabela():
+    # Cria os itens da legenda com bolinhas coloridas
+    def item_legenda(cor, texto):
+        return ft.Row([
+            ft.Container(width=10, height=10, bgcolor=cor, border_radius=5),
+            ft.Text(texto, size=12, color=COR_TEXT_SEC)
+        ], spacing=5)
+
+    return ft.Container(
+        content=ft.Row([
+            item_legenda(ft.Colors.BLUE, "Libertadores"),
+            item_legenda(ft.Colors.GREEN, "Pré-Libertadores"),
+            item_legenda(ft.Colors.YELLOW, "Sul-Americana"),
+            item_legenda(ft.Colors.RED_ACCENT, "Rebaixamento"),
+        ], alignment="left"),
+        margin=ft.margin.only(bottom=15, top=10)
+    )
+
+
 def criar_tabela_estilizada(df):
     if df is None or df.empty:
         return ft.Text("Sem dados disponíveis.", color=COR_TEXT_SEC)
 
+    # Tamanho de fonte padrão para toda a tabela
+    FONTE_SIZE = 13
+
     cols = [
-        ft.DataColumn(ft.Text(str(c), weight="bold", color=COR_ACCENT))
+        ft.DataColumn(ft.Text(str(c), weight="bold", color=COR_ACCENT, size=FONTE_SIZE))
         for c in df.columns
     ]
-    rows = [
-        ft.DataRow([ft.DataCell(ft.Text(str(v), size=11)) for v in row])
-        for i, row in df.iterrows()
-    ]
+    
+    rows = []
+    for i, row in df.iterrows():
+        posicao = i + 1
+        cells = []
+        
+        for col_name, value in row.items():
+            valor_celula = str(value)
+            
+            if col_name == "Time" and "   " in valor_celula:
+                num_pos, nome_time = valor_celula.split("   ", 1)
+                
+                # Definir cor do número baseada na posição 
+                cor_pos = "white"
+                if posicao <= 4: cor_pos = ft.Colors.BLUE
+                elif posicao == 5: cor_pos = ft.Colors.GREEN
+                elif 6 <= posicao <= 11: cor_pos = ft.Colors.YELLOW
+                elif posicao >= 17: cor_pos = ft.Colors.RED
+                
+                cells.append(ft.DataCell(ft.Row([
+                    ft.Text(num_pos, color=cor_pos, weight="bold", size=FONTE_SIZE),
+                    ft.Text(f"   {nome_time}", color="white", size=FONTE_SIZE)
+                ])))
+                continue 
+            
+            cells.append(ft.DataCell(
+                ft.Text(valor_celula, size=FONTE_SIZE, color="white", weight="bold")
+            ))
+            
+        rows.append(ft.DataRow(cells))
+
     return ft.DataTable(
         columns=cols,
         rows=rows,
@@ -370,7 +419,6 @@ def main(page: ft.Page):
             return
         
         time_sel = dd_time_ev.value
-        # Filtra jogos do ano atual realizados onde o time participou
         mask_time = (
             (df_res['HomeTeam'] == time_sel) | (df_res['AwayTeam'] == time_sel)
         ) & (df_res['Date'].dt.year == ano_atual)
@@ -428,16 +476,24 @@ def main(page: ft.Page):
     def rodar(e):
         btn_s.content = ft.ProgressRing(width=20, color="black")
         page.update()
+        
         df_res_at = df_total[
             (df_total['Date'].dt.year == ano_atual) & df_total['FTHG'].notna()
         ]
         df_fut_at = df_total[
             (df_total['Date'].dt.year == ano_atual) & df_total['FTHG'].isna()
         ]
+        
         res = simular_campeonato(
             38, df_fut_at, df_res_at, modelos, encoder, time_stats, cols_model
         )
-        area_sim.controls = [criar_tabela_estilizada(res)]
+        
+        # Atualização da área de simulação com a legenda e a nova tabela
+        area_sim.controls = [
+            criar_legenda_tabela(),
+            criar_tabela_estilizada(res)
+        ]
+        
         btn_s.content = ft.Text("SIMULAR CAMPEONATO")
         page.update()
 
@@ -445,18 +501,16 @@ def main(page: ft.Page):
         "SIMULAR CAMPEONATO", bgcolor=COR_ACCENT,
         color="black", on_click=rodar, width=float('inf')
     )
+    
     tab_sim = ft.Container(
         content=ft.Column([
             ft.Text(
                 "Tabela simulada utilizando o modelo de IA da AtletiQ\n"
-                "Os resultados são imparciais e baseados puramente em cálculos"\
-                " matemáticos.",
+                "Os resultados são imparciais e baseados puramente em cálculos matemáticos.",
                 color=COR_TEXT_SEC,
             ),
             ft.Divider(height=20, color=ft.Colors.TRANSPARENT), 
-            
             btn_s, 
-            
             ft.Text("Resultado da Simulação:", size=18, weight="bold"),
             area_sim
         ], scroll=ft.ScrollMode.AUTO),
