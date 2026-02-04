@@ -1,6 +1,8 @@
-# **AtletiQ**
+# **AtletiQ 2.5**
 
 Este é um aplicativo desenvolvido em Python com Flet que utiliza técnicas de web scraping e machine learning para analisar e prever resultados de partidas do Campeonato Brasileiro de Futebol.
+
+Este projeto é uma evolução drástica do app apresentado na disciplina de projeto integrador que pode ou não ser apresentado novamente para demonstrar a evolução do desenvolvimento.
 
 A aplicação busca dados atualizados da API da football-data.org, treina um modelo de regressão logística e apresenta diversas funcionalidades analíticas em uma interface amigável.
 
