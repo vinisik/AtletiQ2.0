@@ -737,7 +737,7 @@ def main(page: ft.Page):
             ft.Icon("sports_soccer", color=COR_ACCENT),
             ft.Text("AtletiQ 2.5", size=22, weight="bold", color="white")
         ]),
-        ft.Text("v2.1", size=10, color=COR_TEXT_SEC)
+        ft.Text("v2.5", size=10, color=COR_TEXT_SEC)
     ], alignment="spaceBetween")
 
     header = ft.Container(
