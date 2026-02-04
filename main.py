@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 import os
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -44,6 +45,25 @@ CORES_TIMES = {
     'Vitória': '#E30613',
     'Athletico Paranaense': '#C3281E'
 }
+
+def carregar_escudos():
+    try:
+        with open("escudos.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"default": "URL_DO_ICONE_GENERICO"}
+
+ESCUDOS_DATA = carregar_escudos()
+
+def obter_escudo(time_nome, tamanho=25):
+    # Tenta buscar o escudo, se não existir usa o 'default'
+    url = ESCUDOS_DATA.get(time_nome, ESCUDOS_DATA.get("default"))
+    return ft.Image(
+        src=url,
+        width=tamanho,
+        height=tamanho,
+        fit=ft.ImageFit.CONTAIN
+    )
 
 
 # AUXILIARES DE UI
@@ -125,6 +145,7 @@ def criar_tabela_estilizada(df):
             
             if col_name == "Time" and "   " in valor_celula:
                 num_pos, nome_time = valor_celula.split("   ", 1)
+                nome_time_limpo = nome_time.strip()
                 
                 # Definir cor do número baseada na posição 
                 cor_pos = "white"
@@ -135,9 +156,18 @@ def criar_tabela_estilizada(df):
                 
                 cells.append(ft.DataCell(ft.Row([
                     ft.Text(num_pos, color=cor_pos, weight="bold", size=FONTE_SIZE),
+                    obter_escudo(nome_time_limpo, 18),
                     ft.Text(f"   {nome_time}", color="white", size=FONTE_SIZE)
                 ])))
                 continue 
+
+            elif col_name == "Time":
+                nome_time_limpo = valor_celula.strip()
+                cells.append(ft.DataCell(ft.Row([
+                    obter_escudo(nome_time_limpo, 18),
+                    ft.Text(valor_celula, color="white", size=FONTE_SIZE)
+                ], spacing=10)))
+                continue
             
             cells.append(ft.DataCell(
                 ft.Text(valor_celula, size=FONTE_SIZE, color="white", weight="bold")
@@ -325,6 +355,7 @@ def main(page: ft.Page):
                 content=ft.Row([
                     ft.Column([
                         # ft.Text("Mandante", size=10, color=COR_TEXT_SEC, text_align="center"),
+                        obter_escudo(mandante, 50),
                         ft.Text(mandante, weight="bold", size=20, text_align="center"),
                         ft.Text("Últimos jogos", size=9),
                         forma_mandante, # Bolinhas dos úlimos jogos
@@ -344,6 +375,7 @@ def main(page: ft.Page):
                     
                     ft.Column([
                         # ft.Text("Visitante", size=10, color=COR_TEXT_SEC, text_align="center"),
+                        obter_escudo(visitante, 50),
                         ft.Text(visitante, weight="bold", size=20, text_align="center"),
                         ft.Text("Últimos jogos", size=9),
                         forma_visitante, # Bolinhas dos úlimos jogos
@@ -483,7 +515,9 @@ def main(page: ft.Page):
                         ft.Row([
                             ft.Text(row['HomeTeam'], size=13, weight="bold",
                                     expand=True, text_align="right"),
+                                    obter_escudo(row['HomeTeam'], 20),
                             info_central,
+                            obter_escudo(row['AwayTeam'], 20),
                             ft.Text(row['AwayTeam'], size=13, weight="bold",
                                     expand=True, text_align="left")
                         ], spacing=10)
@@ -537,7 +571,7 @@ def main(page: ft.Page):
             return
         df_f = df_artilharia_completa.copy()
         if dd_time_art.value != "Todos":
-            df_f = df_f[df_f['Time'].str.contains(dd_time_art.value, na=False)]
+            df_f = df_f[df_f['Time'] == dd_time_art.value]
 
         lista_artilharia.controls = [
             ft.Text(f"Top Marcadores - {dd_time_art.value}", size=18, weight="bold"),

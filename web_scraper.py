@@ -11,6 +11,10 @@ class AtletiQScraper:
         self.base_url = "https://api.football-data.org/v4/"
         self.headers = {'X-Auth-Token': self.api_key}
 
+    def limpar_nome_time(self, nome_raw):
+        """Função auxiliar para padronizar nomes"""
+        return self.de_para.get(nome_raw, nome_raw.replace(' SAF', '').replace(' EC', '').strip())
+
     def buscar_dados_hibrido(self, ano):
         if not self.api_key:
             print("Erro: API_KEY não encontrada.")
@@ -29,20 +33,21 @@ class AtletiQScraper:
             matches = []
             
             # Mapeamento de nomes para padronização interna 
-            de_para = {
+            self.de_para = {
                 'CA Mineiro': 'Atlético-MG',
                 'CA Paranaense': 'Athletico-PR',
                 'EC Bahia': 'Bahia',
-                'RB Bragantino': 'Bragantino',
+                'RB Bragantino': 'RB Bragantino',
                 'Botafogo FR': 'Botafogo',
                 'SC Corinthians Paulista': 'Corinthians',
                 'Coritiba FBC': 'Coritiba',
                 'Cuiabá EC': 'Cuiabá',
-                'Chapecoense AC': 'Chapecoense',
+                'Chapecoense AF': 'Chapecoense',
                 'CR Flamengo': 'Flamengo',
                 'Fluminense FC': 'Fluminense',
                 'Fortaleza EC': 'Fortaleza',
                 'Grêmio FBPA': 'Grêmio',
+                'SC Internacional': 'Internacional',
                 'Mirassol FC': 'Mirassol',
                 'SE Palmeiras': 'Palmeiras',
                 'São Paulo FC': 'São Paulo',
@@ -54,8 +59,8 @@ class AtletiQScraper:
             
             for m in data.get('matches', []):
                 h_raw, a_raw = m['homeTeam'].get('name', ''), m['awayTeam'].get('name', '')
-                home = de_para.get(h_raw, h_raw.replace(' SAF', '').replace(' EC', '').strip())
-                away = de_para.get(a_raw, a_raw.replace(' SAF', '').replace(' EC', '').strip())
+                home = self.de_para.get(h_raw, h_raw.replace(' SAF', '').replace(' EC', '').strip())
+                away = self.de_para.get(a_raw, a_raw.replace(' SAF', '').replace(' EC', '').strip())
                 
                 matches.append({
                     'Rodada': m.get('matchday'), 
@@ -84,9 +89,17 @@ class AtletiQScraper:
             data = response.json()
             scorers = []
             for s in data.get('scorers', []):
+                nome_time_raw = s['team']['name']
+                nome_time_limpo = self.limpar_nome_time(nome_time_raw)
+
+                # Trata as assistências para evitar None
+                assistencias = s.get('assists')
+                if assistencias is None:
+                    assistencias = 0
+
                 scorers.append({
                     'Jogador': s['player']['name'],
-                    'Time': s['team']['name'],
+                    'Time': nome_time_limpo,
                     'Gols': s['goals'],
                     'Assistências': s.get('assists', 0),
                     'Jogos': s.get('playedMatches', 0)
