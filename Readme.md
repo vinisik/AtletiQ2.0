@@ -48,7 +48,7 @@ AtletiQ/
 
 ├── analysis.py \# Processamento de H2H e histórico secular
 
-├── atletiq\_dataset.csv \# \[NOVO\] Cache local de dados multi-ano
+├── atletiq\_dataset.csv \# Cache local de dados multi-ano
 
 ├── historico\_confrontos.csv \# Base de dados histórica secular
 
